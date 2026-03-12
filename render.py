@@ -451,8 +451,7 @@ html_output = f"""<!DOCTYPE html>
 """
 
 # ── 7. Write output ───────────────────────────────────────────────────────────
-os.makedirs("output", exist_ok=True)
-output_path = "output/output.html"
+output_path = "index.html"
 with open(output_path, "w", encoding="utf-8") as f:
     f.write(html_output)
 
