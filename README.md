@@ -1,6 +1,4 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/tniubn-f)
-
-# HW1 — Markdown 創作與渲染實作
+# 📝 個人技術履歷與作品集（Personal CV & Portfolio) <br> Markdown創作與渲染實作
 
 ## 1. 專案簡介
 
@@ -11,7 +9,7 @@
 - 個人基本資料與自我介紹
 - 程式語言與框架的技術技能表
 - 學術背景（學歷、修習課程）
-- 三個實際專案作品（RAG 問答系統、部落格平台、系統架構圖）
+- 實際專案作品（RAG 問答系統、部落格平台、系統架構圖）
 - 機器學習相關數學公式（損失函數、梯度下降、Softmax、Attention）
 - 學習計畫任務清單與路線圖
 - GitHub 統計圖片與相關連結
