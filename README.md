@@ -1,4 +1,4 @@
-# 📝 個人技術履歷與作品集（Personal CV & Portfolio) <br> Markdown創作與渲染實作
+# 📝 Markdown創作與渲染實作_個人技術履歷與作品集（Personal CV & Portfolio) <br>
 
 ## 1. 專案簡介
 
