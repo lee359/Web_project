@@ -73,9 +73,20 @@
 
 ### 專案一：基於 MCP 協定與 YOLOv8n 之即時影像辨識系統實作
 
-```python
-
+```json
+"mcpServers": {
+    "YOLOv8 Detection Server": {
+      "command": "C:\\Users\\**[USER]**\\MCPproject-YOLOv8\\venv\\Scripts\\python.exe",
+      "args": [
+        "C:\\Users\\**[USER]**\\MCPproject-YOLOv8\\mcpserver.py"
+      ],
+      "env": {
+        "PYTHONPATH": "C:\\Users\\**[USER]**\\MCPproject-YOLOv8"
+      }
+    }
+}
 ```
+註：** [USER] ** 為本研究電腦使用者名稱，為保護個人隱私，故省略。
 
 ---
 
