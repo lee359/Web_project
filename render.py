@@ -111,6 +111,196 @@ html_output = f"""<!DOCTYPE html>
       --t:        .3s cubic-bezier(.4,0,.2,1);
     }}
 
+    /* ── Roadmap stack interaction ────────────────────────────────────────── */
+    .roadmap-stack {{
+      margin: 16px 0 8px;
+    }}
+    .roadmap-headline {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      font-size: .9em;
+      color: var(--muted);
+    }}
+    .roadmap-viewport {{
+      position: relative;
+      min-height: 300px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: linear-gradient(150deg, rgba(99,102,241,.08), rgba(139,92,246,.04));
+      overflow: hidden;
+      box-shadow: var(--sh-sm);
+      cursor: pointer;
+    }}
+    .roadmap-viewport::before,
+    .roadmap-viewport::after {{
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--t), transform var(--t);
+      z-index: 8;
+    }}
+    .roadmap-viewport::before {{
+      left: 12px;
+      background: radial-gradient(circle at center, rgba(99,102,241,.35), rgba(99,102,241,0));
+    }}
+    .roadmap-viewport::after {{
+      right: 12px;
+      background: radial-gradient(circle at center, rgba(6,182,212,.35), rgba(6,182,212,0));
+    }}
+    .roadmap-viewport.hover-left::before {{
+      opacity: 1;
+      transform: translateY(-50%) scale(1.12);
+      animation: pulseLeft .9s ease-in-out infinite;
+    }}
+    .roadmap-viewport.hover-right::after {{
+      opacity: 1;
+      transform: translateY(-50%) scale(1.12);
+      animation: pulseRight .9s ease-in-out infinite;
+    }}
+    @keyframes pulseLeft {{
+      0%, 100% {{ box-shadow: 0 0 0 0 rgba(99,102,241,.18); }}
+      50% {{ box-shadow: -8px 0 0 8px rgba(99,102,241,.08); }}
+    }}
+    @keyframes pulseRight {{
+      0%, 100% {{ box-shadow: 0 0 0 0 rgba(6,182,212,.18); }}
+      50% {{ box-shadow: 8px 0 0 8px rgba(6,182,212,.08); }}
+    }}
+    .roadmap-zone {{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      border: none;
+      background: transparent;
+      z-index: 7;
+    }}
+    .roadmap-zone-left {{ left: 0; }}
+    .roadmap-zone-right {{ right: 0; }}
+    .roadmap-zone:focus-visible {{
+      outline: 2px dashed var(--a1);
+      outline-offset: -2px;
+    }}
+    .roadmap-card {{
+      position: absolute;
+      left: 50%;
+      top: 52%;
+      width: min(520px, calc(100% - 44px));
+      padding: 20px 22px;
+      border-radius: 16px;
+      border: 1px solid rgba(99,102,241,.2);
+      background: linear-gradient(145deg, #ffffff, #f7f9ff);
+      transform: translate(-50%, -50%);
+      box-shadow: 0 4px 18px rgba(15, 23, 42, .10);
+      transition: transform .35s ease, opacity .35s ease, box-shadow .35s ease;
+      opacity: 0;
+      pointer-events: none;
+    }}
+    .roadmap-card.active {{
+      opacity: 1;
+      z-index: 6;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }}
+    .roadmap-card.active:hover {{
+      transform: translate(-50%, -54%) scale(1.02);
+      box-shadow: 0 14px 30px rgba(99,102,241,.20);
+    }}
+    .roadmap-card.stack-1 {{
+      opacity: .78;
+      z-index: 5;
+      transform: translate(calc(-50% + 16px), calc(-50% + 14px)) scale(.97) rotate(1.2deg);
+    }}
+    .roadmap-card.stack-2 {{
+      opacity: .58;
+      z-index: 4;
+      transform: translate(calc(-50% + 30px), calc(-50% + 26px)) scale(.94) rotate(2.4deg);
+    }}
+    .roadmap-card.stack-3 {{
+      opacity: .42;
+      z-index: 3;
+      transform: translate(calc(-50% + 42px), calc(-50% + 36px)) scale(.91) rotate(3.2deg);
+    }}
+    .roadmap-card.out {{
+      opacity: 0;
+      z-index: 1;
+      transform: translate(calc(-50% + 56px), calc(-50% + 48px)) scale(.88);
+    }}
+    .roadmap-kicker {{
+      margin: 0 0 6px;
+      font-size: .76em;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: var(--a1);
+      text-transform: uppercase;
+    }}
+    .roadmap-card h4 {{
+      margin: 0 0 4px;
+      font-size: 1.18em;
+      letter-spacing: -.01em;
+      color: var(--text);
+      text-transform: none;
+    }}
+    .roadmap-card p {{
+      margin: 0;
+      color: #4b5563;
+      font-size: .96em;
+      line-height: 1.7;
+    }}
+    .roadmap-card.slide-in-next {{
+      animation: cardInFromRight .34s cubic-bezier(.22,.9,.2,1) both;
+    }}
+    .roadmap-card.slide-in-prev {{
+      animation: cardInFromLeft .34s cubic-bezier(.22,.9,.2,1) both;
+    }}
+    @keyframes cardInFromRight {{
+      from {{ opacity: 0; transform: translate(calc(-50% + 48px), -50%) scale(.96); }}
+      to   {{ opacity: 1; transform: translate(-50%, -50%) scale(1); }}
+    }}
+    @keyframes cardInFromLeft {{
+      from {{ opacity: 0; transform: translate(calc(-50% - 48px), -50%) scale(.96); }}
+      to   {{ opacity: 1; transform: translate(-50%, -50%) scale(1); }}
+    }}
+    .roadmap-dots {{
+      position: absolute;
+      left: 50%;
+      bottom: 12px;
+      transform: translateX(-50%);
+      z-index: 9;
+      display: flex;
+      gap: 7px;
+      align-items: center;
+    }}
+    .roadmap-dot {{
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      border: none;
+      background: rgba(99,102,241,.28);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.5);
+      transition: transform var(--t), background var(--t), box-shadow var(--t);
+      cursor: pointer;
+      padding: 0;
+    }}
+    .roadmap-dot:hover {{
+      transform: scale(1.25);
+      background: rgba(99,102,241,.58);
+    }}
+    .roadmap-dot.active {{
+      width: 20px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--a1), var(--a3));
+      box-shadow: 0 0 0 2px rgba(99,102,241,.16);
+    }}
+
     /* ── Reset ─────────────────────────────────────────────────────────────── */
     *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
     html {{ scroll-behavior: smooth; }}
@@ -408,6 +598,7 @@ html_output = f"""<!DOCTYPE html>
     .mermaid-zoom-btn:hover {{
       background: rgba(99,102,241,.25);
     }}
+
     /* Lightbox overlay */
     #mermaid-lightbox {{
       display: none;
@@ -571,6 +762,104 @@ html_output = f"""<!DOCTYPE html>
         }});
       }});
     }}, 900);
+
+    /* ── 6. Card-stack roadmap interactions ───────────────────────────────── */
+    document.querySelectorAll('[data-roadmap]').forEach(function (stack) {{
+      var viewport = stack.querySelector('[data-roadmap-viewport]');
+      if (!viewport) return;
+
+      var cards = Array.from(viewport.querySelectorAll('.roadmap-card'));
+      var leftZone = viewport.querySelector('.roadmap-zone-left');
+      var rightZone = viewport.querySelector('.roadmap-zone-right');
+      var active = 0;
+      var direction = 'init';
+
+      var dotsWrap = document.createElement('div');
+      dotsWrap.className = 'roadmap-dots';
+      dotsWrap.setAttribute('role', 'tablist');
+      dotsWrap.setAttribute('aria-label', '學習路線圖進度');
+      viewport.appendChild(dotsWrap);
+
+      var dots = cards.map(function (_, index) {{
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'roadmap-dot';
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', '前往第 ' + (index + 1) + ' 階段');
+        dot.addEventListener('click', function (e) {{
+          e.stopPropagation();
+          if (index === active) return;
+          direction = index > active ? 'next' : 'prev';
+          active = index;
+          applyLayout();
+        }});
+        dotsWrap.appendChild(dot);
+        return dot;
+      }});
+
+      function applyLayout() {{
+        cards.forEach(function (card, index) {{
+          card.classList.remove('active', 'stack-1', 'stack-2', 'stack-3', 'out', 'slide-in-next', 'slide-in-prev');
+          if (index === active) {{
+            card.classList.add('active');
+            if (direction === 'next') card.classList.add('slide-in-next');
+            if (direction === 'prev') card.classList.add('slide-in-prev');
+            return;
+          }}
+          var diff = index - active;
+          if (diff > 0 && diff <= 3) {{
+            card.classList.add('stack-' + diff);
+          }} else {{
+            card.classList.add('out');
+          }}
+        }});
+
+        dots.forEach(function (dot, index) {{
+          var isActive = index === active;
+          dot.classList.toggle('active', isActive);
+          dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        }});
+      }}
+
+      function goNext() {{
+        direction = 'next';
+        active = (active + 1) % cards.length;
+        applyLayout();
+      }}
+
+      function goPrev() {{
+        direction = 'prev';
+        active = (active - 1 + cards.length) % cards.length;
+        applyLayout();
+      }}
+
+      leftZone.addEventListener('click', goPrev);
+      rightZone.addEventListener('click', goNext);
+
+      viewport.addEventListener('mousemove', function (e) {{
+        var rect = viewport.getBoundingClientRect();
+        var isLeft = (e.clientX - rect.left) < rect.width / 2;
+        viewport.classList.toggle('hover-left', isLeft);
+        viewport.classList.toggle('hover-right', !isLeft);
+      }});
+      viewport.addEventListener('mouseleave', function () {{
+        viewport.classList.remove('hover-left', 'hover-right');
+      }});
+
+      viewport.addEventListener('keydown', function (e) {{
+        if (e.key === 'ArrowLeft') {{
+          e.preventDefault();
+          goPrev();
+        }}
+        if (e.key === 'ArrowRight') {{
+          e.preventDefault();
+          goNext();
+        }}
+      }});
+      viewport.setAttribute('tabindex', '0');
+
+      applyLayout();
+    }});
   </script>
 </body>
 </html>

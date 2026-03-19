@@ -1,8 +1,7 @@
 # 👤 個人技術履歷 · Personal CV & Portfolio
 
-> **姓名 / Name：** 李O恩　｜　**學校 / School：** 中原大學 電機工程學系
->
-> **GitHub：** [github.com/lee359](https://github.com/lee359)　｜　**Email：** lee359@example.com
+> **姓名/Name：** 李O恩 &nbsp; | &nbsp; **學校/School：** 中原大學 電機工程學系<br>
+> **GitHub：** [github.com/lee359](https://github.com/lee359) &nbsp; | &nbsp; **Email：** lee359@example.com<br>
 
 ---
 
@@ -105,17 +104,53 @@
 
 ### 2026 年技術學習路線圖
 
-```mermaid
-graph LR
-    A([🏁 現在]) --> B[深度學習進階]
-    B --> C[Transformer & LLM]
-    C --> D[MLOps 與部署]
-    D --> E[Kubernetes 入門]
-    E --> F[研究方向確定]
-    F --> G([🎯 論文 / 求職])
-    style A fill:#bbf7d0,stroke:#16a34a
-    style G fill:#bfdbfe,stroke:#2563eb
-```
+<section class="roadmap-stack" data-roadmap>
+    <div class="roadmap-headline">
+        <strong>互動卡片版路線圖</strong>
+        <span>點擊卡片左側/右側切換階段</span>
+    </div>
+
+    <div class="roadmap-viewport" data-roadmap-viewport>
+        <button class="roadmap-zone roadmap-zone-left" type="button" aria-label="上一階段"></button>
+        <button class="roadmap-zone roadmap-zone-right" type="button" aria-label="下一階段"></button>
+
+        <article class="roadmap-card" data-step="0">
+            <p class="roadmap-kicker">Step 01</p>
+            <h4>🏁 現在</h4>
+            <p>建立數學與程式基礎，整理學習節奏與專題方向。</p>
+        </article>
+        <article class="roadmap-card" data-step="1">
+            <p class="roadmap-kicker">Step 02</p>
+            <h4>深度學習進階</h4>
+            <p>強化 CNN、RNN、訓練策略與模型調參實作。</p>
+        </article>
+        <article class="roadmap-card" data-step="2">
+            <p class="roadmap-kicker">Step 03</p>
+            <h4>Transformer &amp; LLM</h4>
+            <p>掌握注意力機制、Prompt 設計與檢索增強流程。</p>
+        </article>
+        <article class="roadmap-card" data-step="3">
+            <p class="roadmap-kicker">Step 04</p>
+            <h4>MLOps 與部署</h4>
+            <p>建立模型部署、版本管理與監控回饋機制。</p>
+        </article>
+        <article class="roadmap-card" data-step="4">
+            <p class="roadmap-kicker">Step 05</p>
+            <h4>Kubernetes 入門</h4>
+            <p>學習容器編排、服務擴展與叢集維運基礎。</p>
+        </article>
+        <article class="roadmap-card" data-step="5">
+            <p class="roadmap-kicker">Step 06</p>
+            <h4>研究方向確定</h4>
+            <p>聚焦主題、完成文獻整理並建立驗證方法。</p>
+        </article>
+        <article class="roadmap-card" data-step="6">
+            <p class="roadmap-kicker">Step 07</p>
+            <h4>🎯 論文 / 求職</h4>
+            <p>輸出成果、整理作品集與履歷，銜接下一階段。</p>
+        </article>
+    </div>
+</section>
 
 ---
 
@@ -132,12 +167,6 @@ graph LR
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=lee359&show_icons=true&theme=tokyonight&hide_border=true)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=lee359&layout=compact&theme=tokyonight&hide_border=true)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=lee359&repo=hw1-markdown-creation-and-rendering-practice-lee359&layout=compact&theme=tokyonight&hide_border=true)
 
----
-
-## 🤖 AI 輔助聲明
-
-> 本文件部分內容（包含段落措辭、程式碼範例格式、排版結構）由 **GitHub Copilot（Claude Sonnet）** 輔助生成。
-> 創意發想與內容決策來自本人。
 
