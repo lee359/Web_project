@@ -22,7 +22,7 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 
   <style>
-    /* ── Design tokens ─────────────────────────────────────────────────────── */
+    
     :root {
       --bg:       #f0f4ff;
       --surface:  #ffffff;
@@ -41,7 +41,7 @@
       --t:        .3s cubic-bezier(.4,0,.2,1);
     }
 
-    /* ── Roadmap stack interaction ────────────────────────────────────────── */
+    
     .roadmap-stack {
       margin: 16px 0 8px;
     }
@@ -55,6 +55,8 @@
       color: var(--muted);
     }
     .roadmap-viewport {
+      --roadmap-card-short: min(520px, calc(100% - 44px));
+      --roadmap-hint-size: clamp(24px, calc(var(--roadmap-card-short) / 9), 56px);
       position: relative;
       min-height: 300px;
       border: 1px solid var(--border);
@@ -68,41 +70,39 @@
     .roadmap-viewport::after {
       content: '';
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 52px;
-      height: 52px;
+      top: 12px;
+      width: var(--roadmap-hint-size);
+      height: var(--roadmap-hint-size);
       border-radius: 999px;
       opacity: 0;
       pointer-events: none;
-      transition: opacity var(--t), transform var(--t);
+      transition: opacity var(--t);
       z-index: 8;
+      display: grid;
+      place-items: center;
+      font-size: calc(var(--roadmap-hint-size) * .46);
+      font-weight: 700;
+      line-height: 1;
     }
     .roadmap-viewport::before {
-      left: 12px;
-      background: radial-gradient(circle at center, rgba(99,102,241,.35), rgba(99,102,241,0));
+      content: '←';
+      left: 14px;
+      color: #ffffff;
+      background: radial-gradient(circle at center, rgba(99,102,241,.88), rgba(99,102,241,.62));
+      box-shadow: 0 0 0 8px rgba(99,102,241,.12), 0 10px 24px rgba(99,102,241,.26);
     }
     .roadmap-viewport::after {
-      right: 12px;
-      background: radial-gradient(circle at center, rgba(6,182,212,.35), rgba(6,182,212,0));
+      content: '→';
+      right: 14px;
+      color: #ffffff;
+      background: radial-gradient(circle at center, rgba(6,182,212,.88), rgba(6,182,212,.62));
+      box-shadow: 0 0 0 8px rgba(6,182,212,.12), 0 10px 24px rgba(6,182,212,.26);
     }
     .roadmap-viewport.hover-left::before {
       opacity: 1;
-      transform: translateY(-50%) scale(1.12);
-      animation: pulseLeft .9s ease-in-out infinite;
     }
     .roadmap-viewport.hover-right::after {
       opacity: 1;
-      transform: translateY(-50%) scale(1.12);
-      animation: pulseRight .9s ease-in-out infinite;
-    }
-    @keyframes pulseLeft {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(99,102,241,.18); }
-      50% { box-shadow: -8px 0 0 8px rgba(99,102,241,.08); }
-    }
-    @keyframes pulseRight {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(6,182,212,.18); }
-      50% { box-shadow: 8px 0 0 8px rgba(6,182,212,.08); }
     }
     .roadmap-zone {
       position: absolute;
@@ -124,25 +124,45 @@
       left: 50%;
       top: 52%;
       width: min(520px, calc(100% - 44px));
-      padding: 20px 22px;
-      border-radius: 16px;
-      border: 1px solid rgba(99,102,241,.2);
-      background: linear-gradient(145deg, #ffffff, #f7f9ff);
+      padding: 24px 24px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.55);
+      background:
+        linear-gradient(140deg, rgba(255,255,255,.88), rgba(245,249,255,.78)),
+        radial-gradient(circle at 18% -8%, rgba(99,102,241,.20), transparent 45%),
+        radial-gradient(circle at 92% 118%, rgba(6,182,212,.20), transparent 48%);
+      backdrop-filter: blur(8px);
       transform: translate(-50%, -50%);
-      box-shadow: 0 4px 18px rgba(15, 23, 42, .10);
-      transition: transform .35s ease, opacity .35s ease, box-shadow .35s ease;
+      box-shadow:
+        0 16px 34px rgba(15, 23, 42, .12),
+        0 0 0 1px rgba(99,102,241,.08) inset;
+      transition: transform .35s ease, opacity .35s ease, box-shadow .35s ease, border-color .35s ease;
       opacity: 0;
       pointer-events: none;
+      overflow: hidden;
+    }
+    .roadmap-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--a1), var(--a2), var(--a3));
+      opacity: .92;
     }
     .roadmap-card.active {
       opacity: 1;
       z-index: 6;
       pointer-events: auto;
       transform: translate(-50%, -50%) scale(1);
+      border-color: rgba(99,102,241,.33);
     }
     .roadmap-card.active:hover {
       transform: translate(-50%, -54%) scale(1.02);
-      box-shadow: 0 14px 30px rgba(99,102,241,.20);
+      box-shadow:
+        0 20px 42px rgba(99,102,241,.24),
+        0 0 0 1px rgba(6,182,212,.28) inset;
     }
     .roadmap-card.stack-1 {
       opacity: .78;
@@ -166,23 +186,24 @@
     }
     .roadmap-kicker {
       margin: 0 0 6px;
-      font-size: .76em;
-      font-weight: 700;
+      font-size: .74em;
+      font-weight: 800;
       letter-spacing: .08em;
-      color: var(--a1);
+      color: #4f46e5;
       text-transform: uppercase;
     }
     .roadmap-card h4 {
       margin: 0 0 4px;
-      font-size: 1.18em;
+      font-size: 1.22em;
+      font-weight: 800;
       letter-spacing: -.01em;
-      color: var(--text);
+      color: #0b1222;
       text-transform: none;
     }
     .roadmap-card p {
       margin: 0;
-      color: #4b5563;
-      font-size: .96em;
+      color: #374151;
+      font-size: .95em;
       line-height: 1.7;
     }
     .roadmap-card.slide-in-next {
@@ -231,11 +252,11 @@
       box-shadow: 0 0 0 2px rgba(99,102,241,.16);
     }
 
-    /* ── Reset ─────────────────────────────────────────────────────────────── */
+    
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
-    /* ── Body ──────────────────────────────────────────────────────────────── */
+    
     body {
       font-family: 'Inter', 'Microsoft JhengHei', 'Noto Sans TC', sans-serif;
       font-size: 16px;
@@ -249,7 +270,7 @@
       padding: 36px 16px 96px;
     }
 
-    /* ── Reading progress bar ──────────────────────────────────────────────── */
+    
     #progress-bar {
       position: fixed;
       top: 0; left: 0;
@@ -262,7 +283,7 @@
       border-radius: 0 2px 2px 0;
     }
 
-    /* ── Page container ────────────────────────────────────────────────────── */
+    
     .container {
       max-width: 880px;
       margin: 0 auto;
@@ -278,7 +299,7 @@
       to   { opacity: 1; transform: none; }
     }
 
-    /* ── Scroll-reveal ─────────────────────────────────────────────────────── */
+    
     .reveal {
       opacity: 0;
       transform: translateY(22px);
@@ -289,20 +310,25 @@
       transform: none;
     }
 
-    /* ── h1 — hero headline ────────────────────────────────────────────────── */
+    
     h1 {
       font-size: clamp(1.9em, 4.5vw, 2.6em);
       font-weight: 800;
       letter-spacing: -.03em;
       line-height: 1.2;
+      color: var(--a1);
       background: linear-gradient(100deg, var(--a1) 0%, var(--a2) 50%, var(--a3) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
       margin-bottom: 8px;
     }
+    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+      h1 {
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
 
-    /* ── h2 ────────────────────────────────────────────────────────────────── */
+    
     h2 {
       font-size: clamp(1.25em, 2.8vw, 1.55em);
       font-weight: 700;
@@ -322,7 +348,7 @@
       flex-shrink: 0;
     }
 
-    /* ── h3 / h4 ───────────────────────────────────────────────────────────── */
+    
     h3 {
       font-size: 1.12em;
       font-weight: 600;
@@ -338,7 +364,7 @@
       margin: 22px 0 8px;
     }
 
-    /* ── Paragraph & inline ────────────────────────────────────────────────── */
+    
     p { margin: 12px 0; }
 
     a {
@@ -359,7 +385,7 @@
     em     { color: var(--a1); font-style: italic; }
     del    { color: #a0aec0; text-decoration: line-through; }
 
-    /* ── Blockquote ────────────────────────────────────────────────────────── */
+    
     blockquote {
       margin: 24px 0;
       padding: 18px 24px 18px 30px;
@@ -375,7 +401,7 @@
     }
     blockquote p { margin: 5px 0; }
 
-    /* ── Tables ────────────────────────────────────────────────────────────── */
+    
     .table-wrap {
       overflow-x: auto;
       margin: 24px 0;
@@ -402,7 +428,7 @@
     tbody tr { transition: background var(--t); }
     tbody tr:hover td { background: rgba(99,102,241,.08); }
 
-    /* ── Lists ─────────────────────────────────────────────────────────────── */
+    
     ul, ol { padding-left: 28px; margin: 12px 0; }
     li { margin: 6px 0; }
     ul li::marker { color: var(--a1); }
@@ -414,7 +440,7 @@
       vertical-align: middle;
     }
 
-    /* ── Inline code ───────────────────────────────────────────────────────── */
+    
     code {
       font-family: 'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace;
       font-size: .82em;
@@ -425,7 +451,7 @@
       border: 1px solid rgba(99,102,241,.18);
     }
 
-    /* ── Code blocks ───────────────────────────────────────────────────────── */
+    
     .highlight {
       position: relative;
       border-radius: var(--r-sm);
@@ -438,7 +464,7 @@
       box-shadow: var(--sh-md);
       transform: translateY(-3px);
     }
-    /* macOS window chrome */
+    
     .highlight::before {
       content: '';
       display: block;
@@ -467,7 +493,7 @@
       font-size: inherit;
     }
 
-    /* ── Pygments One Dark token colours (injected below) ──────────────────── */
+    
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -554,7 +580,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .vm { color: #E06C75 } /* Name.Variable.Magic */
 .highlight .il { color: #D19A66 } /* Literal.Number.Integer.Long */
 
-    /* ── Horizontal rule ───────────────────────────────────────────────────── */
+    
     hr {
       border: none;
       height: 1px;
@@ -562,7 +588,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
       margin: 48px 0;
     }
 
-    /* ── Images ────────────────────────────────────────────────────────────── */
+    
     img {
       max-width: 100%;
       border-radius: var(--r-sm);
@@ -575,7 +601,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
       box-shadow: var(--sh-md);
     }
 
-    /* ── Mermaid diagrams ──────────────────────────────────────────────────── */
+    
     .mermaid-wrap {
       background: linear-gradient(135deg, rgba(99,102,241,.04), rgba(139,92,246,.04));
       border: 1px solid var(--border);
@@ -591,7 +617,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
       box-shadow: var(--sh-sm);
       transform: translateY(-2px);
     }
-    /* 放大提示按鈕 */
+    
     .mermaid-zoom-btn {
       position: absolute;
       top: 10px; right: 12px;
@@ -613,7 +639,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
       background: rgba(99,102,241,.25);
     }
 
-    /* Lightbox overlay */
+    
     #mermaid-lightbox {
       display: none;
       position: fixed;
@@ -652,10 +678,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     }
     #mermaid-lightbox-close:hover { color: var(--text); }
 
-    /* ── Math ──────────────────────────────────────────────────────────────── */
+    
     .MathJax { overflow-x: auto; }
 
-    /* ── Responsive breakpoints ────────────────────────────────────────────── */
+    
     @media (max-width: 1050px) {
       .container { max-width: 96vw; padding: 52px 56px; }
     }
@@ -675,6 +701,20 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
       h2 { margin-top: 36px; }
       code { font-size: .78em; }
     }
+
+    
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -683,9 +723,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <div id="progress-bar" role="progressbar" aria-label="Reading progress"></div>
 
   <!-- Mermaid Lightbox -->
-  <div id="mermaid-lightbox" role="dialog" aria-modal="true" aria-label="圖表放大檢視">
+  <div id="mermaid-lightbox" role="dialog" aria-modal="true" aria-label="diagram zoom view">
     <div id="mermaid-lightbox-content">
-      <button id="mermaid-lightbox-close" aria-label="關閉">&#x2715;</button>
+      <button id="mermaid-lightbox-close" aria-label="close">&#x2715;</button>
       <div id="lb-svg-wrap"></div>
     </div>
   </div>
@@ -693,7 +733,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <div class="container">
 <h1 id="personal-cv-portfolio">👤 個人技術履歷 · Personal CV &amp; Portfolio</h1>
 <blockquote>
-<p><strong>姓名/Name：</strong> 李O恩 &nbsp; | &nbsp; <strong>學校/School：</strong> 中原大學 電機工程學系<br>
+<p><strong>姓名/Name：</strong> 李O恩 &nbsp; <br><strong>學校/School：</strong> 中原大學 電機工程學系<br>
 <strong>GitHub：</strong> <a href="https://github.com/lee359">github.com/lee359</a> &nbsp; | &nbsp; <strong>Email：</strong> lee359@example.com<br></p>
 </blockquote>
 <hr />
@@ -815,7 +855,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <ul>
 <li><input type="checkbox" checked disabled> 完成機器學習期末專題並上傳 GitHub</li>
 <li><input type="checkbox" checked disabled> 建立個人 GitHub Portfolio 主頁</li>
-<li><input type="checkbox" checked disabled> 完成 HW1 Markdown 作業</li>
 <li><input type="checkbox" disabled> 學習 Docker 容器化技術</li>
 <li><input type="checkbox" disabled> 取得 AWS Cloud Practitioner 認證</li>
 <li><input type="checkbox" disabled> 在 Kaggle 競賽中取得銅牌以上名次</li>
@@ -835,7 +874,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
         <article class="roadmap-card" data-step="0">
             <p class="roadmap-kicker">Step 01</p>
-            <h4>🏁 現在</h4>
+            <h4>🫡 現在</h4>
             <p>建立數學與程式基礎，整理學習節奏與專題方向。</p>
         </article>
         <article class="roadmap-card" data-step="1">
@@ -901,15 +940,19 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   </div>
 
   <script>
-    /* ── 1. Reading-progress bar ────────────────────────────────────────────── */
+    
     const bar = document.getElementById('progress-bar');
-    window.addEventListener('scroll', function () {
+    function updateProgressBar() {
       var h = document.documentElement;
-      var prog = h.scrollTop / (h.scrollHeight - h.clientHeight) || 0;
+      var raw = h.scrollTop / (h.scrollHeight - h.clientHeight) || 0;
+      var prog = Math.max(raw, 0.02);
       bar.style.transform = 'scaleX(' + prog + ')';
-    }, { passive: true });
+    }
+    updateProgressBar();
+    window.addEventListener('scroll', updateProgressBar, { passive: true });
+    window.addEventListener('resize', updateProgressBar, { passive: true });
 
-    /* ── 2. Scroll-reveal via Intersection Observer ─────────────────────────── */
+    
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -931,7 +974,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
       observer.observe(el);
     });
 
-    /* ── 3. Wrap tables in scrollable container ─────────────────────────────── */
+    
     document.querySelectorAll('.container table').forEach(function (tbl) {
       if (!tbl.parentElement.classList.contains('table-wrap')) {
         var wrap = document.createElement('div');
@@ -942,10 +985,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
       }
     });
 
-    /* ── 4. Mermaid — 初始化（strict 模式防 XSS）───────────────────────────── */
+    
     mermaid.initialize({ startOnLoad: true, theme: 'neutral', securityLevel: 'strict' });
 
-    /* ── 5. Mermaid 點擊放大 Lightbox ──────────────────────────────────────── */
+    
     var lightbox = document.getElementById('mermaid-lightbox');
     var lightboxContent = document.getElementById('mermaid-lightbox-content');
     var lightboxClose = document.getElementById('mermaid-lightbox-close');
@@ -968,22 +1011,41 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
       if (e.key === 'Escape') closeLightbox();
     });
 
-    // 等 Mermaid 渲染完成後才掛按鈕（稍作延遲）
-    setTimeout(function() {
-      document.querySelectorAll('.mermaid-wrap').forEach(function(wrap) {
+    // Reliably attach Mermaid zoom buttons without fixed timeout.
+    function attachMermaidZoomButtons(root) {
+      root.querySelectorAll('.mermaid-wrap').forEach(function (wrap) {
+        if (wrap.dataset.zoomBound === '1') return;
+        wrap.dataset.zoomBound = '1';
         var btn = document.createElement('button');
         btn.className = 'mermaid-zoom-btn';
         btn.setAttribute('aria-label', '放大圖表');
         btn.textContent = '⤢ 放大';
         wrap.appendChild(btn);
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
           var svg = wrap.querySelector('svg');
           if (svg) openLightbox(svg.outerHTML);
         });
       });
-    }, 900);
+    }
 
-    /* ── 6. Card-stack roadmap interactions ───────────────────────────────── */
+    attachMermaidZoomButtons(document);
+    var mermaidWrapObserver = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        mutation.addedNodes.forEach(function (node) {
+          if (!(node instanceof Element)) return;
+          if (node.matches && node.matches('.mermaid-wrap')) {
+            attachMermaidZoomButtons(node.parentElement || document);
+            return;
+          }
+          if (node.querySelector && node.querySelector('.mermaid-wrap')) {
+            attachMermaidZoomButtons(node);
+          }
+        });
+      });
+    });
+    mermaidWrapObserver.observe(document.body, { childList: true, subtree: true });
+
+    
     document.querySelectorAll('[data-roadmap]').forEach(function (stack) {
       var viewport = stack.querySelector('[data-roadmap-viewport]');
       if (!viewport) return;
@@ -1080,6 +1142,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
       applyLayout();
     });
+
   </script>
 </body>
 </html>

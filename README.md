@@ -8,8 +8,7 @@
 - 個人基本資料與自我介紹
 - 程式語言與框架的技術技能表
 - 學術背景（學歷、修習課程）
-- 實際專案作品（RAG 問答系統、部落格平台、系統架構圖）
-- 機器學習相關數學公式（損失函數、梯度下降、Softmax、Attention）
+- 實際專案作品（基於 MCP 協定與 YOLOv8n 之即時影像辨識系統實作）
 - 學習計畫任務清單與路線圖
 - GitHub 統計圖片與相關連結
 
@@ -34,7 +33,7 @@
 
 ### 選用渲染工具 & 設計系統
 
-使用 **Python `markdown` 套件**（搭配 `Pygments`）將 `content.md` 渲染為 `output/output.html`，並搭載完整設計系統：
+使用 **Python `markdown` 套件**（搭配 `Pygments`）將 `content.md` 渲染為 `index.html`，並搭載完整設計系統：
 
 | 層面 | 技術 | 說明 |
 |------|------|------|
@@ -97,10 +96,10 @@ pip install -r requirements.txt
 python render.py
 ```
 
-執行後輸出結果存於 `output/output.html`：
+執行後輸出結果存於 `index.html`：
 
 ```
-✅  Successfully rendered → output/output.html
+✅  Successfully rendered → index.html
 ```
 
 ---
@@ -109,7 +108,7 @@ python render.py
 
 | 檔案路徑 | 格式 | 說明 |
 |----------|------|------|
-| `output/output.html` | HTML | Sleek & Modern 互動式履歷頁面 |
+| `index.html` | HTML | Sleek & Modern 互動式履歷頁面 |
 
 ### 視覺設計
 - **網站部分截圖**：
@@ -139,7 +138,7 @@ python render.py
 - Mermaid 流程圖（架構圖、學習路線圖）瀏覽器端自動渲染
 - MathJax LaTeX 數學公式（損失函數、Softmax、Attention 等）
 
-以任何現代瀏覽器開啟 `output/output.html` 即可預覽，**無需 server**。
+以任何現代瀏覽器開啟 `index.html` 即可預覽，**無需 server**。
 
 ---
 

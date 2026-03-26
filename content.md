@@ -1,6 +1,6 @@
 # 👤 個人技術履歷 · Personal CV & Portfolio
 
-> **姓名/Name：** 李O恩 &nbsp; | &nbsp; **學校/School：** 中原大學 電機工程學系<br>
+> **姓名/Name：** 李O恩 &nbsp; <br>**學校/School：** 中原大學 電機工程學系<br>
 > **GitHub：** [github.com/lee359](https://github.com/lee359) &nbsp; | &nbsp; **Email：** lee359@example.com<br>
 
 ---
@@ -95,7 +95,6 @@
 
 - [x] 完成機器學習期末專題並上傳 GitHub
 - [x] 建立個人 GitHub Portfolio 主頁
-- [x] 完成 HW1 Markdown 作業
 - [ ] 學習 Docker 容器化技術
 - [ ] 取得 AWS Cloud Practitioner 認證
 - [ ] 在 Kaggle 競賽中取得銅牌以上名次
@@ -116,7 +115,7 @@
 
         <article class="roadmap-card" data-step="0">
             <p class="roadmap-kicker">Step 01</p>
-            <h4>🏁 現在</h4>
+            <h4>🫡 現在</h4>
             <p>建立數學與程式基礎，整理學習節奏與專題方向。</p>
         </article>
         <article class="roadmap-card" data-step="1">

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal CV &amp; Portfolio · Lee</title>
+
+  <!-- Google Fonts: Inter (UI) + JetBrains Mono (code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Mermaid.js -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+  <!-- MathJax -->
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+/*__CSS_CONTENT__*/
+  </style>
+</head>
+<body>
+
+  <!-- Reading progress -->
+  <div id="progress-bar" role="progressbar" aria-label="Reading progress"></div>
+
+  <!-- Mermaid Lightbox -->
+  <div id="mermaid-lightbox" role="dialog" aria-modal="true" aria-label="diagram zoom view">
+    <div id="mermaid-lightbox-content">
+      <button id="mermaid-lightbox-close" aria-label="close">&#x2715;</button>
+      <div id="lb-svg-wrap"></div>
+    </div>
+  </div>
+
+  <div class="container">
+<!--__BODY_HTML__-->
+  </div>
+
+  <script>
+/*__JS_CONTENT__*/
+  </script>
+</body>
+</html>
