@@ -1,4 +1,4 @@
-# 👤 個人技術履歷 👤<br>Personal CV & Portfolio
+# 👤 個人技術履歷與作品集 👤<br>Personal CV & Portfolio
 
 > **姓名/Name：** 李O恩 &nbsp; <br>**學校/School：** 中原大學 電機工程學系<br>
 > **GitHub：** [github.com/lee359](https://github.com/lee359) &nbsp; | &nbsp; **Email：** lee359@example.com<br>

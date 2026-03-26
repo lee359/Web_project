@@ -1,3 +1,5 @@
+# 專案主題：個人技術履歷與作品集（Personal CV & Portfolio）
+
 ## 1. 專案簡介
 ### content.md 主題
 
@@ -128,7 +130,7 @@ python render.py
     ![alt text](image-1.png)<br>
     ![alt text](image-2.png)
 
-- **主標題**：雙行標題（`👤 個人技術履歷 👤` + `Personal CV & Portfolio`）並置中顯示
+- **主標題**：雙行標題（`👤 個人技術履歷與作品集 👤` + `Personal CV & Portfolio`）並置中顯示
 - **配色**：Indigo (#6366f1) / Violet (#8b5cf6) / Cyan (#06b6d4) 三色系，帶有輕度紫色光感背景
 - **字型**：Inter（正文）+ JetBrains Mono（程式碼），Google Fonts CDN 載入
 - **容器**：白色卡片圓角（16px），indigo 色調陰影，最大寬 880px
