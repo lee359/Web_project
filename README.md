@@ -33,10 +33,11 @@
 
 ### 選用渲染工具 & 設計系統
 
-使用 **Python `markdown` 套件**（搭配 `Pygments`）將 `content.md` 渲染為 `index.html`，並搭載完整設計系統：
+使用 **Python `markdown` 套件**（搭配 `Pygments`）將 `content.md` 渲染為 `index.html`，並採用三層拆分架構（Template / CSS / JS）提高可維護性：
 
 | 層面 | 技術 | 說明 |
 |------|------|------|
+| 架構分層 | `template.html` + `styles.css` + `app.js` + `render.py` | HTML 結構、樣式、互動、渲染流程分離 |
 | 渲染核心 | `markdown` + `Pygments` | Markdown → HTML；One Dark 語法高亮 |
 | 字型 | Inter + JetBrains Mono | Google Fonts CDN，現代 UI 標準字型 |
 | 動畫 | CSS Keyframes + Intersection Observer API | 頁面進場動畫；滾動觸發逐元素淡入 |
@@ -47,6 +48,7 @@
 
 選用理由：
 - 純 Python 產生 HTML，**無需安裝 Node.js、Pandoc 或 LaTeX**
+- 模板 / 樣式 / 行為拆分後，可針對單一層面修改而不影響其餘檔案
 - CSS 自訂屬性（設計 token）使整體風格高度一致、易於維護
 - Intersection Observer 在零依賴（無 GSAP / Framer Motion）的情況下實現流暢滾動動畫
 - 跨平台（Windows / macOS / Linux）皆可執行
@@ -64,6 +66,13 @@
 | 網路連線 | 首次預覽需連線（載入 Google Fonts、Mermaid.js、MathJax CDN） |
 
 > **Python 端無額外系統依賴**（無需 Pandoc、LaTeX、Node.js）。設計系統使用的 Inter 字型與 Mermaid.js / MathJax 所有動畫效果皆由瀏覽器端 CSS/JS 原生執行。
+
+目前專案主要檔案職責：
+- `content.md`：內容資料來源（履歷文字、路線圖資料等）
+- `template.html`：HTML 骨架與插入點
+- `styles.css`：所有版面與視覺樣式
+- `app.js`：互動邏輯（進度條、路線圖切換、Mermaid 放大等）
+- `render.py`：Markdown 轉換、資源組裝、輸出 `index.html`
 
 ---
 
@@ -102,6 +111,12 @@ python render.py
 ✅  Successfully rendered → index.html
 ```
 
+建議流程：
+- 修改內容請編輯 `content.md`
+- 修改版面請編輯 `styles.css`
+- 修改互動請編輯 `app.js`
+- `index.html` 為生成檔，通常不直接手動編輯
+
 ---
 
 ## 5. 預期輸出
@@ -112,9 +127,10 @@ python render.py
 
 ### 視覺設計
 - **網站部分截圖**：
-    ![alt text](image-2.png)<br>
-    ![alt text](image-1.png)
+    ![alt text](image-1.png)<br>
+    ![alt text](image-2.png)
 
+- **主標題**：雙行標題（`👤 個人技術履歷 👤` + `Personal CV & Portfolio`）並置中顯示
 - **配色**：Indigo (#6366f1) / Violet (#8b5cf6) / Cyan (#06b6d4) 三色系，帶有輕度紫色光感背景
 - **字型**：Inter（正文）+ JetBrains Mono（程式碼），Google Fonts CDN 載入
 - **容器**：白色卡片圓角（16px），indigo 色調陰影，最大寬 880px
@@ -130,6 +146,7 @@ python render.py
 | **程式碼區塊 hover** | 上移 3px + 陰影加深；頂部顯示 macOS 三點視窗 chrome |
 | **引用區塊 hover** | 向右位移 5px + 輕微陰影 |
 | **Mermaid 圖表 hover** | 上移 2px |
+| **學習路線圖提示** | 滑鼠移到左右區域時，顯示左上/右上圓形箭頭的靜態光暈提示 |
 | **圖片 hover** | 放大 scale(1.02) + 陰影 |
 
 ### 特殊渲染
