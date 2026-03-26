@@ -243,7 +243,7 @@
         radial-gradient(ellipse at 15% 10%, rgba(99,102,241,.15) 0, transparent 55%),
         radial-gradient(ellipse at 85% 90%, rgba(139,92,246,.12) 0, transparent 55%);
       background-attachment: fixed;
-      padding: 36px 16px 96px;
+      padding: 0;
     }
 
     
@@ -261,13 +261,15 @@
 
     
     .container {
-      max-width: 880px;
+      width: 100%;
+      max-width: 1920px;
+      min-height: 100vh;
       margin: 0 auto;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--r);
-      box-shadow: var(--sh-md);
-      padding: 60px 76px;
+      border-radius: 0;
+      box-shadow: var(--sh-lg);
+      padding: 80px 100px;
       animation: pageEnter .65s cubic-bezier(.22,1,.36,1) both;
     }
     @keyframes pageEnter {

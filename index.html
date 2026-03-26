@@ -22,8 +22,7 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 
   <style>
-    
-    :root {
+:root {
       --bg:       #f0f4ff;
       --surface:  #ffffff;
       --border:   #e2e8f7;
@@ -267,7 +266,7 @@
         radial-gradient(ellipse at 15% 10%, rgba(99,102,241,.15) 0, transparent 55%),
         radial-gradient(ellipse at 85% 90%, rgba(139,92,246,.12) 0, transparent 55%);
       background-attachment: fixed;
-      padding: 36px 16px 96px;
+      padding: 0;
     }
 
     
@@ -285,13 +284,15 @@
 
     
     .container {
-      max-width: 880px;
+      width: 100%;
+      max-width: 1920px;
+      min-height: 100vh;
       margin: 0 auto;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--r);
-      box-shadow: var(--sh-md);
-      padding: 60px 76px;
+      border-radius: 0;
+      box-shadow: var(--sh-lg);
+      padding: 80px 100px;
       animation: pageEnter .65s cubic-bezier(.22,1,.36,1) both;
     }
     @keyframes pageEnter {
@@ -714,6 +715,59 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
         opacity: 1 !important;
         transform: none !important;
       }
+    }
+
+/* Hero Section */
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 80vh;
+      padding: 40px 20px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-section::before,
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(99, 102, 241, 0.1), transparent 50%),
+                  linear-gradient(-45deg, rgba(139, 92, 246, 0.1), transparent 50%);
+      animation: low-poly-bg 20s linear infinite;
+      z-index: 0;
+    }
+
+    .hero-section::after {
+      animation-direction: reverse;
+      animation-duration: 25s;
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), transparent 50%),
+                  linear-gradient(-135deg, rgba(99, 102, 241, 0.08), transparent 50%);
+    }
+
+    @keyframes low-poly-bg {
+      0% { transform: rotate(0deg) scale(1.5); }
+      100% { transform: rotate(360deg) scale(1.5); }
+    }
+
+    .hero-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-section h2 {
+      border-bottom: none;
+      margin-bottom: 12px;
+    }
+    .hero-section h2::before {
+      display: none;
     }
 
   </style>
