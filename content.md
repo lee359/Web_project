@@ -166,6 +166,6 @@
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=lee359&show_icons=true&theme=tokyonight&hide_border=true)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=lee359&repo=hw1-markdown-creation-and-rendering-practice-lee359&layout=compact&theme=tokyonight&hide_border=true)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=lee359&repo=Web_project-lee359&layout=compact&theme=tokyonight&hide_border=true)
 
 

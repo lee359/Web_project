@@ -1,5 +1,3 @@
-# 📝 Markdown創作與渲染實作 <br>
-
 ## 1. 專案簡介
 ### content.md 主題
 
