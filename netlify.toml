@@ -1,7 +1,7 @@
 [build]
-base = "portfolio-lee359"
+base = "thu_web_HW"
 command = "pnpm build"
-publish = "portfolio-lee359/dist/public"
+publish = "thu_web_HW/dist/public"
 
 [[redirects]]
 from = "/*"

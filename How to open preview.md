@@ -3,7 +3,7 @@
 # 啟動 Dev 模式
 
 1. 進入資料夾  
-D:\a_114-2_classHW\thu_web_HW\portfolio-lee359
+D:\a_114-2_classHW\thu_web_HW\thu_web_HW
 2. 執行  
 npx pnpm@latest dev
 3. 打開網址  
@@ -17,7 +17,7 @@ http://localhost:3000/
 # 啟動 Preview 模式
 
 1. 進入資料夾  
-D:\a_114-2_classHW\thu_web_HW\portfolio-lee359
+D:\a_114-2_classHW\thu_web_HW\thu_web_HW
 2. 先建置  
 npx pnpm@latest build
 3. 再啟動預覽  
