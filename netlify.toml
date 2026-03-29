@@ -1,0 +1,9 @@
+[build]
+base = "portfolio-lee359"
+command = "pnpm build"
+publish = "portfolio-lee359/dist/public"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
