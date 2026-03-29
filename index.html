@@ -24,18 +24,20 @@
   <style>
     
     :root {
-      --bg:       #f0f4ff;
-      --surface:  #ffffff;
-      --border:   #e2e8f7;
-      --text:     #0d1326;
-      --muted:    #5a6482;
-      --a1:       #6366f1;
-      --a2:       #8b5cf6;
-      --a3:       #06b6d4;
+      /* Cyberpunk Blueprint 配色系統 */
+      --bg:       #050d1a;
+      --surface:  #0a1528;
+      --border:   #00d4ff;
+      --text:     #e2e8f0;
+      --muted:    #7c8fab;
+      --a1:       #00d4ff;
+      --a2:       #7c3aed;
+      --a3:       #0ea5e9;
       --grad:     linear-gradient(135deg, var(--a1), var(--a2));
-      --sh-sm:    0 2px 12px rgba(99,102,241,.10);
-      --sh-md:    0 8px 36px rgba(99,102,241,.15);
-      --sh-lg:    0 20px 64px rgba(99,102,241,.20);
+      --sh-sm:    0 0 16px rgba(0,212,255,.12);
+      --sh-md:    0 0 32px rgba(0,212,255,.20);
+      --sh-lg:    0 0 64px rgba(0,212,255,.25);
+      --glow:     0 0 20px rgba(0,212,255,.5);
       --r:        16px;
       --r-sm:     8px;
       --t:        .3s cubic-bezier(.4,0,.2,1);
@@ -59,11 +61,13 @@
       --roadmap-hint-size: clamp(24px, calc(var(--roadmap-card-short) / 9), 56px);
       position: relative;
       min-height: 300px;
-      border: 1px solid var(--border);
+      border: 2px solid rgba(0,212,255,.3);
       border-radius: 18px;
-      background: linear-gradient(150deg, rgba(99,102,241,.08), rgba(139,92,246,.04));
+      background: linear-gradient(135deg, rgba(10,21,40,.8), rgba(5,13,26,.9)),
+                  radial-gradient(circle at 20% 20%, rgba(0,212,255,.08), transparent 40%);
       overflow: hidden;
-      box-shadow: var(--sh-sm);
+      box-shadow: inset 0 0 20px rgba(0,212,255,.05), 
+                  0 0 30px rgba(0,212,255,.15);
       cursor: pointer;
     }
     .roadmap-viewport::before,
@@ -112,7 +116,8 @@
       border: none;
       background: transparent;
       z-index: 7;
-    }
+      background: rgba(0,212,255,.2);
+      box-shadow: inset 0 0 0 1px rgba(0,212,255,.4);
     .roadmap-zone-left { left: 0; }
     .roadmap-zone-right { right: 0; }
     .roadmap-zone:focus-visible {
@@ -126,17 +131,16 @@
       width: min(520px, calc(100% - 44px));
       padding: 24px 24px;
       border-radius: 20px;
-      border: 1px solid rgba(255,255,255,.55);
-      background:
-        linear-gradient(140deg, rgba(255,255,255,.88), rgba(245,249,255,.78)),
-        radial-gradient(circle at 18% -8%, rgba(99,102,241,.20), transparent 45%),
-        radial-gradient(circle at 92% 118%, rgba(6,182,212,.20), transparent 48%);
+      border: 2px solid rgba(0,212,255,.4);
+      background: linear-gradient(135deg, rgba(10,21,40,.95), rgba(5,13,26,.9)),
+            radial-gradient(circle at 20% 20%, rgba(0,212,255,.1), transparent 40%);
       backdrop-filter: blur(8px);
       transform: translate(-50%, -50%);
-      box-shadow:
-        0 16px 34px rgba(15, 23, 42, .12),
-        0 0 0 1px rgba(99,102,241,.08) inset;
+      box-shadow: 
+        0 0 30px rgba(0,212,255,.2),
+        inset 0 0 20px rgba(0,212,255,.03);
       transition: transform .35s ease, opacity .35s ease, box-shadow .35s ease, border-color .35s ease;
+        clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
       opacity: 0;
       pointer-events: none;
       overflow: hidden;
@@ -156,13 +160,17 @@
       z-index: 6;
       pointer-events: auto;
       transform: translate(-50%, -50%) scale(1);
-      border-color: rgba(99,102,241,.33);
+        border-color: rgba(0,212,255,.6);
+        box-shadow: 
+          0 0 40px rgba(0,212,255,.3),
+          inset 0 0 20px rgba(0,212,255,.05);
     }
     .roadmap-card.active:hover {
       transform: translate(-50%, -54%) scale(1.02);
-      box-shadow:
-        0 20px 42px rgba(99,102,241,.24),
-        0 0 0 1px rgba(6,182,212,.28) inset;
+        box-shadow:
+          0 0 50px rgba(0,212,255,.4),
+          inset 0 0 30px rgba(0,212,255,.08);
+        border-color: rgba(0,212,255,.8);
     }
     .roadmap-card.stack-1 {
       opacity: .78;
@@ -189,7 +197,7 @@
       font-size: .74em;
       font-weight: 800;
       letter-spacing: .08em;
-      color: #4f46e5;
+      color: var(--a1);
       text-transform: uppercase;
     }
     .roadmap-card h4 {
@@ -197,12 +205,12 @@
       font-size: 1.22em;
       font-weight: 800;
       letter-spacing: -.01em;
-      color: #0b1222;
+      color: var(--text);
       text-transform: none;
     }
     .roadmap-card p {
       margin: 0;
-      color: #374151;
+      color: rgba(226,232,240,.7);
       font-size: .95em;
       line-height: 1.7;
     }
@@ -243,13 +251,13 @@
     }
     .roadmap-dot:hover {
       transform: scale(1.25);
-      background: rgba(99,102,241,.58);
+      background: rgba(0,212,255,.4);
     }
     .roadmap-dot.active {
       width: 20px;
       border-radius: 999px;
       background: linear-gradient(90deg, var(--a1), var(--a3));
-      box-shadow: 0 0 0 2px rgba(99,102,241,.16);
+      box-shadow: 0 0 16px rgba(0,212,255,.4);
     }
 
     
@@ -264,8 +272,15 @@
       color: var(--text);
       background: var(--bg);
       background-image:
-        radial-gradient(ellipse at 15% 10%, rgba(99,102,241,.15) 0, transparent 55%),
-        radial-gradient(ellipse at 85% 90%, rgba(139,92,246,.12) 0, transparent 55%);
+        radial-gradient(ellipse at 15% 10%, rgba(0,212,255,.08) 0, transparent 55%),
+        radial-gradient(ellipse at 85% 90%, rgba(124,58,237,.08) 0, transparent 55%),
+        repeating-linear-gradient(
+          0deg,
+          rgba(0,212,255,.03),
+          rgba(0,212,255,.03) 1px,
+          transparent 1px,
+          transparent 2px
+        );
       background-attachment: fixed;
       padding: 36px 16px 96px;
     }
@@ -281,18 +296,44 @@
       z-index: 1000;
       transition: transform .12s linear;
       border-radius: 0 2px 2px 0;
+      box-shadow: 0 0 20px var(--a1), 0 0 40px var(--a1);
     }
 
     
     .container {
       max-width: 880px;
       margin: 0 auto;
-      background: var(--surface);
-      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(10,21,40,.95), rgba(5,13,26,.98));
+      border: 2px solid var(--a1);
       border-radius: var(--r);
-      box-shadow: var(--sh-md);
+      box-shadow: 
+        var(--sh-lg),
+        inset 0 0 20px rgba(0,212,255,.05),
+        0 0 40px rgba(0,212,255,.1);
       padding: 60px 76px;
       animation: pageEnter .65s cubic-bezier(.22,1,.36,1) both;
+      clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
+      position: relative;
+    }
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        linear-gradient(45deg, rgba(0,212,255,.02) 25%, transparent 25%, transparent 75%, rgba(0,212,255,.02) 75%, rgba(0,212,255,.02)),
+        linear-gradient(45deg, rgba(0,212,255,.02) 25%, transparent 25%, transparent 75%, rgba(0,212,255,.02) 75%, rgba(0,212,255,.02));
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+      pointer-events: none;
+      border-radius: var(--r);
+      clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
+    }
+    .container > * {
+      position: relative;
+      z-index: 1;
     }
     @keyframes pageEnter {
       from { opacity: 0; transform: translateY(20px); }
@@ -390,10 +431,10 @@
     blockquote {
       margin: 24px 0;
       padding: 18px 24px 18px 30px;
-      background: linear-gradient(135deg, rgba(99,102,241,.06), rgba(139,92,246,.03));
+      background: linear-gradient(135deg, rgba(0,212,255,.08), rgba(124,58,237,.04));
       border-left: 4px solid var(--a1);
       border-radius: 0 var(--r-sm) var(--r-sm) 0;
-      color: #374151;
+      color: rgba(226,232,240,.8);
       transition: transform var(--t), box-shadow var(--t);
     }
     blockquote:hover {
@@ -425,9 +466,9 @@
     }
     td { padding: 11px 18px; border-bottom: 1px solid var(--border); }
     tr:last-child td { border-bottom: none; }
-    tbody tr:nth-child(even) td { background: rgba(99,102,241,.03); }
+    tbody tr:nth-child(even) td { background: rgba(0,212,255,.04); }
     tbody tr { transition: background var(--t); }
-    tbody tr:hover td { background: rgba(99,102,241,.08); }
+    tbody tr:hover td { background: rgba(0,212,255,.08); }
 
     
     ul, ol { padding-left: 28px; margin: 12px 0; }
@@ -445,11 +486,11 @@
     code {
       font-family: 'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace;
       font-size: .82em;
-      background: rgba(99,102,241,.09);
-      color: var(--a2);
+      background: rgba(0,212,255,.1);
+      color: var(--a1);
       padding: 2px 8px;
       border-radius: 4px;
-      border: 1px solid rgba(99,102,241,.18);
+      border: 1px solid rgba(0,212,255,.2);
     }
 
     
@@ -458,11 +499,11 @@
       border-radius: var(--r-sm);
       margin: 24px 0;
       overflow: hidden;
-      box-shadow: var(--sh-sm);
+      box-shadow: 0 0 20px rgba(0,212,255,.1);
       transition: box-shadow var(--t), transform var(--t);
     }
     .highlight:hover {
-      box-shadow: var(--sh-md);
+      box-shadow: 0 0 30px rgba(0,212,255,.15);
       transform: translateY(-3px);
     }
     
