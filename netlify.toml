@@ -1,7 +1,6 @@
 [build]
-base = "thu_web_HW"
 command = "pnpm build"
-publish = "thu_web_HW/dist/public"
+publish = "dist/public"
 
 [[redirects]]
 from = "/*"
