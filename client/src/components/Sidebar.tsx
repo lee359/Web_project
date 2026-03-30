@@ -22,7 +22,7 @@ export default function Sidebar() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map((item) => document.getElementById(item.id));
-      const scrollY = window.scrollY + 120;
+      const scrollY = window.scrollY + 300;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];

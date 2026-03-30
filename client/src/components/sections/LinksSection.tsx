@@ -159,53 +159,6 @@ export default function LinksSection() {
             </a>
           ))}
         </div>
-
-        {/* GitHub Stats */}
-        <div
-          style={{
-            opacity: inView ? 1 : 0,
-            transform: inView ? "translateY(0)" : "translateY(30px)",
-            transition: "all 0.7s ease 0.3s",
-          }}
-        >
-          <h3
-            className="mb-6 flex items-center gap-2"
-            style={{
-              color: "#00d4ff",
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 600,
-              fontSize: "0.85rem",
-              letterSpacing: "0.1em",
-            }}
-          >
-            <span style={{ fontFamily: "'JetBrains Mono', monospace" }}>▸</span>
-            GitHub 統計
-          </h3>
-
-          <div
-            className="p-6 rounded cyber-card"
-            style={{
-              clipPath: "polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%)",
-            }}
-          >
-            <div className="flex flex-col sm:flex-row gap-4 items-start">
-              <img
-                src="https://github-readme-stats.vercel.app/api?username=lee359&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0a1628&title_color=00d4ff&icon_color=7c3aed&text_color=e2e8f0"
-                alt="GitHub Stats"
-                className="rounded"
-                style={{ maxWidth: "100%", height: "auto" }}
-                loading="lazy"
-              />
-              <img
-                src="https://github-readme-stats.vercel.app/api/top-langs/?username=lee359&repo=Web_project-lee359&layout=compact&theme=tokyonight&hide_border=true&bg_color=0a1628&title_color=00d4ff&text_color=e2e8f0"
-                alt="Top Languages"
-                className="rounded"
-                style={{ maxWidth: "100%", height: "auto" }}
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

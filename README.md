@@ -1,4 +1,4 @@
-## 註:README.md要全部重寫，修改的細項記錄在wiki
+## 註:README.md要全部重寫，修改的細項記錄在wiki!
 
 # 專案主題：個人技術履歷與作品集（Personal CV & Portfolio）
 
