@@ -25,7 +25,7 @@ export default function Home() {
 
       {/* Main content — offset by sidebar width on desktop */}
       <main
-        className="lg:ml-[220px]"
+        className="w-full lg:pl-[220px]"
         style={{ minHeight: "100vh" }}
       >
         <HeroSection />

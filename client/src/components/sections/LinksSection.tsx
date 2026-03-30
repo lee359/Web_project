@@ -40,12 +40,12 @@ export default function LinksSection() {
     <section
       id="links"
       ref={ref as React.RefObject<HTMLElement>}
-      className="py-20 relative"
+      className="w-full py-20 min-h-screen flex items-center relative"
       style={{ background: "#060f1e" }}
     >
       <div className="absolute inset-0 circuit-bg" style={{ opacity: 0.25 }} />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-8 lg:px-16">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-8 lg:px-16">
         {/* Section header */}
         <div
           className="mb-12"
