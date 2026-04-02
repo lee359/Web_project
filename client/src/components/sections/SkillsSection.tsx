@@ -115,7 +115,7 @@ export default function SkillsSection() {
     <section
       id="skills"
       ref={ref as React.RefObject<HTMLElement>}
-      className="py-20 relative overflow-hidden"
+      className="w-full py-20 min-h-screen flex items-center relative overflow-hidden"
       style={{ background: "#060f1e" }}
     >
       {/* Background image */}
@@ -130,7 +130,7 @@ export default function SkillsSection() {
       />
       <div className="absolute inset-0 circuit-bg" style={{ opacity: 0.25 }} />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-8 lg:px-16">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-8 lg:px-16">
         {/* Section header */}
         <div
           style={{

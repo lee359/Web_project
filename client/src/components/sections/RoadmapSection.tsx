@@ -74,12 +74,12 @@ export default function RoadmapSection() {
     <section
       id="roadmap"
       ref={ref as React.RefObject<HTMLElement>}
-      className="py-20 relative"
+      className="w-full py-20 min-h-screen flex items-center relative"
       style={{ background: "linear-gradient(180deg, #050d1a 0%, #060f1e 100%)" }}
     >
       <div className="absolute inset-0 circuit-bg" style={{ opacity: 0.25 }} />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-8 lg:px-16">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-8 lg:px-16">
         {/* Section header */}
         <div
           className="mb-12"

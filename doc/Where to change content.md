@@ -1,3 +1,18 @@
+在這個專案中，決定網站內容的檔案**不再是 content.md**。
+
+content.md 是舊版純靜態網站的內容來源。現在專案已經升級為 React App，內容是直接寫在 React 元件（`.tsx` 檔案）中。
+
+**主要的內容檔案是：**
+
+1.  client/src/pages/Home.tsx：這是首頁的主要內容檔案，包含了你看到的區塊、文字和結構。
+2.  client/src/components/sections：`Home.tsx` 會引用這個資料夾裡的多個元件，每個元件代表一個區塊（例如關於我、技能、專案等）。
+
+簡單來說：
+*   要改**首頁**的內容 → 去 Home.tsx 和 sections 找對應的元件。
+*   content.md 現在只是舊的存檔，修改它**不會**影響你看到的網站。
+
+---
+
 # 👤 個人技術履歷與作品集 👤<br>Personal CV & Portfolio
 
 > **姓名/Name：** 李O恩 &nbsp; <br>**學校/School：** 中原大學 電機工程學系<br>
@@ -161,11 +176,5 @@
 | Email | lee359@example.com | 聯絡信箱 |
 
 ---
-
-## 📸 GitHub 統計
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=lee359&show_icons=true&theme=tokyonight&hide_border=true)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=lee359&repo=Web_project-lee359&layout=compact&theme=tokyonight&hide_border=true)
 
 
