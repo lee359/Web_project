@@ -22,7 +22,7 @@ export default function Sidebar() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map((item) => document.getElementById(item.id));
-      const scrollY = window.scrollY + 120;
+      const scrollY = window.scrollY + 300;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
@@ -49,31 +49,52 @@ export default function Sidebar() {
     <>
       {/* Mobile hamburger */}
       <button
-        className="fixed top-4 left-4 z-50 lg:hidden p-2 rounded"
-        style={{ background: "rgba(10,22,40,0.9)", border: "1px solid rgba(0,212,255,0.3)" }}
+        className="fixed left-4 z-50 p-2 rounded group transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
+        style={{
+          top: "25px",
+          transform: `translateY(-50%) ${isOpen ? "scale(0.92)" : "scale(1)"}`,
+          opacity: isOpen ? 0 : 1,
+          pointerEvents: isOpen ? "none" : "auto",
+          background: "rgba(10,22,40,0.9)",
+          border: "1px solid rgba(0,212,255,0.35)",
+          boxShadow: "0 0 0 rgba(0,212,255,0)",
+        }}
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle navigation"
       >
         <div className="space-y-1">
-          <span className="block w-5 h-0.5" style={{ background: "#00d4ff" }}></span>
-          <span className="block w-5 h-0.5" style={{ background: "#00d4ff" }}></span>
-          <span className="block w-5 h-0.5" style={{ background: "#00d4ff" }}></span>
+          <span className="block w-5 h-0.5 rounded transition-all duration-300 group-hover:w-4" style={{ background: "#00d4ff" }}></span>
+          <span className="block w-5 h-0.5 rounded transition-all duration-300" style={{ background: "#00d4ff" }}></span>
+          <span className="block w-5 h-0.5 rounded transition-all duration-300 group-hover:w-4" style={{ background: "#00d4ff" }}></span>
         </div>
       </button>
 
       {/* Mobile overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-40 lg:hidden"
+          className="fixed inset-0 z-30"
           style={{ background: "rgba(5,13,26,0.8)" }}
           onClick={() => setIsOpen(false)}
         />
       )}
 
+      {/* Top handle bar for mobile - indicates sidebar presence */}
+      <div
+        className="fixed top-0 left-0 right-0 z-20 transition-opacity duration-300"
+        style={{
+          height: "50px",
+          background: "linear-gradient(90deg, rgba(0,212,255,0.15), rgba(124,58,237,0.1), rgba(0,212,255,0.08))",
+          borderBottom: "2px solid rgba(0,212,255,0.3)",
+          backdropFilter: "blur(8px)",
+          opacity: isOpen ? "0" : "1",
+          pointerEvents: isOpen ? "none" : "auto",
+        }}
+      />
+
       {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 h-full z-40 flex flex-col transition-transform duration-300
-          ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
+          ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
         style={{
           width: "220px",
           background: "linear-gradient(180deg, #060e1e 0%, #080f1f 100%)",

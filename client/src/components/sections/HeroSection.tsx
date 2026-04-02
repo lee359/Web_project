@@ -41,7 +41,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="w-full relative min-h-screen flex items-center overflow-hidden"
       style={{ background: "#050d1a" }}
     >
       {/* Background image */}
@@ -87,7 +87,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 w-full px-8 lg:px-16 py-20">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 max-w-5xl">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 max-w-5xl mx-auto">
           {/* Left: Text */}
           <div className="flex-1 animate-fade-up">
             {/* Status badge */}

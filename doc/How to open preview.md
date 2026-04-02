@@ -3,7 +3,7 @@
 # 啟動 Dev 模式
 
 1. 進入資料夾  
-D:\a_114-2_classHW\thu_web_HW\portfolio-lee359
+D:\a_114-2_classHW\thu_web_HW
 2. 執行  
 npx pnpm@latest dev
 3. 打開網址  
@@ -17,7 +17,7 @@ http://localhost:3000/
 # 啟動 Preview 模式
 
 1. 進入資料夾  
-D:\a_114-2_classHW\thu_web_HW\portfolio-lee359
+D:\a_114-2_classHW\thu_web_HW
 2. 先建置  
 npx pnpm@latest build
 3. 再啟動預覽  
@@ -30,6 +30,13 @@ http://localhost:4173/
 1. 在同一個正在跑 preview 的終端機按 Ctrl + C
 2. 若詢問是否中止，輸入 Y 再按 Enter
 
-# 補充
+## 補充
 1. 如果你之後已安裝好全域 pnpm，上面指令可把 npx pnpm@latest 換成 pnpm。
 2. 你要我現在直接幫你關閉 preview，我可以立刻處理。
+
+# 分支上線預覽（不影響 main 正式站）
+
+1. 在功能分支 push 後，對 `main` 開 Pull Request。
+2. GitHub Actions 會跑 `preview` job 並部署 PR 預覽。
+3. 到該次 workflow 的 `Deploy PR preview to GitHub Pages` 步驟查看預覽連結。
+4. 確認預覽正常再 merge 到 `main`，正式站才會更新。

@@ -1,7 +1,6 @@
 [build]
-base = "portfolio-lee359"
 command = "pnpm build"
-publish = "portfolio-lee359/dist/public"
+publish = "dist/public"
 
 [[redirects]]
 from = "/*"
