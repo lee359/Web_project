@@ -1,3 +1,8 @@
+## 註:README.md要全部重寫，修改的細項記錄在wiki\My route
+
+個人網站預覽: https://deploy-preview-2--web666-project.netlify.app<br>
+deploy github page會無法顯示頁面，目前研究處理方法中...
+
 # 專案主題：個人技術履歷與作品集（Personal CV & Portfolio）
 
 ## 1. 專案簡介
@@ -127,8 +132,7 @@ python render.py
 
 ### 視覺設計
 - **網站部分截圖**：
-    ![alt text](image-1.png)<br>
-    ![alt text](image-2.png)
+   
 
 - **主標題**：雙行標題（`👤 個人技術履歷與作品集 👤` + `Personal CV & Portfolio`）並置中顯示
 - **配色**：Indigo (#6366f1) / Violet (#8b5cf6) / Cyan (#06b6d4) 三色系，帶有輕度紫色光感背景
