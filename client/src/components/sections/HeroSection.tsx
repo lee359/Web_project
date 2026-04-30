@@ -5,9 +5,10 @@
    ============================================================= */
 
 import { useEffect, useState } from "react";
+import imagesJpg from './images.jpg';
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663479025969/nNCp97MS5SZyN9jxyzYEoM/hero-bg-Y9NEXw73h4zGNcw46hPULW.webp";
-const AVATAR = "https://d2xsxph8kpxj0f.cloudfront.net/310519663479025969/nNCp97MS5SZyN9jxyzYEoM/avatar-placeholder-R348PBvuMPy8C4m2v5zSi2.webp";
+const AVATAR = imagesJpg;
 
 const roles = ["AI / ML Engineer", "Web Developer", "EE Student @ CYCU", "Open Source Contributor"];
 
@@ -236,8 +237,8 @@ export default function HeroSection() {
 
           {/* Right: Avatar */}
           <div
-            className="flex-shrink-0 animate-fade-up"
-            style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}
+            className="flex-shrink-0 animate-fade-up mb-6 lg:mb-0"
+            style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards", position: "relative" }}
           >
             <div
               className="relative w-52 h-52 lg:w-64 lg:h-64"
@@ -267,12 +268,13 @@ export default function HeroSection() {
                 style={{ borderBottom: "2px solid #00d4ff", borderRight: "2px solid #00d4ff" }}
               />
             </div>
-            {/* Glow ring */}
+            {/* Glow ring - hidden on mobile */}
             <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full pointer-events-none"
+              className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full pointer-events-none"
               style={{
                 background: "radial-gradient(circle, rgba(0,212,255,0.05) 0%, transparent 70%)",
                 filter: "blur(20px)",
+                zIndex: 0,
               }}
             />
           </div>
