@@ -32,7 +32,6 @@ export default function Home() {
         <AboutSection />
         <SkillsSection />
         <EducationSection />
-        <ProjectsSection />
         <RoadmapSection />
         <LinksSection />
         <Footer />

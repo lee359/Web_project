@@ -1,11 +1,12 @@
 /* =============================================================
-   SECTION: Projects
+   PAGE: Projects
    Design: Cyberpunk Blueprint — project card with banner image,
    code block display, tech tags
    ============================================================= */
 
 import { useInView } from "@/hooks/useInView";
 import { useState } from "react";
+import { Link } from "wouter";
 
 const PROJECT_BANNER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663479025969/nNCp97MS5SZyN9jxyzYEoM/project-yolo-banner-eewdoBkx74Zd6CbmhX88zi.webp";
 
@@ -23,7 +24,7 @@ const mcpConfig = `{
   }
 }`;
 
-export default function ProjectsSection() {
+export default function ProjectsPage() {
   const { ref, inView } = useInView();
   const [copied, setCopied] = useState(false);
 
@@ -35,11 +36,30 @@ export default function ProjectsSection() {
 
   return (
     <section
-      id="projects"
       ref={ref as React.RefObject<HTMLElement>}
       className="w-full py-20 min-h-screen flex items-center relative"
       style={{ background: "#060f1e" }}
     >
+      <div className="absolute top-8 left-8 z-20">
+        <Link href="/">
+          <a
+            className="flex items-center gap-2 px-4 py-2 rounded transition-all duration-200 hover:bg-cyan-400/20"
+            style={{
+              background: "rgba(0,212,255,0.1)",
+              border: "1px solid rgba(0,212,255,0.3)",
+              color: "#00d4ff",
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "0.8rem",
+              textDecoration: "none",
+            }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            返回主頁
+          </a>
+        </Link>
+      </div>
       <div className="absolute inset-0 circuit-bg" style={{ opacity: 0.25 }} />
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-8 lg:px-16">
@@ -61,7 +81,7 @@ export default function ProjectsSection() {
               marginBottom: "0.5rem",
             }}
           >
-          / PROJECTS
+            04 / PROJECTS
           </div>
           <h2
             className="section-title"
@@ -163,7 +183,10 @@ export default function ProjectsSection() {
                 {/* Code header */}
                 <div
                   className="flex items-center justify-between px-4 py-2"
-                  style={{ background: "rgba(0,212,255,0.05)", borderBottom: "1px solid rgba(0,212,255,0.1)" }}
+                  style={{
+                    background: "rgba(0,212,255,0.05)",
+                    borderBottom: "1px solid rgba(0,212,255,0.1)",
+                  }}
                 >
                   <div className="flex items-center gap-2">
                     <div className="flex gap-1.5">
