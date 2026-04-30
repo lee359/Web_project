@@ -6,6 +6,7 @@
 
 import { useEffect, useState } from "react";
 import imagesJpg from './images.jpg';
+import { Link } from "wouter";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663479025969/nNCp97MS5SZyN9jxyzYEoM/hero-bg-Y9NEXw73h4zGNcw46hPULW.webp";
 const AVATAR = imagesJpg;
@@ -208,30 +209,32 @@ export default function HeroSection() {
                 </svg>
                 GitHub Profile
               </a>
-              <button
-                onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-                className="clip-btn inline-flex items-center gap-2 px-6 py-3 font-medium transition-all duration-200"
-                style={{
-                  background: "rgba(124,58,237,0.1)",
-                  border: "1px solid rgba(124,58,237,0.4)",
-                  color: "#a78bfa",
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: "0.9rem",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "rgba(124,58,237,0.2)";
-                  e.currentTarget.style.boxShadow = "0 0 20px rgba(124,58,237,0.3)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "rgba(124,58,237,0.1)";
-                  e.currentTarget.style.boxShadow = "none";
-                }}
-              >
-                查看專案
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </button>
+              <Link href="/projects">
+                <a
+                  className="clip-btn inline-flex items-center gap-2 px-6 py-3 font-medium transition-all duration-200"
+                  style={{
+                    background: "rgba(124,58,237,0.1)",
+                    border: "1px solid rgba(124,58,237,0.4)",
+                    color: "#a78bfa",
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontSize: "0.9rem",
+                    textDecoration: "none",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "rgba(124,58,237,0.2)";
+                    e.currentTarget.style.boxShadow = "0 0 20px rgba(124,58,237,0.3)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "rgba(124,58,237,0.1)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                >
+                  查看專案
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </Link>
             </div>
           </div>
 
