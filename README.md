@@ -1,5 +1,5 @@
 ## 註:README.md要全部重寫，修改的細項記錄在wiki/My route
-
+網站預覽: https://deploy-preview-2--web666-project.netlify.app
 # 專案主題：個人技術履歷與作品集（Personal CV & Portfolio）
 
 ## 1. 專案簡介
