@@ -1,7 +1,4 @@
-## 註:README.md要全部重寫，修改的細項記錄在wiki\My route
-
-個人網站預覽: https://deploy-preview-2--web666-project.netlify.app<br>
-deploy github page會無法顯示頁面，目前研究處理方法中...
+## 註:README.md要全部重寫，修改的細項記錄在wiki/My route
 
 # 專案主題：個人技術履歷與作品集（Personal CV & Portfolio）
 
