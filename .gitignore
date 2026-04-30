@@ -1,5 +1,6 @@
 venv/
 .venv/
+web777
 __pycache__/
 *.pyc
 # Dependencies
