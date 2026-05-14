@@ -3,7 +3,9 @@
    Design: Cyberpunk Blueprint — left fixed nav with glow indicators
    ============================================================= */
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import { useIsMobile } from "@/hooks/useMobile";
 
 const navItems = [
   { id: "hero", label: "首頁", icon: "⬡" },
@@ -16,6 +18,7 @@ const navItems = [
 ];
 
 export default function Sidebar() {
+  const isMobile = useIsMobile();
   const [activeSection, setActiveSection] = useState("hero");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -45,11 +48,14 @@ export default function Sidebar() {
     setIsOpen(false);
   };
 
+  const showMobileShell = isMobile && isOpen;
+  const sidebarVisible = !isMobile || isOpen;
+
   return (
     <>
       {/* Mobile hamburger */}
       <button
-        className="fixed left-4 z-50 p-2 rounded group transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
+        className="fixed left-4 z-50 p-2 rounded group transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 md:hidden"
         style={{
           top: "25px",
           transform: `translateY(-50%) ${isOpen ? "scale(0.92)" : "scale(1)"}`,
@@ -70,7 +76,7 @@ export default function Sidebar() {
       </button>
 
       {/* Mobile overlay */}
-      {isOpen && (
+      {showMobileShell && (
         <div
           className="fixed inset-0 z-30"
           style={{ background: "rgba(5,13,26,0.8)" }}
@@ -80,21 +86,21 @@ export default function Sidebar() {
 
       {/* Top handle bar for mobile - indicates sidebar presence */}
       <div
-        className="fixed top-0 left-0 right-0 z-20 transition-opacity duration-300"
+        className="fixed top-0 left-0 right-0 z-20 transition-opacity duration-300 md:hidden"
         style={{
           height: "50px",
           background: "linear-gradient(90deg, rgba(0,212,255,0.15), rgba(124,58,237,0.1), rgba(0,212,255,0.08))",
           borderBottom: "2px solid rgba(0,212,255,0.3)",
           backdropFilter: "blur(8px)",
-          opacity: isOpen ? "0" : "1",
-          pointerEvents: isOpen ? "none" : "auto",
+          opacity: showMobileShell ? "1" : "0",
+          pointerEvents: showMobileShell ? "auto" : "none",
         }}
       />
 
       {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 h-full z-40 flex flex-col transition-transform duration-300
-          ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+          ${sidebarVisible ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}
         style={{
           width: "220px",
           background: "linear-gradient(180deg, #060e1e 0%, #080f1f 100%)",
