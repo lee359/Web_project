@@ -11,14 +11,14 @@ export default function Projects() {
   }, []);
 
   return (
-    <div className="min-h-screen page-transition" style={{ background: "#050d1a" }}>
+    <div className="min-h-screen page-transition" style={{ background: "var(--color-bg-primary)" }}>
       <button
         onClick={() => setLocation("/")}
         className="fixed top-6 left-6 z-50 inline-flex items-center gap-2 px-4 py-2 transition-all duration-200"
         style={{
-          background: "rgba(10,22,40,0.88)",
-          border: "1px solid rgba(0,212,255,0.35)",
-          color: "#00d4ff",
+          background: "var(--color-bg-navy-20)",
+          border: "1px solid var(--color-accent-cyan-35)",
+          color: "var(--color-accent-cyan)",
           fontFamily: "'JetBrains Mono', monospace",
           fontSize: "0.8rem",
           clipPath: "polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))",

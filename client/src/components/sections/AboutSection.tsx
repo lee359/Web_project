@@ -20,7 +20,7 @@ export default function AboutSection() {
       id="about"
       ref={ref as React.RefObject<HTMLElement>}
       className="w-full py-20 min-h-screen flex items-center relative"
-      style={{ background: "linear-gradient(180deg, #050d1a 0%, #060f1e 100%)" }}
+      style={{ background: "var(--gradient-navy-vertical)" }}
     >
       {/* Circuit bg */}
       <div className="absolute inset-0 circuit-bg" style={{ opacity: 0.3 }} />
@@ -52,14 +52,14 @@ export default function AboutSection() {
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 700,
               fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
-              color: "#e2e8f0",
+              color: "var(--color-text-primary)",
             }}
           >
             關於我
           </h2>
           <div
             className="mt-3 h-px w-24"
-            style={{ background: "linear-gradient(90deg, #00d4ff, transparent)" }}
+            style={{ background: "linear-gradient(90deg, var(--color-accent-cyan), transparent)" }}
           />
         </div>
 
@@ -78,20 +78,20 @@ export default function AboutSection() {
             >
               <p
                 style={{
-                  color: "rgba(226,232,240,0.8)",
+                  color: "var(--color-text-secondary-80)",
                   fontFamily: "'DM Sans', sans-serif",
                   fontSize: "0.95rem",
                   lineHeight: 1.8,
                   marginBottom: "1rem",
                 }}
               >
-                我是就讀於<span style={{ color: "#00d4ff" }}>中原大學電機工程學系</span>的在學學生，對{" "}
-                <span style={{ color: "#a78bfa" }}>人工智慧</span>與{" "}
-                <span style={{ color: "#a78bfa" }}>軟體開發</span>充滿熱忱。
+                我是就讀於<span style={{ color: "var(--color-accent-cyan)" }}>中原大學電機工程學系</span>的在學學生，對{" "}
+                <span style={{ color: "var(--color-accent-violet-light)" }}>人工智慧</span>與{" "}
+                <span style={{ color: "var(--color-accent-violet-light)" }}>軟體開發</span>充滿熱忱。
               </p>
               <p
                 style={{
-                  color: "rgba(226,232,240,0.7)",
+                  color: "var(--color-text-secondary-70)",
                   fontFamily: "'DM Sans', sans-serif",
                   fontSize: "0.95rem",
                   lineHeight: 1.8,
@@ -104,11 +104,11 @@ export default function AboutSection() {
             {/* Decorative data line */}
             <div
               className="mt-4 flex items-center gap-3"
-              style={{ color: "rgba(0,212,255,0.4)", fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem" }}
+              style={{ color: "var(--color-accent-cyan-40)", fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem" }}
             >
               <span>▶</span>
               <span>SYSTEM STATUS: ONLINE</span>
-              <div className="flex-1 h-px" style={{ background: "rgba(0,212,255,0.15)" }} />
+              <div className="flex-1 h-px" style={{ background: "var(--color-accent-cyan-15)" }} />
             </div>
           </div>
 
@@ -133,7 +133,7 @@ export default function AboutSection() {
                 <div className="text-2xl mb-2">{item.icon}</div>
                 <div
                   style={{
-                    color: "#00d4ff",
+                    color: "var(--color-accent-cyan)",
                     fontFamily: "'Space Grotesk', sans-serif",
                     fontWeight: 600,
                     fontSize: "0.85rem",
@@ -144,7 +144,7 @@ export default function AboutSection() {
                 </div>
                 <div
                   style={{
-                    color: "rgba(226,232,240,0.6)",
+                    color: "var(--color-text-secondary-60)",
                     fontFamily: "'DM Sans', sans-serif",
                     fontSize: "0.75rem",
                     lineHeight: 1.5,

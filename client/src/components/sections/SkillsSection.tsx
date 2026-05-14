@@ -9,37 +9,37 @@ import { useState, useEffect } from "react";
 const SKILLS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663479025969/nNCp97MS5SZyN9jxyzYEoM/skills-bg-i7wDvHudkcU7ZoUs6f4Q6i.webp";
 
 const languages = [
-  { name: "Python", level: 85, usage: "資料分析 / ML 建模", color: "#00d4ff" },
-  { name: "JavaScript", level: 75, usage: "Web 前後端開發", color: "#00d4ff" },
-  { name: "C / C++", level: 65, usage: "系統程式 / 演算法", color: "#7c3aed" },
-  { name: "SQL", level: 70, usage: "資料庫查詢與管理", color: "#7c3aed" },
-  { name: "Bash", level: 60, usage: "Shell 腳本自動化", color: "#00d4ff" },
+  { name: "Python", level: 85, usage: "資料分析 / ML 建模", color: "var(--color-accent-cyan)" },
+  { name: "JavaScript", level: 75, usage: "Web 前後端開發", color: "var(--color-accent-cyan)" },
+  { name: "C / C++", level: 65, usage: "系統程式 / 演算法", color: "var(--color-accent-violet)" },
+  { name: "SQL", level: 70, usage: "資料庫查詢與管理", color: "var(--color-accent-violet)" },
+  { name: "Bash", level: 60, usage: "Shell 腳本自動化", color: "var(--color-accent-cyan)" },
 ];
 
 const toolGroups = [
   {
     category: "AI / ML",
-    color: "#00d4ff",
+    color: "var(--color-accent-cyan)",
     tools: ["PyTorch", "TensorFlow", "scikit-learn", "Hugging Face", "LangChain"],
   },
   {
     category: "Web 後端",
-    color: "#a78bfa",
+    color: "var(--color-accent-violet-light)",
     tools: ["FastAPI", "Flask", "Django"],
   },
   {
     category: "Web 前端",
-    color: "#00d4ff",
+    color: "var(--color-accent-cyan)",
     tools: ["React", "HTML5", "CSS3", "TailwindCSS"],
   },
   {
     category: "資料分析",
-    color: "#a78bfa",
+    color: "var(--color-accent-violet-light)",
     tools: ["Pandas", "NumPy", "Matplotlib", "Seaborn"],
   },
   {
     category: "DevOps",
-    color: "#00d4ff",
+    color: "var(--color-accent-cyan)",
     tools: ["Git", "GitHub Actions", "Docker", "Docker Compose"],
   },
 ];
@@ -62,7 +62,7 @@ function SkillBar({ name, level, usage, color, animate }: {
         <div className="flex items-center gap-3">
           <span
             style={{
-              color: "#e2e8f0",
+              color: "var(--color-text-primary)",
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 600,
               fontSize: "0.9rem",
@@ -72,7 +72,7 @@ function SkillBar({ name, level, usage, color, animate }: {
           </span>
           <span
             style={{
-              color: "rgba(226,232,240,0.45)",
+              color: "var(--color-text-secondary-50)",
               fontFamily: "'DM Sans', sans-serif",
               fontSize: "0.75rem",
             }}
@@ -116,7 +116,7 @@ export default function SkillsSection() {
       id="skills"
       ref={ref as React.RefObject<HTMLElement>}
       className="w-full py-20 min-h-screen flex items-center relative overflow-hidden"
-      style={{ background: "#060f1e" }}
+      style={{ background: "var(--color-bg-primary-alt)" }}
     >
       {/* Background image */}
       <div
@@ -162,7 +162,7 @@ export default function SkillsSection() {
           >
             技術技能
           </h2>
-          <div className="mt-3 h-px w-24" style={{ background: "linear-gradient(90deg, #00d4ff, transparent)" }} />
+          <div className="mt-3 h-px w-24" style={{ background: "linear-gradient(90deg, var(--color-accent-cyan), transparent)" }} />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10">
@@ -219,7 +219,7 @@ export default function SkillsSection() {
                   <div
                     className="mb-2 flex items-center gap-2"
                     style={{
-                      color: "rgba(226,232,240,0.5)",
+                      color: "var(--color-text-secondary-50)",
                       fontFamily: "'JetBrains Mono', monospace",
                       fontSize: "0.7rem",
                       letterSpacing: "0.1em",

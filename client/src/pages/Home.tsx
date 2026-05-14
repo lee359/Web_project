@@ -18,14 +18,14 @@ export default function Home() {
   return (
     <div
       className="min-h-screen"
-      style={{ background: "#050d1a" }}
+      style={{ background: "var(--color-bg-primary)" }}
     >
       {/* Fixed sidebar */}
       <Sidebar />
 
       {/* Main content — offset by sidebar width on desktop */}
       <main
-        className="w-full lg:pl-[220px]"
+        className="w-full md:pl-[220px]"
         style={{ minHeight: "100vh" }}
       >
         <HeroSection />

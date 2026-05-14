@@ -22,7 +22,7 @@ const educations = [
     period: "2019 – 2022",
     details: ["畢業成績：全班前 xx%"],
     type: "高中",
-    color: "#7c3aed",
+    color: "var(--color-accent-violet)",
   },
 ];
 
@@ -41,7 +41,7 @@ export default function EducationSection() {
       id="education"
       ref={ref as React.RefObject<HTMLElement>}
       className="w-full py-20 min-h-screen flex items-center relative"
-      style={{ background: "linear-gradient(180deg, #060f1e 0%, #050d1a 100%)" }}
+      style={{ background: "linear-gradient(180deg, var(--color-bg-primary-alt) 0%, var(--color-bg-primary) 100%)" }}
     >
       <div className="absolute inset-0 circuit-bg" style={{ opacity: 0.25 }} />
 
@@ -77,7 +77,7 @@ export default function EducationSection() {
           >
             學術背景
           </h2>
-          <div className="mt-3 h-px w-24" style={{ background: "linear-gradient(90deg, #00d4ff, transparent)" }} />
+          <div className="mt-3 h-px w-24" style={{ background: "linear-gradient(90deg, var(--color-accent-cyan), transparent)" }} />
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -108,7 +108,7 @@ export default function EducationSection() {
               {/* Timeline line */}
               <div
                 className="absolute left-4 top-0 bottom-0 w-px"
-                style={{ background: "linear-gradient(180deg, #00d4ff, rgba(0,212,255,0.1))" }}
+                style={{ background: "var(--gradient-cyan-solid)" }}
               />
 
               <div className="space-y-6 pl-12">
@@ -154,7 +154,7 @@ export default function EducationSection() {
                           </span>
                           <h4
                             style={{
-                              color: "#e2e8f0",
+                              color: "var(--color-text-primary)",
                               fontFamily: "'Space Grotesk', sans-serif",
                               fontWeight: 600,
                               fontSize: "1rem",
@@ -165,7 +165,7 @@ export default function EducationSection() {
                         </div>
                         <span
                           style={{
-                            color: "rgba(226,232,240,0.4)",
+                            color: "var(--color-text-secondary-40)",
                             fontFamily: "'JetBrains Mono', monospace",
                             fontSize: "0.7rem",
                             whiteSpace: "nowrap",
@@ -181,7 +181,7 @@ export default function EducationSection() {
                             key={d}
                             className="flex items-start gap-2"
                             style={{
-                              color: "rgba(226,232,240,0.65)",
+                              color: "var(--color-text-secondary-65)",
                               fontFamily: "'DM Sans', sans-serif",
                               fontSize: "0.85rem",
                             }}
@@ -231,12 +231,12 @@ export default function EducationSection() {
                     key={course}
                     className="flex items-center gap-3 py-2"
                     style={{
-                      borderBottom: i < courses.length - 1 ? "1px solid rgba(0,212,255,0.08)" : "none",
+                      borderBottom: i < courses.length - 1 ? "1px solid var(--color-accent-cyan-8)" : "none",
                     }}
                   >
                     <span
                       style={{
-                        color: "#00d4ff",
+                        color: "var(--color-accent-cyan)",
                         fontFamily: "'JetBrains Mono', monospace",
                         fontSize: "0.7rem",
                         opacity: 0.6,
@@ -246,7 +246,7 @@ export default function EducationSection() {
                     </span>
                     <span
                       style={{
-                        color: "rgba(226,232,240,0.75)",
+                        color: "var(--color-text-secondary-75)",,
                         fontFamily: "'DM Sans', sans-serif",
                         fontSize: "0.85rem",
                       }}

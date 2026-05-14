@@ -8,14 +8,14 @@ export default function Footer() {
     <footer
       className="py-8 relative"
       style={{
-        background: "#050d1a",
-        borderTop: "1px solid rgba(0,212,255,0.1)",
+        background: "var(--color-bg-primary)",
+        borderTop: "1px solid var(--color-accent-cyan-10)",
       }}
     >
       <div className="max-w-5xl mx-auto px-8 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div
           style={{
-            color: "rgba(226,232,240,0.3)",
+            color: "var(--color-text-secondary-30)",
             fontFamily: "'JetBrains Mono', monospace",
             fontSize: "0.7rem",
           }}
@@ -24,7 +24,7 @@ export default function Footer() {
         </div>
         <div
           style={{
-            color: "rgba(0,212,255,0.4)",
+            color: "var(--color-accent-cyan-40)",
             fontFamily: "'JetBrains Mono', monospace",
             fontSize: "0.7rem",
           }}
