@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div
       className="min-h-screen"
-      style={{ background: "#050d1a" }}
+      style={{ background: "var(--color-bg-primary)" }}
     >
       {/* Fixed sidebar */}
       <Sidebar />

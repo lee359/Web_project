@@ -38,16 +38,16 @@ export default function ProjectsPage() {
     <section
       ref={ref as React.RefObject<HTMLElement>}
       className="w-full py-20 min-h-screen flex items-center relative"
-      style={{ background: "#060f1e" }}
+      style={{ background: "var(--color-bg-primary-alt)" }}
     >
       <div className="absolute top-8 left-8 z-20">
         <Link href="/">
           <a
             className="flex items-center gap-2 px-4 py-2 rounded transition-all duration-200 hover:bg-cyan-400/20"
             style={{
-              background: "rgba(0,212,255,0.1)",
-              border: "1px solid rgba(0,212,255,0.3)",
-              color: "#00d4ff",
+              background: "var(--color-accent-cyan-10)",
+              border: "1px solid var(--color-accent-cyan-30)",
+              color: "var(--color-accent-cyan)",
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: "0.8rem",
               textDecoration: "none",
@@ -108,8 +108,8 @@ export default function ProjectsPage() {
           <div
             className="rounded overflow-hidden"
             style={{
-              background: "linear-gradient(135deg, rgba(10,22,40,0.95) 0%, rgba(15,32,64,0.9) 100%)",
-              border: "1px solid rgba(0,212,255,0.2)",
+              background: "linear-gradient(135deg, var(--color-bg-navy-20) 0%, var(--color-bg-navy-light) 100%)",
+              border: "1px solid var(--color-accent-cyan-20)",
               clipPath: "polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))",
             }}
           >
@@ -124,16 +124,16 @@ export default function ProjectsPage() {
               <div
                 className="absolute inset-0"
                 style={{
-                  background: "linear-gradient(180deg, transparent 40%, rgba(10,22,40,0.95) 100%)",
+                  background: "linear-gradient(180deg, transparent 40%, var(--color-bg-primary) 100%)",
                 }}
               />
               {/* Project number badge */}
               <div
                 className="absolute top-4 left-4 px-3 py-1 rounded"
                 style={{
-                  background: "rgba(0,212,255,0.15)",
-                  border: "1px solid rgba(0,212,255,0.4)",
-                  color: "#00d4ff",
+                  background: "var(--color-accent-cyan-15)",
+                  border: "1px solid var(--color-accent-cyan-40)",
+                  color: "var(--color-accent-cyan)",
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: "0.7rem",
                   backdropFilter: "blur(10px)",
@@ -161,7 +161,7 @@ export default function ProjectsPage() {
               <p
                 className="mb-5"
                 style={{
-                  color: "rgba(226,232,240,0.65)",
+                  color: "var(--color-text-secondary-65)",
                   fontFamily: "'DM Sans', sans-serif",
                   fontSize: "0.875rem",
                   lineHeight: 1.7,
@@ -184,19 +184,19 @@ export default function ProjectsPage() {
                 <div
                   className="flex items-center justify-between px-4 py-2"
                   style={{
-                    background: "rgba(0,212,255,0.05)",
-                    borderBottom: "1px solid rgba(0,212,255,0.1)",
+                    background: "var(--color-accent-cyan-5)",
+                    borderBottom: "1px solid var(--color-accent-cyan-10)",
                   }}
                 >
                   <div className="flex items-center gap-2">
                     <div className="flex gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#ff5f57" }} />
-                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#febc2e" }} />
-                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#28c840" }} />
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--color-terminal-red)" }} />
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--color-terminal-yellow)" }} />
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--color-terminal-green)" }} />
                     </div>
                     <span
                       style={{
-                        color: "rgba(0,212,255,0.6)",
+                        color: "var(--color-accent-cyan-60)",
                         fontFamily: "'JetBrains Mono', monospace",
                         fontSize: "0.7rem",
                       }}
@@ -208,9 +208,9 @@ export default function ProjectsPage() {
                     onClick={handleCopy}
                     className="flex items-center gap-1.5 px-2 py-1 rounded transition-all duration-200"
                     style={{
-                      background: copied ? "rgba(0,212,255,0.15)" : "transparent",
-                      border: "1px solid rgba(0,212,255,0.2)",
-                      color: copied ? "#00d4ff" : "rgba(226,232,240,0.4)",
+                      background: copied ? "var(--color-accent-cyan-15)" : "transparent",
+                      border: "1px solid var(--color-accent-cyan-20)",
+                      color: copied ? "var(--color-accent-cyan)" : "var(--color-text-secondary-40)",
                       fontFamily: "'JetBrains Mono', monospace",
                       fontSize: "0.65rem",
                     }}
@@ -222,11 +222,11 @@ export default function ProjectsPage() {
                 <pre
                   className="p-4 overflow-x-auto text-sm"
                   style={{
-                    background: "rgba(5,13,26,0.8)",
+                    background: "var(--color-bg-navy-dark-10)",
                     fontFamily: "'JetBrains Mono', monospace",
                     fontSize: "0.78rem",
                     lineHeight: 1.6,
-                    color: "#e2e8f0",
+                    color: "var(--color-text-primary)",
                     margin: 0,
                   }}
                 >
@@ -260,7 +260,7 @@ export default function ProjectsPage() {
               <p
                 className="mt-3"
                 style={{
-                  color: "rgba(226,232,240,0.35)",
+                  color: "var(--color-text-secondary-35)",
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: "0.65rem",
                 }}

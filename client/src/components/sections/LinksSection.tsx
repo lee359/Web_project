@@ -28,7 +28,7 @@ const links = [
         <path d="M2 7l10 7 10-7" />
       </svg>
     ),
-    color: "#7c3aed",
+    color: "var(--color-accent-violet)",
     label: "lee359@example.com",
   },
 ];
@@ -77,7 +77,7 @@ export default function LinksSection() {
           >
             相關連結
           </h2>
-          <div className="mt-3 h-px w-24" style={{ background: "linear-gradient(90deg, #00d4ff, transparent)" }} />
+          <div className="mt-3 h-px w-24" style={{ background: "linear-gradient(90deg, var(--color-accent-cyan), transparent)" }} />
         </div>
 
         {/* Link cards */}
@@ -135,7 +135,7 @@ export default function LinksSection() {
                 </div>
                 <div
                   style={{
-                    color: "rgba(226,232,240,0.45)",
+                    color: "var(--color-text-secondary-50)",
                     fontFamily: "'DM Sans', sans-serif",
                     fontSize: "0.8rem",
                   }}

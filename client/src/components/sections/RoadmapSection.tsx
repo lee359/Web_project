@@ -111,7 +111,7 @@ export default function RoadmapSection() {
           >
             學習計畫
           </h2>
-          <div className="mt-3 h-px w-24" style={{ background: "linear-gradient(90deg, #00d4ff, transparent)" }} />
+          <div className="mt-3 h-px w-24" style={{ background: "linear-gradient(90deg, var(--color-accent-cyan), transparent)" }} />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10">
@@ -146,10 +146,10 @@ export default function RoadmapSection() {
               {/* Progress bar */}
               <div className="mb-5">
                 <div className="flex justify-between mb-1.5">
-                  <span style={{ color: "rgba(226,232,240,0.5)", fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem" }}>
+                  <span style={{ color: "var(--color-text-secondary-50)", fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem" }}>
                     PROGRESS
                   </span>
-                  <span style={{ color: "#00d4ff", fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem" }}>
+                  <span style={{ color: "var(--color-accent-cyan)", fontFamily: "'JetBrains Mono', monospace", fontSize: "0.7rem" }}>
                     {goals.filter((g) => g.done).length} / {goals.length}
                   </span>
                 </div>
@@ -158,7 +158,7 @@ export default function RoadmapSection() {
                     className="h-full rounded-full skill-bar-fill"
                     style={{
                       width: `${(goals.filter((g) => g.done).length / goals.length) * 100}%`,
-                      background: "linear-gradient(90deg, #00d4ff, #7c3aed)",
+                      background: "linear-gradient(90deg, var(--color-accent-cyan), var(--color-accent-violet))",
                       boxShadow: "0 0 8px rgba(0,212,255,0.5)",
                       transition: "width 1s ease",
                     }}

@@ -44,7 +44,7 @@ export default function HeroSection() {
     <section
       id="hero"
       className="w-full relative min-h-screen flex items-center overflow-hidden"
-      style={{ background: "#050d1a" }}
+      style={{ background: "var(--color-bg-primary)" }}
     >
       {/* Background image */}
       <div
@@ -67,7 +67,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(135deg, rgba(5,13,26,0.95) 0%, rgba(5,13,26,0.7) 50%, rgba(5,13,26,0.9) 100%)",
+          background: "linear-gradient(135deg, var(--color-bg-navy-dark-10) 0%, rgba(5,13,26,0.7) 50%, var(--color-bg-navy-dark-10) 100%)",
         }}
       />
 
@@ -75,14 +75,14 @@ export default function HeroSection() {
       <div
         className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(0,212,255,0.06) 0%, transparent 70%)",
+          background: "radial-gradient(circle, var(--color-accent-cyan-6) 0%, transparent 70%)",
           filter: "blur(40px)",
         }}
       />
       <div
         className="absolute bottom-1/4 left-1/3 w-64 h-64 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(circle, var(--color-accent-violet-8) 0%, transparent 70%)",
           filter: "blur(40px)",
         }}
       />
@@ -96,7 +96,7 @@ export default function HeroSection() {
             <div className="inline-flex items-center gap-2 mb-6">
               <span
                 className="w-2 h-2 rounded-full animate-pulse-glow"
-                style={{ background: "#00d4ff" }}
+                style={{ background: "var(--color-accent-cyan)" }}
               />
               <span
                 style={{
@@ -117,7 +117,7 @@ export default function HeroSection() {
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontWeight: 700,
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
-                color: "#e2e8f0",
+                color: "var(--color-text-primary)",
                 lineHeight: 1.1,
                 letterSpacing: "-0.02em",
               }}
@@ -127,7 +127,7 @@ export default function HeroSection() {
                 style={{
                   display: "block",
                   fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)",
-                  color: "rgba(226,232,240,0.5)",
+                  color: "var(--color-text-secondary-50)",
                   fontWeight: 400,
                   letterSpacing: "0.05em",
                   marginTop: "0.25rem",
@@ -167,9 +167,9 @@ export default function HeroSection() {
                   key={item.text}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded"
                   style={{
-                    background: "rgba(0,212,255,0.06)",
-                    border: "1px solid rgba(0,212,255,0.2)",
-                    color: "rgba(226,232,240,0.7)",
+                  background: "var(--color-accent-cyan-6)",
+                  border: "1px solid var(--color-accent-cyan-20)",
+                  color: "var(--color-text-secondary-70)",
                     fontSize: "0.8rem",
                     fontFamily: "'DM Sans', sans-serif",
                   }}
@@ -188,19 +188,19 @@ export default function HeroSection() {
                 rel="noopener noreferrer"
                 className="clip-btn inline-flex items-center gap-2 px-6 py-3 font-medium transition-all duration-200"
                 style={{
-                  background: "linear-gradient(135deg, rgba(0,212,255,0.15), rgba(0,212,255,0.05))",
-                  border: "1px solid rgba(0,212,255,0.4)",
-                  color: "#00d4ff",
+                  background: "var(--gradient-cyan-fade)",
+                  border: "1px solid var(--color-accent-cyan-40)",
+                  color: "var(--color-accent-cyan)",
                   fontFamily: "'Space Grotesk', sans-serif",
                   fontSize: "0.9rem",
                   textDecoration: "none",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "linear-gradient(135deg, rgba(0,212,255,0.25), rgba(0,212,255,0.1))";
-                  e.currentTarget.style.boxShadow = "0 0 20px rgba(0,212,255,0.3)";
+                  e.currentTarget.style.background = "linear-gradient(135deg, var(--color-accent-cyan-25), var(--color-accent-cyan-10))";
+                  e.currentTarget.style.boxShadow = "0 0 20px var(--color-accent-cyan-30)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "linear-gradient(135deg, rgba(0,212,255,0.15), rgba(0,212,255,0.05))";
+                  e.currentTarget.style.background = "var(--gradient-cyan-fade)";
                   e.currentTarget.style.boxShadow = "none";
                 }}
               >
@@ -213,19 +213,19 @@ export default function HeroSection() {
                 <a
                   className="clip-btn inline-flex items-center gap-2 px-6 py-3 font-medium transition-all duration-200"
                   style={{
-                    background: "rgba(124,58,237,0.1)",
-                    border: "1px solid rgba(124,58,237,0.4)",
-                    color: "#a78bfa",
+                  background: "var(--color-accent-violet-10)",
+                  border: "1px solid var(--color-accent-violet-40)",
+                  color: "var(--color-accent-violet-light)",
                     fontFamily: "'Space Grotesk', sans-serif",
                     fontSize: "0.9rem",
                     textDecoration: "none",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "rgba(124,58,237,0.2)";
-                    e.currentTarget.style.boxShadow = "0 0 20px rgba(124,58,237,0.3)";
+                    e.currentTarget.style.background = "var(--color-accent-violet-20)";
+                    e.currentTarget.style.boxShadow = "0 0 20px var(--color-accent-violet-30)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "rgba(124,58,237,0.1)";
+                    e.currentTarget.style.background = "var(--color-accent-violet-10)";
                     e.currentTarget.style.boxShadow = "none";
                   }}
                 >
@@ -258,24 +258,24 @@ export default function HeroSection() {
               <div
                 className="absolute inset-0"
                 style={{
-                  background: "linear-gradient(135deg, rgba(0,212,255,0.1) 0%, transparent 60%)",
+                  background: "linear-gradient(135deg, var(--color-accent-cyan-10) 0%, transparent 60%)",
                 }}
               />
               {/* Corner decorations */}
               <div
                 className="absolute top-0 left-0 w-6 h-6"
-                style={{ borderTop: "2px solid #00d4ff", borderLeft: "2px solid #00d4ff" }}
+                style={{ borderTop: "2px solid var(--color-accent-cyan)", borderLeft: "2px solid var(--color-accent-cyan)" }}
               />
               <div
                 className="absolute bottom-0 right-0 w-6 h-6"
-                style={{ borderBottom: "2px solid #00d4ff", borderRight: "2px solid #00d4ff" }}
+                style={{ borderBottom: "2px solid var(--color-accent-cyan)", borderRight: "2px solid var(--color-accent-cyan)" }}
               />
             </div>
             {/* Glow ring - hidden on mobile */}
             <div
               className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full pointer-events-none"
               style={{
-                background: "radial-gradient(circle, rgba(0,212,255,0.05) 0%, transparent 70%)",
+                background: "radial-gradient(circle, var(--color-accent-cyan-5) 0%, transparent 70%)",
                 filter: "blur(20px)",
                 zIndex: 0,
               }}
@@ -287,7 +287,7 @@ export default function HeroSection() {
       {/* Scroll indicator */}
       <div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        style={{ color: "rgba(0,212,255,0.5)" }}
+        style={{ color: "var(--color-accent-cyan-40)" }}
       >
         <span style={{ fontSize: "0.65rem", fontFamily: "'JetBrains Mono', monospace", letterSpacing: "0.15em" }}>
           SCROLL
@@ -295,7 +295,7 @@ export default function HeroSection() {
         <div
           className="w-px h-8"
           style={{
-            background: "linear-gradient(180deg, rgba(0,212,255,0.5), transparent)",
+            background: "linear-gradient(180deg, var(--color-accent-cyan-40), transparent)",
             animation: "pulse 2s ease-in-out infinite",
           }}
         />

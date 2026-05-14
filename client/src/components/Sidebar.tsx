@@ -61,17 +61,17 @@ export default function Sidebar() {
           transform: `translateY(-50%) ${isOpen ? "scale(0.92)" : "scale(1)"}`,
           opacity: isOpen ? 0 : 1,
           pointerEvents: isOpen ? "none" : "auto",
-          background: "rgba(10,22,40,0.9)",
-          border: "1px solid rgba(0,212,255,0.35)",
+          background: "var(--color-bg-navy-20)",
+          border: "1px solid var(--color-accent-cyan-35)",
           boxShadow: "0 0 0 rgba(0,212,255,0)",
         }}
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle navigation"
       >
         <div className="space-y-1">
-          <span className="block w-5 h-0.5 rounded transition-all duration-300 group-hover:w-4" style={{ background: "#00d4ff" }}></span>
-          <span className="block w-5 h-0.5 rounded transition-all duration-300" style={{ background: "#00d4ff" }}></span>
-          <span className="block w-5 h-0.5 rounded transition-all duration-300 group-hover:w-4" style={{ background: "#00d4ff" }}></span>
+          <span className="block w-5 h-0.5 rounded transition-all duration-300 group-hover:w-4" style={{ background: "var(--color-accent-cyan)" }}></span>
+          <span className="block w-5 h-0.5 rounded transition-all duration-300" style={{ background: "var(--color-accent-cyan)" }}></span>
+          <span className="block w-5 h-0.5 rounded transition-all duration-300 group-hover:w-4" style={{ background: "var(--color-accent-cyan)" }}></span>
         </div>
       </button>
 
@@ -79,7 +79,7 @@ export default function Sidebar() {
       {showMobileShell && (
         <div
           className="fixed inset-0 z-30"
-          style={{ background: "rgba(5,13,26,0.8)" }}
+          style={{ background: "var(--color-bg-navy-dark-10)" }}
           onClick={() => setIsOpen(false)}
         />
       )}
@@ -89,8 +89,8 @@ export default function Sidebar() {
         className="fixed top-0 left-0 right-0 z-20 transition-opacity duration-300 md:hidden"
         style={{
           height: "50px",
-          background: "linear-gradient(90deg, rgba(0,212,255,0.15), rgba(124,58,237,0.1), rgba(0,212,255,0.08))",
-          borderBottom: "2px solid rgba(0,212,255,0.3)",
+          background: "var(--gradient-multi-fade)",
+          borderBottom: "2px solid var(--color-accent-cyan-30)",
           backdropFilter: "blur(8px)",
           opacity: showMobileShell ? "1" : "0",
           pointerEvents: showMobileShell ? "auto" : "none",
@@ -104,29 +104,29 @@ export default function Sidebar() {
         style={{
           width: "220px",
           background: "linear-gradient(180deg, #060e1e 0%, #080f1f 100%)",
-          borderRight: "1px solid rgba(0,212,255,0.15)",
+          borderRight: "1px solid var(--color-accent-cyan-15)",
           boxShadow: "4px 0 30px rgba(0,0,0,0.5)",
         }}
       >
         {/* Logo area */}
-        <div className="p-6 pb-4" style={{ borderBottom: "1px solid rgba(0,212,255,0.1)" }}>
+        <div className="p-6 pb-4" style={{ borderBottom: "1px solid var(--color-accent-cyan-10)" }}>
           <div className="flex items-center gap-3 mb-1">
             <div
               className="w-8 h-8 rounded flex items-center justify-center text-sm font-bold"
               style={{
-                background: "linear-gradient(135deg, rgba(0,212,255,0.2), rgba(124,58,237,0.2))",
-                border: "1px solid rgba(0,212,255,0.4)",
-                color: "#00d4ff",
+                background: "linear-gradient(135deg, var(--color-accent-cyan-20), var(--color-accent-violet-20))",
+                border: "1px solid var(--color-accent-cyan-40)",
+                color: "var(--color-accent-cyan)",
                 fontFamily: "'Space Grotesk', sans-serif",
               }}
             >
               L
             </div>
             <div>
-              <div style={{ color: "#e2e8f0", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "0.9rem" }}>
+              <div style={{ color: "var(--color-text-primary)", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "0.9rem" }}>
                 李O恩
               </div>
-              <div style={{ color: "#00d4ff", fontSize: "0.65rem", fontFamily: "'JetBrains Mono', monospace", opacity: 0.8 }}>
+              <div style={{ color: "var(--color-accent-cyan)", fontSize: "0.65rem", fontFamily: "'JetBrains Mono', monospace", opacity: 0.8 }}>
                 EE @ CYCU
               </div>
             </div>
@@ -143,9 +143,9 @@ export default function Sidebar() {
                 onClick={() => scrollTo(item.id)}
                 className="w-full text-left flex items-center gap-3 px-3 py-2.5 rounded transition-all duration-200 group"
                 style={{
-                  background: isActive ? "rgba(0,212,255,0.08)" : "transparent",
-                  borderLeft: isActive ? "2px solid #00d4ff" : "2px solid transparent",
-                  color: isActive ? "#00d4ff" : "rgba(226,232,240,0.6)",
+                  background: isActive ? "var(--color-accent-cyan-8)" : "transparent",
+                  borderLeft: isActive ? "2px solid var(--color-accent-cyan)" : "2px solid transparent",
+                  color: isActive ? "var(--color-accent-cyan)" : "var(--color-text-secondary-60)",
                   fontFamily: "'DM Sans', sans-serif",
                   fontSize: "0.85rem",
                   fontWeight: isActive ? 500 : 400,
@@ -153,7 +153,7 @@ export default function Sidebar() {
               >
                 <span
                   style={{
-                    color: isActive ? "#00d4ff" : "rgba(0,212,255,0.3)",
+                    color: isActive ? "var(--color-accent-cyan)" : "var(--color-accent-cyan-30)",
                     fontSize: "0.7rem",
                     transition: "color 0.2s",
                   }}
@@ -164,7 +164,7 @@ export default function Sidebar() {
                 {isActive && (
                   <span
                     className="ml-auto w-1.5 h-1.5 rounded-full"
-                    style={{ background: "#00d4ff", boxShadow: "0 0 6px #00d4ff" }}
+                    style={{ background: "var(--color-accent-cyan)", boxShadow: "0 0 6px var(--color-accent-cyan)" }}
                   />
                 )}
               </button>
@@ -173,7 +173,7 @@ export default function Sidebar() {
         </nav>
 
         {/* Footer links */}
-        <div className="p-4" style={{ borderTop: "1px solid rgba(0,212,255,0.1)" }}>
+        <div className="p-4" style={{ borderTop: "1px solid var(--color-accent-cyan-10)" }}>
           <div className="flex gap-3 justify-center">
             <a
               href="https://github.com/lee359"
@@ -181,7 +181,7 @@ export default function Sidebar() {
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-xs transition-colors duration-200"
               style={{ color: "rgba(226,232,240,0.5)", fontFamily: "'JetBrains Mono', monospace" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#00d4ff")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-accent-cyan)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(226,232,240,0.5)")}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
