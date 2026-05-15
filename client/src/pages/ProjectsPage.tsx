@@ -5,7 +5,7 @@
    ============================================================= */
 
 import { useInView } from "@/hooks/useInView";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "wouter";
 
 const PROJECT_BANNER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663479025969/nNCp97MS5SZyN9jxyzYEoM/project-yolo-banner-eewdoBkx74Zd6CbmhX88zi.webp";
@@ -27,6 +27,10 @@ const mcpConfig = `{
 export default function ProjectsPage() {
   const { ref, inView } = useInView();
   const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(mcpConfig);

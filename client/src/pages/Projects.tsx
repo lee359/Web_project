@@ -13,7 +13,7 @@ export default function Projects() {
   return (
     <div className="min-h-screen page-transition" style={{ background: "var(--color-bg-primary)" }}>
       <button
-        onClick={() => setLocation("/")}
+        onClick={() => setLocation("/#projects")}
         className="fixed top-6 left-6 z-50 inline-flex items-center gap-2 px-4 py-2 transition-all duration-200"
         style={{
           background: "var(--color-bg-navy-20)",
