@@ -47,7 +47,7 @@ export default function ProjectsPage() {
       <div className="absolute top-8 left-8 z-20">
         <Link href="/">
           <a
-            className="flex items-center gap-2 px-4 py-2 rounded transition-all duration-200 hover:bg-cyan-400/20"
+            className="flex items-center gap-2 px-4 py-2 rounded transition-all duration-300"
             style={{
               background: "var(--color-accent-cyan-10)",
               border: "1px solid var(--color-accent-cyan-30)",
@@ -55,6 +55,19 @@ export default function ProjectsPage() {
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: "0.8rem",
               textDecoration: "none",
+              boxShadow: "0 6px 18px rgba(0, 212, 255, 0.08)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "linear-gradient(135deg, rgba(0, 212, 255, 0.22) 0%, rgba(0, 212, 255, 0.10) 100%)";
+              e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.55)";
+              e.currentTarget.style.boxShadow = "0 0 0 1px rgba(0, 212, 255, 0.25), 0 10px 24px rgba(0, 212, 255, 0.18)";
+              e.currentTarget.style.textShadow = "0 0 10px rgba(0, 212, 255, 0.45)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "var(--color-accent-cyan-10)";
+              e.currentTarget.style.borderColor = "var(--color-accent-cyan-30)";
+              e.currentTarget.style.boxShadow = "0 6px 18px rgba(0, 212, 255, 0.08)";
+              e.currentTarget.style.textShadow = "none";
             }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
