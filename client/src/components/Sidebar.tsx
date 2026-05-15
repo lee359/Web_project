@@ -6,6 +6,8 @@
 import { useEffect, useState } from "react";
 
 import { useIsMobile } from "@/hooks/useMobile";
+import { useTheme } from "@/contexts/ThemeContext";
+import { ThemeModal } from "./ThemeModal";
 
 const navItems = [
   { id: "hero", label: "首頁", icon: "⬡" },
@@ -17,10 +19,31 @@ const navItems = [
   { id: "links", label: "相關連結", icon: "◉" },
 ];
 
+function ThemeToggleButton({ onOpen }: { onOpen: () => void }) {
+  const { theme } = useTheme();
+  const isLight = theme === "light";
+  const label = isLight ? "🌙 暗色模式" : "☀️ 亮色模式";
+
+  return (
+    <button
+      onClick={onOpen}
+      className="flex items-center gap-1.5 text-xs transition-colors duration-200"
+      style={{ color: "rgba(226,232,240,0.5)", fontFamily: "'JetBrains Mono', monospace" }}
+      onMouseEnter={(e) => (e.currentTarget.style.color = "#00d4ff")}
+      onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(226,232,240,0.5)")}
+      title={`Switch to ${isLight ? "dark" : "light"} mode`}
+      aria-label={label}
+    >
+      {label}
+    </button>
+  );
+}
+
 export default function Sidebar() {
   const isMobile = useIsMobile();
   const [activeSection, setActiveSection] = useState("hero");
   const [isOpen, setIsOpen] = useState(false);
+  const [isThemeModalOpen, setIsThemeModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -174,7 +197,7 @@ export default function Sidebar() {
 
         {/* Footer links */}
         <div className="p-4" style={{ borderTop: "1px solid rgba(0,212,255,0.1)" }}>
-          <div className="flex gap-3 justify-center">
+          <div className="flex gap-3 justify-center mb-3">
             <a
               href="https://github.com/lee359"
               target="_blank"
@@ -189,15 +212,19 @@ export default function Sidebar() {
               </svg>
               GitHub
             </a>
+            <ThemeToggleButton onOpen={() => setIsThemeModalOpen(true)} />
           </div>
           <div
-            className="text-center mt-2"
+            className="text-center"
             style={{ color: "rgba(226,232,240,0.2)", fontSize: "0.6rem", fontFamily: "'JetBrains Mono', monospace" }}
           >
             v2026.03
           </div>
         </div>
       </aside>
+
+      {/* Theme Modal */}
+      <ThemeModal isOpen={isThemeModalOpen} onClose={() => setIsThemeModalOpen(false)} />
     </>
   );
 }
