@@ -5,7 +5,7 @@
    Fonts: Space Grotesk (headings) | DM Sans (body) | JetBrains Mono (code)
    ============================================================= */
 
-@import "./themes.css";
+@import "./styles/themes.css";
 @import "tailwindcss";
 @import "tw-animate-css";
 

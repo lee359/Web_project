@@ -9,11 +9,11 @@ import { useState, useEffect } from "react";
 const SKILLS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663479025969/nNCp97MS5SZyN9jxyzYEoM/skills-bg-i7wDvHudkcU7ZoUs6f4Q6i.webp";
 
 const languages = [
-  { name: "Python", level: 85, usage: "資料分析 / ML 建模", color: "var(--color-accent-cyan)" },
-  { name: "JavaScript", level: 75, usage: "Web 前後端開發", color: "var(--color-accent-cyan)" },
-  { name: "C / C++", level: 65, usage: "系統程式 / 演算法", color: "var(--color-accent-violet)" },
-  { name: "SQL", level: 70, usage: "資料庫查詢與管理", color: "var(--color-accent-violet)" },
-  { name: "Bash", level: 60, usage: "Shell 腳本自動化", color: "var(--color-accent-cyan)" },
+  { name: "Python", level: 85, usage: "資料分析 / ML 建模", color: "#00d4ff" },
+  { name: "JavaScript", level: 75, usage: "Web 前後端開發", color: "#00d4ff" },
+  { name: "C / C++", level: 65, usage: "系統程式 / 演算法", color: "#7c3aed" },
+  { name: "SQL", level: 70, usage: "資料庫查詢與管理", color: "#7c3aed" },
+  { name: "Bash", level: 60, usage: "Shell 腳本自動化", color: "#00d4ff" },
 ];
 
 const toolGroups = [
@@ -49,12 +49,24 @@ function SkillBar({ name, level, usage, color, animate }: {
 }) {
   const [width, setWidth] = useState(0);
 
+  // Convert hex color to rgba
+  const hexToRgba = (hex: string, alpha: number) => {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  };
+
   useEffect(() => {
     if (animate) {
       const timer = setTimeout(() => setWidth(level), 200);
       return () => clearTimeout(timer);
     }
   }, [animate, level]);
+
+  const colorRgbaFull = hexToRgba(color, 1);
+  const colorRgbaLight = hexToRgba(color, 0.6);
+  const colorRgbaGlow = hexToRgba(color, 0.4);
 
   return (
     <div className="mb-5">
@@ -98,8 +110,8 @@ function SkillBar({ name, level, usage, color, animate }: {
           className="h-full rounded-full skill-bar-fill"
           style={{
             width: `${width}%`,
-            background: `linear-gradient(90deg, ${color}, ${color}99)`,
-            boxShadow: `0 0 8px ${color}66`,
+            background: `linear-gradient(90deg, ${colorRgbaFull}, ${colorRgbaLight})`,
+            boxShadow: `0 0 8px ${colorRgbaGlow}`,
             transition: "width 1.2s cubic-bezier(0.4, 0, 0.2, 1)",
           }}
         />

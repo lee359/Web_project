@@ -246,7 +246,7 @@ export default function EducationSection() {
                     </span>
                     <span
                       style={{
-                        color: "var(--color-text-secondary-75)",,
+                        color: "var(--color-text-secondary-75)",
                         fontFamily: "'DM Sans', sans-serif",
                         fontSize: "0.85rem",
                       }}

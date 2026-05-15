@@ -115,8 +115,8 @@ export default function Sidebar() {
           background: "var(--gradient-multi-fade)",
           borderBottom: "2px solid var(--color-accent-cyan-30)",
           backdropFilter: "blur(8px)",
-          opacity: showMobileShell ? "1" : "0",
-          pointerEvents: showMobileShell ? "auto" : "none",
+          opacity: isMobile && !isOpen ? "1" : "0",
+          pointerEvents: isMobile && !isOpen ? "auto" : "none",
         }}
       />
 
