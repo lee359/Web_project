@@ -5,10 +5,10 @@
    ============================================================= */
 
 import { useEffect, useState } from "react";
-import imagesJpg from './images.jpg';
+import defaultProfilePicture from './default-profile-picture.webp';
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663479025969/nNCp97MS5SZyN9jxyzYEoM/hero-bg-Y9NEXw73h4zGNcw46hPULW.webp";
-const AVATAR = imagesJpg;
+const AVATAR = defaultProfilePicture;
 
 const roles = ["AI / ML Engineer", "Web Developer", "EE Student @ CYCU", "Open Source Contributor"];
 
