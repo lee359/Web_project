@@ -54,7 +54,7 @@ export function ThemeModal({ isOpen, onClose }: ThemeModalProps) {
                 color: "#e2e8f0",
               }}
             >
-              這功能還沒實裝
+              變色功能未實裝...
             </h2>
             <p
               style={{

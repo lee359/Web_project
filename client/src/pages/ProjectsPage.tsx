@@ -287,6 +287,38 @@ export default function ProjectsPage() {
             </div>
           </div>
         </div>
+
+        {/* Continuation placeholder */}
+        <div
+          style={{
+            marginTop: "3rem",
+            opacity: inView ? 1 : 0,
+            transform: inView ? "translateY(0)" : "translateY(20px)",
+            transition: "all 0.8s ease 0.3s",
+          }}
+        >
+          <div
+            className="p-6 lg:p-8 rounded"
+            style={{
+              background: "linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, rgba(139, 92, 246, 0.03) 100%)",
+              border: "1px dashed rgba(168, 85, 247, 0.2)",
+              clipPath: "polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))",
+            }}
+          >
+            <p
+              style={{
+                color: "rgba(226, 232, 240, 0.6)",
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: "0.9rem",
+                fontStyle: "italic",
+                letterSpacing: "0.05em",
+                margin: 0,
+              }}
+            >
+              ✦ To be continued...
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

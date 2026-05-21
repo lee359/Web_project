@@ -12,8 +12,7 @@ const projects = [
     icon: "◈",
   },
   {
-    title: "尚未公開",
-    icon: "◈",
+    title: "To be continued..."
   },
 ];
 
