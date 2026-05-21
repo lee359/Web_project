@@ -45,7 +45,7 @@ export default function ProjectsPage() {
       style={{ background: "var(--color-bg-primary-alt)" }}
     >
       <div className="absolute top-8 left-8 z-20">
-        <Link href="/">
+        <Link href="/#projects">
           <a
             className="flex items-center gap-2 px-4 py-2 rounded transition-all duration-300"
             style={{
