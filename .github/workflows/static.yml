@@ -2,11 +2,9 @@
 name: Deploy static content to Pages
 
 on:
-  # Build on all pushes/PRs; deploy job is gated to main only
+  # Run on pushes to main branch
   push:
-    branches: ["**"]
-  pull_request:
-    branches: ["**"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -30,6 +28,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
@@ -46,52 +48,18 @@ jobs:
       - name: Build site
         run: pnpm build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Prepare static artifact for Pages
+        run: |
+          cp dist/public/index.html dist/public/404.html
+          touch dist/public/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist/public
 
-  preview:
-    needs: build
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: pnpm
-          cache-dependency-path: pnpm-lock.yaml
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build site
-        run: pnpm build
-
-      - name: Deploy PR to Netlify
-        uses: nwtgck/actions-netlify@v3
-        with:
-          publish-dir: './dist/public'
-          production-branch: main
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: 'Preview for PR #${{ github.event.pull_request.number }}'
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-
   deploy:
     needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
