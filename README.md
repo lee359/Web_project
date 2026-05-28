@@ -79,11 +79,11 @@ npm run start
 
 。預覽圖
 
-![alt text](image\image.png)
+![預覽圖_1](images/image.png)
 
-![alt text](image\image-1.png)
+![預覽圖_2](images/image-1.png)
 
-![alt text](image\image-2.png)
+![預覽圖_3](images/image-2.png)
 
  網站連結：
  [https://deploy-preview-2--web666-project.netlify.app](https://web666-project.netlify.app/)
