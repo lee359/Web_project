@@ -60,7 +60,7 @@ npx pnpm@latest dev
 確認終端機沒有顯示錯誤訊息，並確認瀏覽器版本符合需求（Chrome / Firefox / Edge 90+）。
 
 
-## 4. 啟動與建置
+## 3. 啟動與建置
 
 ### 開發模式
 
@@ -96,7 +96,7 @@ npx pnpm@latest run check
 npx pnpm@latest run format
 ```
 
-## 5. 預期畫面
+## 4. 預期畫面
 
 - 啟動 `dev` 後，應在瀏覽器開啟 `http://localhost:5173/`，並顯示個人技術履歷與作品集首頁。
 - 頁面會看到個人簡介、技能、教育背景、專案區塊與導覽側欄。
@@ -110,7 +110,7 @@ npx pnpm@latest run format
 
 ![預覽圖_3](images/image-2.png)
 
-## 6. 專案結構
+## 5. 專案結構
 ```
 thu_web_HW/
 ├── client/                 ← 前端（Vite + React）
@@ -123,11 +123,11 @@ thu_web_HW/
 ├── server/                 ← 可選的 Express 伺服器（build 時會 bundle 至 `dist/`）
 ├── doc/                    ← 專案文件（包含 `How to open preview.md`）
 ├── patches/                ← pnpm patched dependencies
-├── package.json
+├── package.json            ← 專案設定與依賴管理中心
 └── README.md               ← 專案說明
 ```
 
-## 7. 連結與補充
+## 6. 連結與補充
 
 - 網站連結：<https://web666-project.netlify.app/>
 - 相關文件：`doc/How to open preview.md`
@@ -140,6 +140,12 @@ thu_web_HW/
 - `start` — 執行 production bundle (`node dist/index.js`)
 - `check` — TypeScript 型別檢查
 - `format` — Prettier 格式化
+
+## 7. 參考資料 & 網站
+
+- <https://shields.io/>
+- [要怎麼寫README.md](https://medium.com/@jack20499/%E8%A6%81%E6%80%8E%E9%BA%BC%E5%AF%ABreadme-md-76f1e33b0c68)
+- [GitHub — RichardLitt/standard-readme: A standard style for README files](https://github.com/RichardLitt/standard-readme)
 
 
 
