@@ -23,7 +23,19 @@
 | 瀏覽器 | Chrome 90+ / Firefox 90+ / Edge 90+（支援 Intersection Observer API） |
 | 系統層套件 | 無額外必要依賴；Windows 建議安裝 Git for Windows 方便搭配 PowerShell 使用 |
 
-## 安裝指令
+### 安裝 Node.js
+ 
+前往 [https://nodejs.org/](https://nodejs.org/) 下載並安裝 **LTS 版本（16 以上）**。
+ 
+安裝完成後，開啟終端機確認版本：
+ 
+```bash
+node -v
+```
+ 
+- 應顯示 `v16.x.x` 以上的版本號。
+
+### Clone 專案 & 安裝相依套件
  
 ```bash
 git clone <https://github.com/lee359/Web_project.git>
