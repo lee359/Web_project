@@ -23,14 +23,30 @@
 | 瀏覽器 | Chrome 90+ / Firefox 90+ / Edge 90+（支援 Intersection Observer API） |
 | 系統層套件 | 無額外必要依賴；Windows 建議安裝 Git for Windows 方便搭配 PowerShell 使用 |
 
-## 3. 安裝步驟
-
-1. 建立專案工作目錄並進入 repository。
-2. 安裝前端相依套件。
-
-```powershell
+## 安裝指令
+ 
+```bash
+git clone <https://github.com/lee359/Web_project.git>
+cd <Web_project>
 npx pnpm@latest install
+npx pnpm@latest dev        
 ```
+
+### 常見問題
+ 
+**Q：執行 `npx pnpm@latest install` 時出現權限錯誤？**
+ 
+- Windows：以系統管理員身份開啟 PowerShell 後重試
+- macOS / Linux：在指令前加上 `sudo`
+
+**Q：`node -v` 顯示版本低於 16？**
+ 
+請重新安裝較新版本的 Node.js，或使用 [nvm](https://github.com/nvm-sh/nvm) 管理多個 Node.js 版本。
+ 
+**Q：瀏覽器打開後畫面空白？**
+ 
+確認終端機沒有顯示錯誤訊息，並確認瀏覽器版本符合需求（Chrome / Firefox / Edge 90+）。
+
 
 ## 4. 啟動與建置
 
