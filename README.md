@@ -6,7 +6,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.6.3-blue?logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7.1.7-646CFF?logo=vite&logoColor=white)
 ![React](https://img.shields.io/badge/React-19.2.1-61DAFB?logo=react&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3.9%2B-yellow?logo=python&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.0-06B6D4?logo=tailwindcss&logoColor=white)
 
 ## 1. 專案簡介
 
