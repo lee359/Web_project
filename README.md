@@ -27,13 +27,13 @@
  
 前往 [https://nodejs.org/](https://nodejs.org/) 下載並安裝 **LTS 版本（16 以上）**。
  
-安裝完成後，開啟終端機確認版本：
+- 安裝完成後，開啟終端機確認版本：
  
 ```bash
 node -v
 ```
  
-- 應顯示 `v16.x.x` 以上的版本號。
+應顯示 `v16.x.x` 以上的版本號。
 
 ### Clone 專案 & 安裝相依套件
  
@@ -82,6 +82,20 @@ npx pnpm@latest build
 npx pnpm@latest preview
 ```
 
+### 開發指令補充
+
+- 執行 TypeScript 型別檢查：
+
+```bash
+npx pnpm@latest run check
+```
+
+- 使用 Prettier 整理程式碼排版：
+
+```bash
+npx pnpm@latest run format
+```
+
 ## 5. 預期畫面
 
 - 啟動 `dev` 後，應在瀏覽器開啟 `http://localhost:5173/`，並顯示個人技術履歷與作品集首頁。
@@ -113,26 +127,9 @@ thu_web_HW/
 └── README.md               ← 專案說明
 ```
 
-## 7. 開發指令
-
-- 應用入口：`client/src/main.tsx`（會 render `client/src/App.tsx`）
-- 使用 `wouter` 作為 client-side 路由，並在 `client/src/contexts/ThemeContext.tsx` 提供主題（theme）上下文。
-- 執行 TypeScript 型別檢查：
-
-```bash
-npx pnpm@latest run check
-```
-
-- 使用 Prettier 格式化程式碼：
-
-```bash
-npx pnpm@latest run format
-```
-
-## 8. 連結與補充
+## 7. 連結與補充
 
 - 網站連結：<https://web666-project.netlify.app/>
-- 預覽部署連結：<https://deploy-preview-2--web666-project.netlify.app/>
 - 相關文件：`doc/How to open preview.md`
 
 `package.json` 中的常用 scripts：
