@@ -8,31 +8,67 @@
 ![React](https://img.shields.io/badge/React-19.2.1-61DAFB?logo=react&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-yellow?logo=python&logoColor=white)
 
-## 專案簡介
+## 1. 專案簡介
 
 一個使用 Vite、React 與 TypeScript 建置的個人作品集（CV & Portfolio）前端專案。專案採用 Tailwind CSS、Radix UI 與多個自訂 UI 元件；`server/` 下包含一個可選的簡易 Express 伺服器，`build` 時會一併打包。
 
 
-## 環境建置
+## 2. 環境需求
 
-### 。開發與執行環境需求與安裝指令
+| 項目 | 版本需求 |
+|------|---------|
+| 作業系統 | Windows 10+ / macOS 12+ / Ubuntu 20.04+ |
+| Node.js | 16+ |
+| pnpm | 10+ |
+| 瀏覽器 | Chrome 90+ / Firefox 90+ / Edge 90+（支援 Intersection Observer API） |
+| 系統層套件 | 無額外必要依賴；Windows 建議安裝 Git for Windows 方便搭配 PowerShell 使用 |
 
-| 項目 | 版本 / 指令 |
-|------|-------------|
-| Node.js (runtime) | 16+（建議 LTS） |
-| 套件管理 | pnpm（若未安裝，使用 `npx pnpm@latest`） |
-| 安裝相依套件 | `npx pnpm@latest install` |
+## 3. 安裝步驟
 
-### 。專案使用的程式語言與版本
+1. 建立專案工作目錄並進入 repository。
+2. 安裝前端相依套件。
 
-| 程式語言 | 版本 / 備註 |
-|----------|------------|
-| TypeScript | 5.6.3（參見 `devDependencies`） |
-| JavaScript | ECMAScript / ESNext（由 Vite 編譯） |
-| Node.js | 16+（runtime） |
-| Python | 3.9+（若使用 repo 中的 Python 工具或 `doc` 裡的渲染流程） |
+```powershell
+npx pnpm@latest install
+```
 
-## 專案結構
+## 4. 啟動與建置
+
+### 開發模式
+
+透過 Vite 啟動 React App。以下指令可直接在 Windows PowerShell 執行。
+
+```powershell
+npx pnpm@latest dev
+```
+
+### 建置版本
+
+```powershell
+npx pnpm@latest build
+```
+
+### 預覽已建置版本
+
+```powershell
+npx pnpm@latest preview
+```
+
+## 5. 預期畫面
+
+- 啟動 `dev` 後，應在瀏覽器開啟 `http://localhost:5173/`，並顯示個人技術履歷與作品集首頁。
+- 頁面會看到個人簡介、技能、教育背景、專案區塊與導覽側欄。
+- 使用 `preview` 時，應能檢視 build 後的相同畫面。
+
+### 預覽截圖
+
+![預覽圖_1](images/image.png)
+
+![預覽圖_2](images/image-1.png)
+
+![預覽圖_3](images/image-2.png)
+
+## 6. 專案結構
 ```
 thu_web_HW/
 ├── client/                 ← 前端（Vite + React）
@@ -49,46 +85,7 @@ thu_web_HW/
 └── README.md               ← 專案說明
 ```
 
-## 使用方式
-
-啟動開發伺服器（Vite）：
-
-```bash
-npx pnpm@latest dev
-```
-
-建置 production（同時會將 `server/index.ts` bundle 到 `dist/`）：
-
-```bash
-npx pnpm@latest build
-```
-
-本機預覽已建置的產物：
-
-```bash
-npx pnpm@latest preview
-```
-
-在 production 模式下啟動（需先執行 `build`）：
-
-```bash
-npm run start
-```
-
-## 渲染效果預覽
-
-。預覽圖
-
-![預覽圖_1](images/image.png)
-
-![預覽圖_2](images/image-1.png)
-
-![預覽圖_3](images/image-2.png)
-
- 網站連結：
- [https://deploy-preview-2--web666-project.netlify.app](https://web666-project.netlify.app/)
-
-## 開發
+## 7. 開發指令
 
 - 應用入口：`client/src/main.tsx`（會 render `client/src/App.tsx`）
 - 使用 `wouter` 作為 client-side 路由，並在 `client/src/contexts/ThemeContext.tsx` 提供主題（theme）上下文。
@@ -98,13 +95,17 @@ npm run start
 npx pnpm@latest run check
 ```
 
-使用 Prettier 格式化程式碼：
+- 使用 Prettier 格式化程式碼：
 
 ```bash
 npx pnpm@latest run format
 ```
 
-## 常用指令
+## 8. 連結與補充
+
+- 網站連結：<https://web666-project.netlify.app/>
+- 預覽部署連結：<https://deploy-preview-2--web666-project.netlify.app/>
+- 相關文件：`doc/How to open preview.md`
 
 `package.json` 中的常用 scripts：
 
