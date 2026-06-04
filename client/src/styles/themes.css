@@ -138,5 +138,144 @@
   --color-terminal-red: #c0392b;
   --color-terminal-yellow: #d4af37;
   --color-terminal-green: #a8c5a0;
+
+  /* ========== CYBER TOKEN ALIASES FOR LIGHT THEME ========== */
+  --color-accent-cyan: var(--color-accent-caramel);
+  --color-accent-cyan-5: var(--color-accent-caramel-5);
+  --color-accent-cyan-6: var(--color-accent-caramel-6);
+  --color-accent-cyan-8: var(--color-accent-caramel-8);
+  --color-accent-cyan-10: var(--color-accent-caramel-10);
+  --color-accent-cyan-15: var(--color-accent-caramel-15);
+  --color-accent-cyan-20: var(--color-accent-caramel-20);
+  --color-accent-cyan-25: var(--color-accent-caramel-25);
+  --color-accent-cyan-30: var(--color-accent-caramel-30);
+  --color-accent-cyan-40: var(--color-accent-caramel-40);
+  --color-accent-cyan-50: var(--color-accent-caramel-50);
+  --color-accent-cyan-60: var(--color-accent-caramel-60);
+  --color-accent-cyan-70: var(--color-accent-caramel-70);
+  --color-accent-cyan-80: var(--color-accent-caramel-80);
+
+  --color-accent-violet: var(--color-accent-wood);
+  --color-accent-violet-light: var(--color-accent-wood);
+  --color-accent-violet-10: var(--color-accent-wood-10);
+  --color-accent-violet-15: var(--color-accent-wood-15);
+  --color-accent-violet-20: var(--color-accent-wood-20);
+  --color-accent-violet-30: var(--color-accent-wood-30);
+  --color-accent-violet-40: var(--color-accent-wood-40);
+
+  --color-bg-navy-mid: var(--color-bg-cream-mid);
+  --color-bg-navy-light: var(--color-bg-cream-light);
+  --color-bg-navy-10: var(--color-bg-cream-10);
+  --color-bg-navy-15: var(--color-bg-cream-15);
+  --color-bg-navy-20: var(--color-bg-cream-20);
+  --color-bg-navy-dark-10: var(--color-bg-warm-dark-10);
+
+  --gradient-cyan-fade: var(--gradient-caramel-fade);
+  --gradient-cyan-to-violet: var(--gradient-caramel-to-wood);
+  --gradient-navy-vertical: var(--gradient-warm-vertical);
+  --gradient-cyan-solid: var(--gradient-caramel-solid);
+
+  /* ========== SECTION LIGHT THEME COLORS ========== */
+  --color-section-panel-bg: rgba(253, 243, 231, 0.86);
+  --color-section-panel-bg-strong: rgba(255, 248, 240, 0.95);
+  --color-section-panel-border: rgba(160, 82, 45, 0.2);
+  --color-section-track-bg: rgba(62, 39, 35, 0.08);
+  --color-section-muted-border: rgba(160, 82, 45, 0.08);
+  --color-section-disabled-bg: rgba(62, 39, 35, 0.04);
+  --color-section-disabled-border: rgba(62, 39, 35, 0.1);
+  --color-section-disabled-text: rgba(62, 39, 35, 0.24);
+  --color-section-warm-glow: rgba(160, 82, 45, 0.35);
+}
+
+:root:not(.dark) #about,
+:root:not(.dark) #roadmap {
+  background: var(--gradient-warm-vertical) !important;
+}
+
+:root:not(.dark) #links {
+  background: var(--color-bg-primary-alt) !important;
+}
+
+:root:not(.dark) #about .cyber-card,
+:root:not(.dark) #roadmap .cyber-card,
+:root:not(.dark) #links .cyber-card,
+:root:not(.dark) #roadmap [style*="rgba(10,22,40"],
+:root:not(.dark) #roadmap [style*="rgba(15,32,64"] {
+  background: linear-gradient(135deg, var(--color-section-panel-bg-strong), var(--color-section-panel-bg)) !important;
+  border-color: var(--color-section-panel-border) !important;
+  box-shadow: 0 8px 28px var(--color-shadow-black-8) !important;
+}
+
+:root:not(.dark) #about [style*="#00d4ff"],
+:root:not(.dark) #roadmap [style*="#00d4ff"],
+:root:not(.dark) #links [style*="#00d4ff"],
+:root:not(.dark) #about [style*="rgb(0,212,255"],
+:root:not(.dark) #roadmap [style*="rgb(0,212,255"],
+:root:not(.dark) #links [style*="rgb(0,212,255"],
+:root:not(.dark) #about [style*="rgb(0, 212, 255"],
+:root:not(.dark) #roadmap [style*="rgb(0, 212, 255"],
+:root:not(.dark) #links [style*="rgb(0, 212, 255"],
+:root:not(.dark) #about [style*="rgba(0,212,255"],
+:root:not(.dark) #roadmap [style*="rgba(0,212,255"],
+:root:not(.dark) #links [style*="rgba(0,212,255"],
+:root:not(.dark) #about [style*="rgba(0, 212, 255"],
+:root:not(.dark) #roadmap [style*="rgba(0, 212, 255"],
+:root:not(.dark) #links [style*="rgba(0, 212, 255"] {
+  color: var(--color-accent-caramel) !important;
+  border-color: var(--color-accent-caramel-30) !important;
+  stroke: var(--color-accent-caramel) !important;
+}
+
+:root:not(.dark) #about [style*="#7c3aed"],
+:root:not(.dark) #roadmap [style*="#7c3aed"],
+:root:not(.dark) #links [style*="#7c3aed"],
+:root:not(.dark) #about [style*="#a78bfa"],
+:root:not(.dark) #roadmap [style*="#a78bfa"],
+:root:not(.dark) #links [style*="#a78bfa"],
+:root:not(.dark) #about [style*="rgb(124,58,237"],
+:root:not(.dark) #roadmap [style*="rgb(124,58,237"],
+:root:not(.dark) #links [style*="rgb(124,58,237"],
+:root:not(.dark) #about [style*="rgb(124, 58, 237"],
+:root:not(.dark) #roadmap [style*="rgb(124, 58, 237"],
+:root:not(.dark) #links [style*="rgb(124, 58, 237"],
+:root:not(.dark) #about [style*="rgba(124,58,237"],
+:root:not(.dark) #roadmap [style*="rgba(124,58,237"],
+:root:not(.dark) #links [style*="rgba(124,58,237"],
+:root:not(.dark) #about [style*="rgba(124, 58, 237"],
+:root:not(.dark) #roadmap [style*="rgba(124, 58, 237"],
+:root:not(.dark) #links [style*="rgba(124, 58, 237"] {
+  color: var(--color-accent-wood) !important;
+  border-color: var(--color-accent-wood-30) !important;
+  stroke: var(--color-accent-wood) !important;
+}
+
+:root:not(.dark) #about path[stroke="#00d4ff"],
+:root:not(.dark) #roadmap path[stroke="#00d4ff"],
+:root:not(.dark) #links path[stroke="#00d4ff"] {
+  stroke: var(--color-accent-caramel) !important;
+}
+
+:root:not(.dark) #about [style*="#e2e8f0"],
+:root:not(.dark) #roadmap [style*="#e2e8f0"],
+:root:not(.dark) #links [style*="#e2e8f0"],
+:root:not(.dark) #about [style*="rgba(226,232,240"],
+:root:not(.dark) #roadmap [style*="rgba(226,232,240"],
+:root:not(.dark) #links [style*="rgba(226,232,240"] {
+  color: var(--color-text-primary) !important;
+}
+
+:root:not(.dark) #roadmap .skill-bar-fill {
+  box-shadow: 0 0 8px var(--color-section-warm-glow) !important;
+}
+
+:root:not(.dark) #roadmap [style*="rgba(255,255,255,0.06)"] {
+  background: var(--color-section-track-bg) !important;
+}
+
+:root:not(.dark) #roadmap [style*="rgba(255,255,255,0.03)"],
+:root:not(.dark) #roadmap [style*="rgba(255,255,255,0.04)"],
+:root:not(.dark) #roadmap [style*="rgba(255,255,255,0.08)"] {
+  background: var(--color-section-disabled-bg) !important;
+  border-color: var(--color-section-disabled-border) !important;
 }
  
