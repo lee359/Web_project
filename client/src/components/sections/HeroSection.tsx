@@ -5,7 +5,7 @@
    ============================================================= */
 
 import { useEffect, useState } from "react";
-import defaultProfilePicture from './default-profile-picture.webp';
+import defaultProfilePicture from './profile-images/images.jpg';
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663479025969/nNCp97MS5SZyN9jxyzYEoM/hero-bg-Y9NEXw73h4zGNcw46hPULW.webp";
 const AVATAR = defaultProfilePicture;
