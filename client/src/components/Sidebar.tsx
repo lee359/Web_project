@@ -20,18 +20,17 @@ const navItems = [
 ];
 
 function ThemeToggleButton({ onOpen }: { onOpen: () => void }) {
-  const { theme } = useTheme();
-  const isLight = theme === "light";
-  const label = isLight ? "🌙 暗色模式" : "☀️ 亮色模式";
+  const { theme, toggleTheme, switchable } = useTheme();
+  const isDark = theme === "dark";
+  const label = isDark ? "☀️ 亮色模式" : "🌙 暗色模式";
+  const handleClick = switchable && toggleTheme ? toggleTheme : onOpen;
 
   return (
     <button
-      onClick={onOpen}
-      className="flex items-center gap-1.5 text-xs transition-colors duration-200"
-      style={{ color: "rgba(226,232,240,0.5)", fontFamily: "'JetBrains Mono', monospace" }}
-      onMouseEnter={(e) => (e.currentTarget.style.color = "#00d4ff")}
-      onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(226,232,240,0.5)")}
-      title={`Switch to ${isLight ? "dark" : "light"} mode`}
+      onClick={handleClick}
+      className="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors duration-200 hover:text-primary"
+      style={{ fontFamily: "'JetBrains Mono', monospace" }}
+      title={`Switch to ${isDark ? "light" : "dark"} mode`}
       aria-label={label}
     >
       {label}
