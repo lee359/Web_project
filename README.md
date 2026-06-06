@@ -129,7 +129,7 @@ thu_web_HW/
 
 ## 6. 連結與補充
 
-- 網站連結：Vercel 部署網址請以 Vercel 專案頁面產生的 Production URL 為準。
+- 網站連結：[Vercel 部署網址請以 Vercel 專案頁面產生的 Production URL 為準。](https://web-project-seven-lyart.vercel.app/)
 - 相關文件：`doc/How to open preview.md`
 
 `package.json` 中的常用 scripts：
