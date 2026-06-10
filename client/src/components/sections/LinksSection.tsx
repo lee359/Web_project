@@ -72,7 +72,7 @@ export default function LinksSection() {
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 700,
               fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
-              color: "#e2e8f0",
+              color: "var(--color-text-primary)",
             }}
           >
             相關連結

@@ -49,10 +49,10 @@ export default function HeroSection() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: `url(${HERO_BG})`,
+          backgroundImage: `linear-gradient(var(--hero-image-tint), var(--hero-image-tint)), url(${HERO_BG})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          opacity: 0.25,
+          opacity: "var(--hero-image-opacity)",
         }}
       />
 
@@ -66,7 +66,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(135deg, var(--color-bg-navy-dark-10) 0%, rgba(5,13,26,0.7) 50%, var(--color-bg-navy-dark-10) 100%)",
+          background: "var(--hero-overlay-gradient)",
         }}
       />
 

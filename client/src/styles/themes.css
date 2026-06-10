@@ -58,6 +58,9 @@
   --gradient-navy-vertical: linear-gradient(180deg, #050d1a 0%, #060f1e 100%);
   --gradient-cyan-solid: linear-gradient(180deg, #00d4ff, rgba(0, 212, 255, 0.1));
   --gradient-sidebar: linear-gradient(180deg, #060e1e 0%, #080f1f 100%);
+  --hero-image-tint: rgba(5, 13, 26, 0.45);
+  --hero-image-opacity: 0.5;
+  --hero-overlay-gradient: linear-gradient(135deg, rgba(5, 13, 26, 0.18) 0%, rgba(5, 13, 26, 0.7) 50%, rgba(5, 13, 26, 0.18) 100%);
 
   /* ========== SECTION COLORS ========== */
   --color-section-panel-bg: rgba(15, 32, 64, 0.9);
@@ -142,6 +145,9 @@
   --gradient-warm-vertical: linear-gradient(180deg, #fff8f0 0%, #f5e6d3 100%);
   --gradient-caramel-solid: linear-gradient(180deg, #a0522d, rgba(160, 82, 45, 0.1));
   --gradient-sidebar: linear-gradient(180deg, #fff8f0 0%, #f5e6d3 100%);
+  --hero-image-tint: rgba(255, 248, 240, 0.48);
+  --hero-image-opacity: 0.42;
+  --hero-overlay-gradient: linear-gradient(135deg, rgba(255, 248, 240, 0.2) 0%, rgba(245, 230, 211, 0.58) 50%, rgba(255, 248, 240, 0.2) 100%);
  
   /* ========== DIALOG/UI COLORS ========== */
   --color-ui-dialog-bg: #3e2723;
