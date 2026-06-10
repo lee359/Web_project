@@ -6,6 +6,7 @@ __pycache__/
 # Dependencies
 **/node_modules
 .pnpm-store/
+.firebase-config/
 
 # Build outputs
 dist/
