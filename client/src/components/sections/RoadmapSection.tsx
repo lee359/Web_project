@@ -11,43 +11,43 @@ const roadmapSteps = [
     step: "Step 01",
     title: "🫡 現在",
     desc: "建立數學與程式基礎，整理學習節奏與專題方向。",
-    color: "#00d4ff",
+    color: "var(--color-accent-cyan)",
   },
   {
     step: "Step 02",
     title: "深度學習進階",
     desc: "強化 CNN、RNN、訓練策略與模型調參實作。",
-    color: "#00d4ff",
+    color: "var(--color-accent-cyan)",
   },
   {
     step: "Step 03",
     title: "Transformer & LLM",
     desc: "掌握注意力機制、Prompt 設計與檢索增強流程。",
-    color: "#7c3aed",
+    color: "var(--color-accent-violet)",
   },
   {
     step: "Step 04",
     title: "MLOps 與部署",
     desc: "建立模型部署、版本管理與監控回饋機制。",
-    color: "#7c3aed",
+    color: "var(--color-accent-violet)",
   },
   {
     step: "Step 05",
     title: "Kubernetes 入門",
     desc: "學習容器編排、服務擴展與叢集維運基礎。",
-    color: "#00d4ff",
+    color: "var(--color-accent-cyan)",
   },
   {
     step: "Step 06",
     title: "研究方向確定",
     desc: "聚焦主題、完成文獻整理並建立驗證方法。",
-    color: "#00d4ff",
+    color: "var(--color-accent-cyan)",
   },
   {
     step: "Step 07",
     title: "🎯 論文 / 求職",
     desc: "輸出成果、整理作品集與履歷，銜接下一階段。",
-    color: "#7c3aed",
+    color: "var(--color-accent-violet)",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function RoadmapSection() {
       id="roadmap"
       ref={ref as React.RefObject<HTMLElement>}
       className="w-full py-20 min-h-screen flex items-center relative"
-      style={{ background: "linear-gradient(180deg, #050d1a 0%, #060f1e 100%)" }}
+      style={{ background: "linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-primary-alt) 100%)" }}
     >
       <div className="absolute inset-0 circuit-bg" style={{ opacity: 0.25 }} />
 
@@ -91,7 +91,7 @@ export default function RoadmapSection() {
         >
           <div
             style={{
-              color: "#00d4ff",
+              color: "var(--color-accent-cyan)",
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: "0.75rem",
               letterSpacing: "0.2em",
@@ -106,7 +106,7 @@ export default function RoadmapSection() {
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 700,
               fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
-              color: "#e2e8f0",
+              color: "var(--color-text-primary)",
             }}
           >
             學習計畫
@@ -126,7 +126,7 @@ export default function RoadmapSection() {
             <h3
               className="mb-6 flex items-center gap-2"
               style={{
-                color: "#00d4ff",
+                color: "var(--color-accent-cyan)",
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontWeight: 600,
                 fontSize: "0.85rem",
@@ -153,13 +153,13 @@ export default function RoadmapSection() {
                     {goals.filter((g) => g.done).length} / {goals.length}
                   </span>
                 </div>
-                <div className="w-full h-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.06)" }}>
+                <div className="w-full h-1.5 rounded-full" style={{ background: "var(--color-section-track-bg)" }}>
                   <div
                     className="h-full rounded-full skill-bar-fill"
                     style={{
                       width: `${(goals.filter((g) => g.done).length / goals.length) * 100}%`,
                       background: "linear-gradient(90deg, var(--color-accent-cyan), var(--color-accent-violet))",
-                      boxShadow: "0 0 8px rgba(0,212,255,0.5)",
+                      boxShadow: "0 0 8px var(--color-section-warm-glow)",
                       transition: "width 1s ease",
                     }}
                   />
@@ -172,30 +172,30 @@ export default function RoadmapSection() {
                     key={i}
                     className="flex items-start gap-3 py-2"
                     style={{
-                      borderBottom: i < goals.length - 1 ? "1px solid rgba(0,212,255,0.06)" : "none",
+                      borderBottom: i < goals.length - 1 ? "1px solid var(--color-accent-cyan-6)" : "none",
                     }}
                   >
                     <div
                       className="flex-shrink-0 w-5 h-5 rounded flex items-center justify-center mt-0.5"
                       style={{
-                        background: goal.done ? "rgba(0,212,255,0.15)" : "rgba(255,255,255,0.04)",
-                        border: `1px solid ${goal.done ? "rgba(0,212,255,0.5)" : "rgba(255,255,255,0.1)"}`,
+                        background: goal.done ? "var(--color-accent-cyan-15)" : "var(--color-section-disabled-bg)",
+                        border: `1px solid ${goal.done ? "var(--color-accent-cyan-50)" : "var(--color-section-disabled-border)"}`,
                       }}
                     >
                       {goal.done && (
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                          <path d="M2 5l2.5 2.5L8 3" stroke="#00d4ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M2 5l2.5 2.5L8 3" stroke="var(--color-accent-cyan)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       )}
                     </div>
                     <span
                       style={{
-                        color: goal.done ? "rgba(226,232,240,0.5)" : "rgba(226,232,240,0.8)",
+                        color: goal.done ? "var(--color-text-secondary-50)" : "var(--color-text-secondary-80)",
                         fontFamily: "'DM Sans', sans-serif",
                         fontSize: "0.85rem",
                         lineHeight: 1.5,
                         textDecoration: goal.done ? "line-through" : "none",
-                        textDecorationColor: "rgba(226,232,240,0.3)",
+                        textDecorationColor: "var(--color-text-secondary-30)",
                       }}
                     >
                       {goal.text}
@@ -217,7 +217,7 @@ export default function RoadmapSection() {
             <h3
               className="mb-6 flex items-center gap-2"
               style={{
-                color: "#00d4ff",
+                color: "var(--color-accent-cyan)",
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontWeight: 600,
                 fontSize: "0.85rem",
@@ -240,7 +240,7 @@ export default function RoadmapSection() {
                       ? current.color
                       : i < activeStep
                         ? `${current.color}40`
-                        : "rgba(255,255,255,0.08)",
+                        : "var(--color-section-track-bg)",
                     boxShadow: i === activeStep ? `0 0 6px ${current.color}` : "none",
                   }}
                 />
@@ -251,7 +251,7 @@ export default function RoadmapSection() {
             <div
               className="relative rounded overflow-hidden"
               style={{
-                background: "linear-gradient(135deg, rgba(10,22,40,0.95), rgba(15,32,64,0.9))",
+                background: "linear-gradient(135deg, var(--color-section-panel-bg-strong), var(--color-section-panel-bg))",
                 border: `1px solid ${current.color}40`,
                 boxShadow: `0 0 30px ${current.color}15`,
                 clipPath: "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))",
@@ -306,7 +306,7 @@ export default function RoadmapSection() {
                 <h4
                   className="mb-4"
                   style={{
-                    color: "#e2e8f0",
+                    color: "var(--color-text-primary)",
                     fontFamily: "'Space Grotesk', sans-serif",
                     fontWeight: 700,
                     fontSize: "1.4rem",
@@ -316,7 +316,7 @@ export default function RoadmapSection() {
                 </h4>
                 <p
                   style={{
-                    color: "rgba(226,232,240,0.65)",
+                    color: "var(--color-text-secondary-65)",
                     fontFamily: "'DM Sans', sans-serif",
                     fontSize: "0.9rem",
                     lineHeight: 1.7,
@@ -340,7 +340,7 @@ export default function RoadmapSection() {
             <div
               className="mt-4 text-center"
               style={{
-                color: "rgba(226,232,240,0.3)",
+                color: "var(--color-text-secondary-30)",
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: "0.65rem",
                 letterSpacing: "0.1em",
@@ -356,9 +356,9 @@ export default function RoadmapSection() {
                 disabled={activeStep === 0}
                 className="px-4 py-2 rounded transition-all duration-200 flex items-center gap-2"
                 style={{
-                  background: activeStep === 0 ? "rgba(255,255,255,0.03)" : "rgba(0,212,255,0.08)",
-                  border: `1px solid ${activeStep === 0 ? "rgba(255,255,255,0.08)" : "rgba(0,212,255,0.3)"}`,
-                  color: activeStep === 0 ? "rgba(226,232,240,0.2)" : "#00d4ff",
+                  background: activeStep === 0 ? "var(--color-section-disabled-bg)" : "var(--color-accent-cyan-8)",
+                  border: `1px solid ${activeStep === 0 ? "var(--color-section-disabled-border)" : "var(--color-accent-cyan-30)"}`,
+                  color: activeStep === 0 ? "var(--color-section-disabled-text)" : "var(--color-accent-cyan)",
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: "0.75rem",
                 }}
@@ -367,7 +367,7 @@ export default function RoadmapSection() {
               </button>
               <span
                 style={{
-                  color: "rgba(226,232,240,0.4)",
+                  color: "var(--color-text-secondary-40)",
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: "0.75rem",
                   display: "flex",
@@ -381,9 +381,9 @@ export default function RoadmapSection() {
                 disabled={activeStep === roadmapSteps.length - 1}
                 className="px-4 py-2 rounded transition-all duration-200 flex items-center gap-2"
                 style={{
-                  background: activeStep === roadmapSteps.length - 1 ? "rgba(255,255,255,0.03)" : "rgba(0,212,255,0.08)",
-                  border: `1px solid ${activeStep === roadmapSteps.length - 1 ? "rgba(255,255,255,0.08)" : "rgba(0,212,255,0.3)"}`,
-                  color: activeStep === roadmapSteps.length - 1 ? "rgba(226,232,240,0.2)" : "#00d4ff",
+                  background: activeStep === roadmapSteps.length - 1 ? "var(--color-section-disabled-bg)" : "var(--color-accent-cyan-8)",
+                  border: `1px solid ${activeStep === roadmapSteps.length - 1 ? "var(--color-section-disabled-border)" : "var(--color-accent-cyan-30)"}`,
+                  color: activeStep === roadmapSteps.length - 1 ? "var(--color-section-disabled-text)" : "var(--color-accent-cyan)",
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: "0.75rem",
                 }}

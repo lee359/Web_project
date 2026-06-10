@@ -15,7 +15,7 @@ const educations = [
       "副修：前端網頁設計",
     ],
     type: "大學",
-    color: "#00d4ff",
+    color: "var(--color-accent-cyan)",
   },
   {
     school: "XX高中 二類（數理）組",
@@ -57,7 +57,7 @@ export default function EducationSection() {
         >
           <div
             style={{
-              color: "#00d4ff",
+              color: "var(--color-accent-cyan)",
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: "0.75rem",
               letterSpacing: "0.2em",
@@ -72,7 +72,7 @@ export default function EducationSection() {
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 700,
               fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
-              color: "#e2e8f0",
+              color: "var(--color-text-primary)",
             }}
           >
             學術背景
@@ -93,7 +93,7 @@ export default function EducationSection() {
             <h3
               className="mb-6 flex items-center gap-2"
               style={{
-                color: "#00d4ff",
+                color: "var(--color-accent-cyan)",
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontWeight: 600,
                 fontSize: "0.85rem",
@@ -209,7 +209,7 @@ export default function EducationSection() {
             <h3
               className="mb-6 flex items-center gap-2"
               style={{
-                color: "#00d4ff",
+                color: "var(--color-accent-cyan)",
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontWeight: 600,
                 fontSize: "0.85rem",

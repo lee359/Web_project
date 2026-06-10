@@ -49,6 +49,7 @@
 
   /* ========== SHADOW & OVERLAY COLORS ========== */
   --color-shadow-black-8: rgba(0, 0, 0, 0.08);
+  --color-sidebar-shadow: rgba(0, 0, 0, 0.5);
 
   /* ========== GRADIENT COLORS ========== */
   --gradient-cyan-fade: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(0, 212, 255, 0.05));
@@ -56,6 +57,21 @@
   --gradient-multi-fade: linear-gradient(90deg, rgba(0, 212, 255, 0.15), rgba(124, 58, 237, 0.1), rgba(0, 212, 255, 0.08));
   --gradient-navy-vertical: linear-gradient(180deg, #050d1a 0%, #060f1e 100%);
   --gradient-cyan-solid: linear-gradient(180deg, #00d4ff, rgba(0, 212, 255, 0.1));
+  --gradient-sidebar: linear-gradient(180deg, #060e1e 0%, #080f1f 100%);
+  --hero-image-tint: rgba(5, 13, 26, 0.45);
+  --hero-image-opacity: 0.5;
+  --hero-overlay-gradient: linear-gradient(135deg, rgba(5, 13, 26, 0.18) 0%, rgba(5, 13, 26, 0.7) 50%, rgba(5, 13, 26, 0.18) 100%);
+
+  /* ========== SECTION COLORS ========== */
+  --color-section-panel-bg: rgba(15, 32, 64, 0.9);
+  --color-section-panel-bg-strong: rgba(10, 22, 40, 0.95);
+  --color-section-panel-border: rgba(0, 212, 255, 0.2);
+  --color-section-track-bg: rgba(255, 255, 255, 0.06);
+  --color-section-disabled-bg: rgba(255, 255, 255, 0.04);
+  --color-section-disabled-border: rgba(255, 255, 255, 0.1);
+  --color-section-disabled-text: rgba(226, 232, 240, 0.2);
+  --color-section-warm-glow: rgba(0, 212, 255, 0.5);
+  --color-card-hover-shadow: rgba(0, 0, 0, 0.4);
 
   /* ========== DIALOG/UI COLORS (Manus-specific) ========== */
   --color-ui-dialog-bg: #f8f8f7;
@@ -120,6 +136,7 @@
  
   /* ========== SHADOW & OVERLAY COLORS ========== */
   --color-shadow-black-8: rgba(62, 39, 35, 0.08);
+  --color-sidebar-shadow: rgba(62, 39, 35, 0.16);
  
   /* ========== GRADIENT COLORS ========== */
   --gradient-caramel-fade: linear-gradient(135deg, rgba(160, 82, 45, 0.15), rgba(160, 82, 45, 0.05));
@@ -127,6 +144,10 @@
   --gradient-multi-fade: linear-gradient(90deg, rgba(160, 82, 45, 0.15), rgba(212, 175, 55, 0.1), rgba(168, 197, 160, 0.08));
   --gradient-warm-vertical: linear-gradient(180deg, #fff8f0 0%, #f5e6d3 100%);
   --gradient-caramel-solid: linear-gradient(180deg, #a0522d, rgba(160, 82, 45, 0.1));
+  --gradient-sidebar: linear-gradient(180deg, #fff8f0 0%, #f5e6d3 100%);
+  --hero-image-tint: rgba(255, 248, 240, 0.48);
+  --hero-image-opacity: 0.42;
+  --hero-overlay-gradient: linear-gradient(135deg, rgba(255, 248, 240, 0.2) 0%, rgba(245, 230, 211, 0.58) 50%, rgba(255, 248, 240, 0.2) 100%);
  
   /* ========== DIALOG/UI COLORS ========== */
   --color-ui-dialog-bg: #3e2723;
@@ -185,6 +206,7 @@
   --color-section-disabled-border: rgba(62, 39, 35, 0.1);
   --color-section-disabled-text: rgba(62, 39, 35, 0.24);
   --color-section-warm-glow: rgba(160, 82, 45, 0.35);
+  --color-card-hover-shadow: rgba(62, 39, 35, 0.16);
 }
 
 :root:not(.dark) #about,
