@@ -5,6 +5,7 @@ const VISIT_TRACKED_KEY = "siteVisitTracked";
 
 export async function recordSiteVisit() {
   if (typeof window === "undefined") return;
+  if (!db) return;
 
   if (sessionStorage.getItem(VISIT_TRACKED_KEY) === "true") {
     return;

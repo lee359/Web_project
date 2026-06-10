@@ -19,6 +19,8 @@ export default function AdminDashboard() {
   });
 
   useEffect(() => {
+    if (!db) return;
+
     return onSnapshot(doc(db, "siteStats", "summary"), (snapshot) => {
       if (!snapshot.exists()) {
         setStats({ totalViews: 0, homeViews: 0 });

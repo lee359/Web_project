@@ -1,6 +1,10 @@
-import { initializeApp } from "firebase/app";
-import { connectAuthEmulator, getAuth } from "firebase/auth";
-import { connectFirestoreEmulator, getFirestore } from "firebase/firestore";
+import { initializeApp, type FirebaseApp } from "firebase/app";
+import { connectAuthEmulator, getAuth, type Auth } from "firebase/auth";
+import {
+  connectFirestoreEmulator,
+  getFirestore,
+  type Firestore,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -12,10 +16,21 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
-const app = initializeApp(firebaseConfig);
+export const missingFirebaseEnv = [
+  ["VITE_FIREBASE_API_KEY", firebaseConfig.apiKey],
+  ["VITE_FIREBASE_AUTH_DOMAIN", firebaseConfig.authDomain],
+  ["VITE_FIREBASE_PROJECT_ID", firebaseConfig.projectId],
+  ["VITE_FIREBASE_APP_ID", firebaseConfig.appId],
+].flatMap(([key, value]) => (value ? [] : [key]));
 
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+export const isFirebaseConfigured = missingFirebaseEnv.length === 0;
+
+export const app: FirebaseApp | null = isFirebaseConfigured
+  ? initializeApp(firebaseConfig)
+  : null;
+
+export const auth: Auth | null = app ? getAuth(app) : null;
+export const db: Firestore | null = app ? getFirestore(app) : null;
 
 const shouldUseEmulator =
   import.meta.env.DEV && import.meta.env.VITE_USE_FIREBASE_EMULATOR === "true";
@@ -27,6 +42,8 @@ declare global {
 }
 
 if (
+  auth &&
+  db &&
   shouldUseEmulator &&
   typeof window !== "undefined" &&
   !window.__FIREBASE_EMULATORS_CONNECTED__

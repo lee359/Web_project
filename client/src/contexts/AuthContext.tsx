@@ -13,7 +13,7 @@ import {
   type User,
 } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-import { auth, db } from "@/lib/firebase";
+import { auth, db, missingFirebaseEnv } from "@/lib/firebase";
 
 type AuthContextValue = {
   user: User | null;
@@ -31,7 +31,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    return onAuthStateChanged(auth, async (currentUser) => {
+    if (!auth || !db) {
+      console.warn("Firebase is not configured.", missingFirebaseEnv);
+      setIsLoading(false);
+      return;
+    }
+
+    const activeAuth = auth;
+    const activeDb = db;
+
+    return onAuthStateChanged(activeAuth, async (currentUser) => {
       setUser(currentUser);
       setIsAdmin(false);
 
@@ -41,7 +50,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
 
       try {
-        const adminDoc = await getDoc(doc(db, "admins", currentUser.uid));
+        const adminDoc = await getDoc(doc(activeDb, "admins", currentUser.uid));
         setIsAdmin(adminDoc.exists());
       } finally {
         setIsLoading(false);
@@ -55,9 +64,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       isAdmin,
       isLoading,
       login: async (email, password) => {
+        if (!auth) {
+          throw new Error(
+            `Firebase is not configured. Missing: ${missingFirebaseEnv.join(", ")}`
+          );
+        }
+
         await signInWithEmailAndPassword(auth, email, password);
       },
       logout: async () => {
+        if (!auth) return;
+
         await signOut(auth);
       },
     }),
