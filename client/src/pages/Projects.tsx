@@ -1,5 +1,5 @@
 import Footer from "@/components/Footer";
-import ProjectsSection from "@/components/sections/ProjectsSection";
+import ProjectsSection from "@/components/sections/ProjectsSection-1";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 

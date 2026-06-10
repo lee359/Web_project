@@ -61,6 +61,8 @@
   --hero-image-tint: rgba(5, 13, 26, 0.45);
   --hero-image-opacity: 0.5;
   --hero-overlay-gradient: linear-gradient(135deg, rgba(5, 13, 26, 0.18) 0%, rgba(5, 13, 26, 0.7) 50%, rgba(5, 13, 26, 0.18) 100%);
+  --project-image-filter: brightness(0.72) saturate(1.25);
+  --project-image-overlay: linear-gradient(180deg, rgba(5, 13, 26, 0.16) 0%, rgba(5, 13, 26, 0.08) 42%, var(--color-bg-primary) 100%), linear-gradient(rgba(5, 13, 26, 0.18), rgba(5, 13, 26, 0.18));
 
   /* ========== SECTION COLORS ========== */
   --color-section-panel-bg: rgba(15, 32, 64, 0.9);
@@ -83,6 +85,7 @@
   --color-terminal-red: #ff5f57;
   --color-terminal-yellow: #febc2e;
   --color-terminal-green: #28c840;
+  --color-code-punctuation: rgba(0, 212, 255, 0.65);
 }
 
 /* Light Theme (Cafe) */
@@ -148,6 +151,8 @@
   --hero-image-tint: rgba(255, 248, 240, 0.48);
   --hero-image-opacity: 0.42;
   --hero-overlay-gradient: linear-gradient(135deg, rgba(255, 248, 240, 0.2) 0%, rgba(245, 230, 211, 0.58) 50%, rgba(255, 248, 240, 0.2) 100%);
+  --project-image-filter: brightness(1.02) saturate(0.88) sepia(0.12);
+  --project-image-overlay: linear-gradient(180deg, rgba(255, 248, 240, 0.08) 0%, rgba(245, 230, 211, 0.12) 42%, var(--color-bg-primary) 100%), linear-gradient(rgba(200, 149, 108, 0.12), rgba(200, 149, 108, 0.12));
  
   /* ========== DIALOG/UI COLORS ========== */
   --color-ui-dialog-bg: #3e2723;
@@ -159,6 +164,7 @@
   --color-terminal-red: #c0392b;
   --color-terminal-yellow: #d4af37;
   --color-terminal-green: #a8c5a0;
+  --color-code-punctuation: rgba(160, 82, 45, 0.65);
 
   /* ========== CYBER TOKEN ALIASES FOR LIGHT THEME ========== */
   --color-accent-cyan: var(--color-accent-caramel);

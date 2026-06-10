@@ -128,7 +128,7 @@ export default function ProjectsSection() {
               <h3
                 className="mb-3"
                 style={{
-                  color: "#e2e8f0",
+                  color: "var(--color-text-primary)",
                   fontFamily: "'Space Grotesk', sans-serif",
                   fontWeight: 700,
                   fontSize: "clamp(1rem, 2vw, 1.25rem)",
@@ -208,28 +208,28 @@ export default function ProjectsSection() {
                   }}
                 >
                   <code>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>{"{"}</span>{"\n"}
+                    <span style={{ color: "rgba(0,212,255,0.15)" }}>{"{"}</span>{"\n"}
                     {"  "}<span style={{ color: "#a78bfa" }}>"mcpServers"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>: {"{"}</span>{"\n"}
+                    <span style={{ color: "rgba(0,212,255,0.15)" }}>: {"{"}</span>{"\n"}
                     {"    "}<span style={{ color: "#a78bfa" }}>"YOLOv8 Detection Server"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>: {"{"}</span>{"\n"}
+                    <span style={{ color: "rgba(0,212,255,0.15)" }}>: {"{"}</span>{"\n"}
                     {"      "}<span style={{ color: "#a78bfa" }}>"command"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>: </span>
+                    <span style={{ color: "rgba(0,212,255,0.15)" }}>: </span>
                     <span style={{ color: "#00d4ff" }}>"...\venv\Scripts\python.exe"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>,</span>{"\n"}
+                    <span style={{ color: "rgba(0,212,255,0.15)" }}>,</span>{"\n"}
                     {"      "}<span style={{ color: "#a78bfa" }}>"args"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>: [</span>
+                    <span style={{ color: "rgba(0,212,255,0.15)" }}>: [</span>
                     <span style={{ color: "#00d4ff" }}>"...\mcpserver.py"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>],</span>{"\n"}
+                    <span style={{ color: "rgba(0,212,255,0.15)" }}>],</span>{"\n"}
                     {"      "}<span style={{ color: "#a78bfa" }}>"env"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>: {"{"}</span>{"\n"}
+                    <span style={{ color: "rgba(0,212,255,0.15)" }}>: {"{"}</span>{"\n"}
                     {"        "}<span style={{ color: "#a78bfa" }}>"PYTHONPATH"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>: </span>
+                    <span style={{ color: "rgba(0,212,255,0.15)" }}>: </span>
                     <span style={{ color: "#00d4ff" }}>"...\MCPproject-YOLOv8"</span>{"\n"}
-                    {"      "}<span style={{ color: "rgba(226,232,240,0.4)" }}>{"}"}</span>{"\n"}
-                    {"    "}<span style={{ color: "rgba(226,232,240,0.4)" }}>{"}"}</span>{"\n"}
-                    {"  "}<span style={{ color: "rgba(226,232,240,0.4)" }}>{"}"}</span>{"\n"}
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>{"}"}</span>
+                    {"      "}<span style={{ color: "rgba(0,212,255,0.15)" }}>{"}"}</span>{"\n"}
+                    {"    "}<span style={{ color: "rgba(0,212,255,0.15)" }}>{"}"}</span>{"\n"}
+                    {"  "}<span style={{ color: "rgba(0,212,255,0.15)" }}>{"}"}</span>{"\n"}
+                    <span style={{ color: "rgba(0,212,255,0.15)" }}>{"}"}</span>
                   </code>
                 </pre>
               </div>

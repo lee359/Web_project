@@ -106,7 +106,7 @@ export default function ProjectsPage() {
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 700,
               fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
-              color: "#e2e8f0",
+              color: "var(--color-text-primary)",
             }}
           >
             專案作品
@@ -136,12 +136,12 @@ export default function ProjectsPage() {
                 src={PROJECT_BANNER}
                 alt="YOLOv8 MCP 即時影像辨識系統"
                 className="w-full h-full object-cover"
-                style={{ filter: "brightness(0.7) saturate(1.3)" }}
+                style={{ filter: "var(--project-image-filter)" }}
               />
               <div
                 className="absolute inset-0"
                 style={{
-                  background: "linear-gradient(180deg, transparent 40%, var(--color-bg-primary) 100%)",
+                  background: "var(--project-image-overlay)",
                 }}
               />
               {/* Project number badge */}
@@ -165,7 +165,7 @@ export default function ProjectsPage() {
               <h3
                 className="mb-3"
                 style={{
-                  color: "#e2e8f0",
+                  color: "var(--color-text-primary)",
                   fontFamily: "'Space Grotesk', sans-serif",
                   fontWeight: 700,
                   fontSize: "clamp(1rem, 2vw, 1.25rem)",
@@ -248,28 +248,28 @@ export default function ProjectsPage() {
                   }}
                 >
                   <code>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>{"{"}</span>{"\n"}
+                    <span style={{ color: "var(--color-code-punctuation)" }}>{"{"}</span>{"\n"}
                     {"  "}<span style={{ color: "#a78bfa" }}>"mcpServers"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>: {"{"}</span>{"\n"}
+                    <span style={{ color: "var(--color-code-punctuation)" }}>: {"{"}</span>{"\n"}
                     {"    "}<span style={{ color: "#a78bfa" }}>"YOLOv8 Detection Server"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>: {"{"}</span>{"\n"}
+                    <span style={{ color: "var(--color-code-punctuation)" }}>: {"{"}</span>{"\n"}
                     {"      "}<span style={{ color: "#a78bfa" }}>"command"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>: </span>
+                    <span style={{ color: "var(--color-code-punctuation)" }}>: </span>
                     <span style={{ color: "#00d4ff" }}>"...\venv\Scripts\python.exe"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>,</span>{"\n"}
+                    <span style={{ color: "var(--color-code-punctuation)" }}>,</span>{"\n"}
                     {"      "}<span style={{ color: "#a78bfa" }}>"args"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>: [</span>
+                    <span style={{ color: "var(--color-code-punctuation)" }}>: [</span>
                     <span style={{ color: "#00d4ff" }}>"...\mcpserver.py"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>],</span>{"\n"}
+                    <span style={{ color: "var(--color-code-punctuation)" }}>],</span>{"\n"}
                     {"      "}<span style={{ color: "#a78bfa" }}>"env"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>: {"{"}</span>{"\n"}
+                    <span style={{ color: "var(--color-code-punctuation)" }}>: {"{"}</span>{"\n"}
                     {"        "}<span style={{ color: "#a78bfa" }}>"PYTHONPATH"</span>
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>: </span>
+                    <span style={{ color: "var(--color-code-punctuation)" }}>: </span>
                     <span style={{ color: "#00d4ff" }}>"...\MCPproject-YOLOv8"</span>{"\n"}
-                    {"      "}<span style={{ color: "rgba(226,232,240,0.4)" }}>{"}"}</span>{"\n"}
-                    {"    "}<span style={{ color: "rgba(226,232,240,0.4)" }}>{"}"}</span>{"\n"}
-                    {"  "}<span style={{ color: "rgba(226,232,240,0.4)" }}>{"}"}</span>{"\n"}
-                    <span style={{ color: "rgba(226,232,240,0.4)" }}>{"}"}</span>
+                    {"      "}<span style={{ color: "var(--color-code-punctuation)" }}>{"}"}</span>{"\n"}
+                    {"    "}<span style={{ color: "var(--color-code-punctuation)" }}>{"}"}</span>{"\n"}
+                    {"  "}<span style={{ color: "var(--color-code-punctuation)" }}>{"}"}</span>{"\n"}
+                    <span style={{ color: "var(--color-code-punctuation)" }}>{"}"}</span>
                   </code>
                 </pre>
               </div>
