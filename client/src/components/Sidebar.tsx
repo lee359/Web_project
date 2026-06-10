@@ -4,6 +4,7 @@
    ============================================================= */
 
 import { useEffect, useState } from "react";
+import { Link } from "wouter";
 
 import { useIsMobile } from "@/hooks/useMobile";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -67,6 +68,14 @@ export default function Sidebar() {
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
+    setIsOpen(false);
+  };
+
+  const rememberAdminReturn = () => {
+    sessionStorage.setItem(
+      "adminLoginReturnTo",
+      `${window.location.pathname}${window.location.search}${window.location.hash}`
+    );
     setIsOpen(false);
   };
 
@@ -196,6 +205,29 @@ export default function Sidebar() {
 
         {/* Footer links */}
         <div className="p-4" style={{ borderTop: "1px solid rgba(0,212,255,0.1)" }}>
+          <Link href="/admin/login">
+            <a
+              className="mb-4 flex w-full items-center justify-center gap-2 rounded px-3 py-2 text-xs transition-all duration-200"
+              style={{
+                background: "var(--color-accent-violet-10)",
+                border: "1px solid var(--color-accent-violet-30)",
+                color: "var(--color-accent-violet-light)",
+                fontFamily: "'JetBrains Mono', monospace",
+                textDecoration: "none",
+              }}
+              onClick={rememberAdminReturn}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "var(--color-accent-violet-20)";
+                e.currentTarget.style.borderColor = "var(--color-accent-violet-50)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "var(--color-accent-violet-10)";
+                e.currentTarget.style.borderColor = "var(--color-accent-violet-30)";
+              }}
+            >
+              Admin
+            </a>
+          </Link>
           <div className="flex gap-3 justify-center">
             <a
               href="https://github.com/lee359"

@@ -5,6 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --host localhost",
+    "dev:emulator": "vite --host localhost --mode emulator",
+    "emulators": "set \"XDG_CONFIG_HOME=.firebase-config\" && firebase emulators:start --project demo-profile --only auth,firestore",
     "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "vite preview --host localhost",
@@ -80,6 +82,7 @@
     "autoprefixer": "^10.4.20",
     "baseline-browser-mapping": "^2.10.12",
     "esbuild": "^0.25.0",
+    "firebase-tools": "^15.19.1",
     "pnpm": "^10.15.1",
     "postcss": "^8.4.47",
     "prettier": "^3.6.2",
