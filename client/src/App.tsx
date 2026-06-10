@@ -10,7 +10,6 @@ import Home from "./pages/Home";
 import ProjectsPage from "./pages/ProjectsPage";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminLogin from "./pages/admin/AdminLogin";
-import AdminProjects from "./pages/admin/AdminProjects";
 
 function Router() {
   return (
@@ -24,11 +23,6 @@ function Router() {
       <Route path={"/admin"}>
         <RequireAdmin>
           <AdminDashboard />
-        </RequireAdmin>
-      </Route>
-      <Route path={"/admin/projects"}>
-        <RequireAdmin>
-          <AdminProjects />
         </RequireAdmin>
       </Route>
       <Route path={"/404"} component={NotFound} />

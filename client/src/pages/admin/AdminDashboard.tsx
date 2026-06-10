@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Eye, FolderKanban, LogOut } from "lucide-react";
-import { Link } from "wouter";
+import { Eye, LogOut } from "lucide-react";
 import { doc, onSnapshot, type Timestamp } from "firebase/firestore";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
@@ -50,18 +49,6 @@ export default function AdminDashboard() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          <Link href="/admin/projects">
-            <a className="block rounded-md border border-border bg-card p-5 transition hover:border-primary/60">
-              <div className="mb-4 flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary">
-                <FolderKanban className="size-5" />
-              </div>
-              <h2 className="text-lg font-semibold">Projects</h2>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Create, update, and remove project records in Firestore.
-              </p>
-            </a>
-          </Link>
-
           <div className="rounded-md border border-border bg-card p-5">
             <div className="mb-4 flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary">
               <Eye className="size-5" />
