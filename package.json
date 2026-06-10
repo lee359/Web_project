@@ -1,5 +1,5 @@
 {
-  "name": "thu_web_HW",
+  "name": "thu_web_hw",
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
@@ -45,6 +45,7 @@
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
     "express": "^4.21.2",
+    "firebase": "^12.14.0",
     "framer-motion": "^12.23.22",
     "helmet": "^8.1.0",
     "input-otp": "^1.4.2",
@@ -98,5 +99,20 @@
     "overrides": {
       "tailwindcss>nanoid": "3.3.7"
     }
-  }
+  },
+  "description": "<!-- Badges: environment and tooling -->\r ![Node.js](https://img.shields.io/badge/Node.js-16%2B-brightgreen?logo=node&logoColor=white)\r ![pnpm](https://img.shields.io/badge/pnpm-%E2%89%A5%2010-blue?logo=pnpm&logoColor=white)\r ![TypeScript](https://img.shields.io/badge/TypeScript-5.6.3-blue?logo=typescript&logoColor=white)\r ![Vite](https://img.shields.io/badge/Vite-7.1.7-646CFF?logo=vite&logoColor=white)\r ![React](https://img.shields.io/badge/React-19.2.1-61DAFB?logo=react&logoColor=white)\r ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.0-06B6D4?logo=tailwindcss&logoColor=white)",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lee359/Web_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/lee359/Web_project/issues"
+  },
+  "homepage": "https://github.com/lee359/Web_project#readme"
 }
