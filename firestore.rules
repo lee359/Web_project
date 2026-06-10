@@ -16,5 +16,27 @@ service cloud.firestore {
       allow read: if request.auth != null && request.auth.uid == uid;
       allow write: if false;
     }
+
+    match /siteStats/{statId} {
+      allow read: if isAdmin();
+      allow create: if statId == "summary"
+        && request.resource.data.keys().hasOnly([
+          "totalViews",
+          "homeViews",
+          "updatedAt"
+        ])
+        && request.resource.data.totalViews == 1
+        && request.resource.data.homeViews == 1
+        && request.resource.data.updatedAt == request.time;
+      allow update: if statId == "summary"
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          "totalViews",
+          "homeViews",
+          "updatedAt"
+        ])
+        && request.resource.data.totalViews == resource.data.totalViews + 1
+        && request.resource.data.homeViews == resource.data.homeViews + 1
+        && request.resource.data.updatedAt == request.time;
+    }
   }
 }

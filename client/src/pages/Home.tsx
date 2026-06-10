@@ -14,9 +14,12 @@ import EducationSection from "@/components/sections/EducationSection";
 import ProjectslineSection from "@/components/sections/ProjectslineSection";
 import RoadmapSection from "@/components/sections/RoadmapSection";
 import LinksSection from "@/components/sections/LinksSection";
+import { recordSiteVisit } from "@/lib/siteStats";
 
 export default function Home() {
   useEffect(() => {
+    recordSiteVisit();
+
     if (window.location.hash === "#projects") {
       const target = document.getElementById("projects");
       if (target) {
