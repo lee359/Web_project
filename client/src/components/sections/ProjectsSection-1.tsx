@@ -54,7 +54,7 @@ export default function ProjectsSection() {
         >
           <div
             style={{
-              color: "#00d4ff",
+              color: "var(--color-accent-cyan)",
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: "0.75rem",
               letterSpacing: "0.2em",

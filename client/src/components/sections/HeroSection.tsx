@@ -132,7 +132,7 @@ export default function HeroSection() {
                   marginTop: "0.25rem",
                 }}
               >
-                Li Dong-En
+                LI,DONG-EN
               </span>
             </h1>
 

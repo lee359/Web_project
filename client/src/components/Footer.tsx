@@ -20,7 +20,7 @@ export default function Footer() {
             fontSize: "0.7rem",
           }}
         >
-          © 2026 李O恩 · Built with React + TailwindCSS
+          © 2026 李東恩 · Built with React + TailwindCSS
         </div>
         <div
           style={{

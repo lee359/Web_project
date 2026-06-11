@@ -49,24 +49,24 @@ export default function ProjectsPage() {
           <a
             className="flex items-center gap-2 px-4 py-2 rounded transition-all duration-300"
             style={{
-              background: "var(--color-accent-cyan-10)",
-              border: "1px solid var(--color-accent-cyan-30)",
-              color: "var(--color-accent-cyan)",
+              background: "var(--project-back-bg)",
+              border: "1px solid var(--project-back-border)",
+              color: "var(--color-text-primary)",
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: "0.8rem",
               textDecoration: "none",
-              boxShadow: "0 6px 18px rgba(0, 212, 255, 0.08)",
+              boxShadow: "var(--project-back-shadow)",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = "linear-gradient(135deg, rgba(0, 212, 255, 0.22) 0%, rgba(0, 212, 255, 0.10) 100%)";
-              e.currentTarget.style.borderColor = "rgba(0, 212, 255, 0.55)";
-              e.currentTarget.style.boxShadow = "0 0 0 1px rgba(0, 212, 255, 0.25), 0 10px 24px rgba(0, 212, 255, 0.18)";
-              e.currentTarget.style.textShadow = "0 0 10px rgba(0, 212, 255, 0.45)";
+              e.currentTarget.style.background = "var(--project-back-hover-bg)";
+              e.currentTarget.style.borderColor = "var(--project-back-hover-border)";
+              e.currentTarget.style.boxShadow = "var(--project-back-hover-shadow)";
+              e.currentTarget.style.textShadow = "var(--project-back-hover-text-shadow)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = "var(--color-accent-cyan-10)";
-              e.currentTarget.style.borderColor = "var(--color-accent-cyan-30)";
-              e.currentTarget.style.boxShadow = "0 6px 18px rgba(0, 212, 255, 0.08)";
+              e.currentTarget.style.background = "var(--project-back-bg)";
+              e.currentTarget.style.borderColor = "var(--project-back-border)";
+              e.currentTarget.style.boxShadow = "var(--project-back-shadow)";
               e.currentTarget.style.textShadow = "none";
             }}
           >
@@ -91,14 +91,14 @@ export default function ProjectsPage() {
         >
           <div
             style={{
-              color: "#00d4ff",
+              color: "var(--color-accent-cyan)",
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: "0.75rem",
               letterSpacing: "0.2em",
               marginBottom: "0.5rem",
             }}
           >
-            04 / PROJECTS
+            PROJECTS
           </div>
           <h2
             className="section-title"
@@ -111,7 +111,7 @@ export default function ProjectsPage() {
           >
             專案作品
           </h2>
-          <div className="mt-3 h-px w-24" style={{ background: "linear-gradient(90deg, #00d4ff, transparent)" }} />
+          <div className="mt-3 h-px w-24" style={{ background: "linear-gradient(90deg, var(--color-text-primary), transparent)" }} />
         </div>
 
         {/* Project card */}

@@ -41,7 +41,7 @@ export default function ProjectslineSection() {
         >
           <div
             style={{
-              color: "#00d4ff",
+              color: "var(--color-text-primary)",
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: "0.75rem",
               letterSpacing: "0.2em",

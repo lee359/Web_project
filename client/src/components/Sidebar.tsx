@@ -155,7 +155,7 @@ export default function Sidebar() {
             </div>
             <div>
               <div style={{ color: "var(--color-text-primary)", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "0.9rem" }}>
-                李O恩
+                李東恩
               </div>
               <div style={{ color: "var(--color-accent-cyan)", fontSize: "0.65rem", fontFamily: "'JetBrains Mono', monospace", opacity: 0.8 }}>
                 EE @ CYCU

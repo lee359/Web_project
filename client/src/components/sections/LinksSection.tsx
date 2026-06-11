@@ -114,7 +114,7 @@ export default function LinksSection() {
               <div>
                 <div
                   style={{
-                    color: "#e2e8f0",
+                    color: "var(--color-text-primary)",
                     fontFamily: "'Space Grotesk', sans-serif",
                     fontWeight: 600,
                     fontSize: "0.95rem",
