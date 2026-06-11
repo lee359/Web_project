@@ -99,7 +99,7 @@ export default function HeroSection() {
               />
               <span
                 style={{
-                  color: "#00d4ff",
+                  color: "var(--color-text-primary)",
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: "0.75rem",
                   letterSpacing: "0.1em",
@@ -121,7 +121,7 @@ export default function HeroSection() {
                 letterSpacing: "-0.02em",
               }}
             >
-              李O恩
+              李東恩
               <span
                 style={{
                   display: "block",
@@ -132,7 +132,7 @@ export default function HeroSection() {
                   marginTop: "0.25rem",
                 }}
               >
-                Lee O-En
+                Li Dong-En
               </span>
             </h1>
 
@@ -142,14 +142,14 @@ export default function HeroSection() {
               style={{
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: "clamp(0.9rem, 1.5vw, 1.1rem)",
-                color: "#00d4ff",
+                color: "var(--color-text-primary)",
               }}
             >
               <span className="cyber-text-glow">{displayed}</span>
               <span
                 className="ml-0.5 inline-block w-0.5 h-5"
                 style={{
-                  background: "#00d4ff",
+                  background: "var(--color-text-primary)",
                   animation: typing ? "none" : "blink 1s step-end infinite",
                 }}
               />

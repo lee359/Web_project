@@ -86,6 +86,8 @@
   --color-terminal-yellow: #febc2e;
   --color-terminal-green: #28c840;
   --color-code-punctuation: rgba(0, 212, 255, 0.65);
+  --color-language-primary: #00d4ff;
+  --color-language-secondary: #00d4ff;
 }
 
 /* Light Theme (Cafe) */
@@ -165,6 +167,8 @@
   --color-terminal-yellow: #d4af37;
   --color-terminal-green: #a8c5a0;
   --color-code-punctuation: rgba(160, 82, 45, 0.65);
+  --color-language-primary: var(--color-text-primary);
+  --color-language-secondary: var(--color-text-primary);
 
   /* ========== CYBER TOKEN ALIASES FOR LIGHT THEME ========== */
   --color-accent-cyan: var(--color-accent-caramel);
