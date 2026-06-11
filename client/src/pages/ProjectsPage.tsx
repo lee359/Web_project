@@ -307,7 +307,7 @@ export default function ProjectsPage() {
           >
             <p
               style={{
-                color: "rgba(226, 232, 240, 0.6)",
+                color: "var(--color-text-primary)",
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: "0.9rem",
                 fontStyle: "italic",
