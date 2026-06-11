@@ -104,11 +104,13 @@ npx pnpm@latest run format
 
 ### 預覽截圖
 
+- 暗色模式下的首頁：
+
 ![預覽圖_1](images/image.png)
 
-![預覽圖_2](images/image-1.png)
+- 亮色模式下的首頁：
 
-![預覽圖_3](images/image-2.png)
+![預覽圖_2](images/image-1.png)
 
 ## 5. 專案結構
 ```
