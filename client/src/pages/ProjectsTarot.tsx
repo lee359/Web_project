@@ -1,9 +1,9 @@
 import Footer from "@/components/Footer";
-import ProjectsSection from "@/components/sections/ProjectsSection-1";
+import ProjectsSection2 from "@/components/sections/ProjectsSection-2";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 
-export default function Projects() {
+export default function ProjectsTarot() {
   const [, setLocation] = useLocation();
 
   useEffect(() => {
@@ -11,7 +11,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <div className="min-h-screen page-transition" style={{ background: "var(--color-bg-primary)" }}>
+    <div className="min-h-screen page-transition bg-[#070615]">
       <button
         onClick={() => setLocation("/#projects")}
         className="fixed top-6 left-6 z-50 inline-flex items-center gap-2 px-4 py-2 transition-all duration-200"
@@ -27,11 +27,8 @@ export default function Projects() {
         <span>←</span>
         <span>返回專案列表</span>
       </button>
-
-      <main className="w-full" style={{ minHeight: "100vh" }}>
-        <ProjectsSection />
-        <Footer />
-      </main>
+      <main><ProjectsSection2 /></main>
+      <Footer />
     </div>
   );
 }

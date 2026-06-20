@@ -38,7 +38,7 @@ export default function ProjectsSection() {
       id="projects"
       ref={ref as React.RefObject<HTMLElement>}
       className="w-full py-20 min-h-screen flex items-center relative"
-      style={{ background: "#060f1e" }}
+      style={{ background: "var(--color-bg-primary-alt)" }}
     >
       <div className="absolute inset-0 circuit-bg" style={{ opacity: 0.25 }} />
 
@@ -74,7 +74,7 @@ export default function ProjectsSection() {
           >
             專案作品
           </h2>
-          <div className="mt-3 h-px w-24" style={{ background: "linear-gradient(90deg, #00d4ff, transparent)" }} />
+          <div className="mt-3 h-px w-24" style={{ background: "linear-gradient(90deg, var(--color-accent-cyan), transparent)" }} />
         </div>
 
         {/* Project card */}
@@ -88,8 +88,8 @@ export default function ProjectsSection() {
           <div
             className="rounded overflow-hidden"
             style={{
-              background: "linear-gradient(135deg, rgba(10,22,40,0.95) 0%, rgba(15,32,64,0.9) 100%)",
-              border: "1px solid rgba(0,212,255,0.2)",
+              background: "linear-gradient(135deg, var(--color-section-panel-bg-strong) 0%, var(--color-section-panel-bg) 100%)",
+              border: "1px solid var(--color-section-panel-border)",
               clipPath: "polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))",
             }}
           >
@@ -99,21 +99,21 @@ export default function ProjectsSection() {
                 src={PROJECT_BANNER}
                 alt="YOLOv8 MCP 即時影像辨識系統"
                 className="w-full h-full object-cover"
-                style={{ filter: "brightness(0.7) saturate(1.3)" }}
+                style={{ filter: "var(--project-image-filter)" }}
               />
               <div
                 className="absolute inset-0"
                 style={{
-                  background: "linear-gradient(180deg, transparent 40%, rgba(10,22,40,0.95) 100%)",
+                  background: "var(--project-image-overlay)",
                 }}
               />
               {/* Project number badge */}
               <div
                 className="absolute top-4 left-4 px-3 py-1 rounded"
                 style={{
-                  background: "rgba(0,212,255,0.15)",
-                  border: "1px solid rgba(0,212,255,0.4)",
-                  color: "#00d4ff",
+                  background: "var(--color-accent-cyan-15)",
+                  border: "1px solid var(--color-accent-cyan-40)",
+                  color: "var(--color-accent-cyan)",
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: "0.7rem",
                   backdropFilter: "blur(10px)",
@@ -141,7 +141,7 @@ export default function ProjectsSection() {
               <p
                 className="mb-5"
                 style={{
-                  color: "rgba(226,232,240,0.65)",
+                  color: "var(--color-text-secondary-65)",
                   fontFamily: "'DM Sans', sans-serif",
                   fontSize: "0.875rem",
                   lineHeight: 1.7,
@@ -159,21 +159,21 @@ export default function ProjectsSection() {
               </div>
 
               {/* Code block */}
-              <div className="rounded overflow-hidden" style={{ border: "1px solid rgba(0,212,255,0.15)" }}>
+              <div className="rounded overflow-hidden" style={{ border: "1px solid var(--color-accent-cyan-15)" }}>
                 {/* Code header */}
                 <div
                   className="flex items-center justify-between px-4 py-2"
-                  style={{ background: "rgba(0,212,255,0.05)", borderBottom: "1px solid rgba(0,212,255,0.1)" }}
+                  style={{ background: "var(--color-accent-cyan-5)", borderBottom: "1px solid var(--color-accent-cyan-10)" }}
                 >
                   <div className="flex items-center gap-2">
                     <div className="flex gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#ff5f57" }} />
-                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#febc2e" }} />
-                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#28c840" }} />
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--color-terminal-red)" }} />
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--color-terminal-yellow)" }} />
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--color-terminal-green)" }} />
                     </div>
                     <span
                       style={{
-                        color: "rgba(0,212,255,0.6)",
+                        color: "var(--color-accent-cyan-60)",
                         fontFamily: "'JetBrains Mono', monospace",
                         fontSize: "0.7rem",
                       }}
@@ -185,9 +185,9 @@ export default function ProjectsSection() {
                     onClick={handleCopy}
                     className="flex items-center gap-1.5 px-2 py-1 rounded transition-all duration-200"
                     style={{
-                      background: copied ? "rgba(0,212,255,0.15)" : "transparent",
-                      border: "1px solid rgba(0,212,255,0.2)",
-                      color: copied ? "#00d4ff" : "rgba(226,232,240,0.4)",
+                      background: copied ? "var(--color-accent-cyan-15)" : "transparent",
+                      border: "1px solid var(--color-accent-cyan-20)",
+                      color: copied ? "var(--color-accent-cyan)" : "var(--color-text-secondary-40)",
                       fontFamily: "'JetBrains Mono', monospace",
                       fontSize: "0.65rem",
                     }}
@@ -199,37 +199,37 @@ export default function ProjectsSection() {
                 <pre
                   className="p-4 overflow-x-auto text-sm"
                   style={{
-                    background: "rgba(5,13,26,0.8)",
+                    background: "var(--color-bg-navy-dark-10)",
                     fontFamily: "'JetBrains Mono', monospace",
                     fontSize: "0.78rem",
                     lineHeight: 1.6,
-                    color: "#e2e8f0",
+                    color: "var(--color-text-primary)",
                     margin: 0,
                   }}
                 >
                   <code>
-                    <span style={{ color: "rgba(0,212,255,0.15)" }}>{"{"}</span>{"\n"}
-                    {"  "}<span style={{ color: "#a78bfa" }}>"mcpServers"</span>
-                    <span style={{ color: "rgba(0,212,255,0.15)" }}>: {"{"}</span>{"\n"}
-                    {"    "}<span style={{ color: "#a78bfa" }}>"YOLOv8 Detection Server"</span>
-                    <span style={{ color: "rgba(0,212,255,0.15)" }}>: {"{"}</span>{"\n"}
-                    {"      "}<span style={{ color: "#a78bfa" }}>"command"</span>
-                    <span style={{ color: "rgba(0,212,255,0.15)" }}>: </span>
-                    <span style={{ color: "#00d4ff" }}>"...\venv\Scripts\python.exe"</span>
-                    <span style={{ color: "rgba(0,212,255,0.15)" }}>,</span>{"\n"}
-                    {"      "}<span style={{ color: "#a78bfa" }}>"args"</span>
-                    <span style={{ color: "rgba(0,212,255,0.15)" }}>: [</span>
-                    <span style={{ color: "#00d4ff" }}>"...\mcpserver.py"</span>
-                    <span style={{ color: "rgba(0,212,255,0.15)" }}>],</span>{"\n"}
-                    {"      "}<span style={{ color: "#a78bfa" }}>"env"</span>
-                    <span style={{ color: "rgba(0,212,255,0.15)" }}>: {"{"}</span>{"\n"}
-                    {"        "}<span style={{ color: "#a78bfa" }}>"PYTHONPATH"</span>
-                    <span style={{ color: "rgba(0,212,255,0.15)" }}>: </span>
-                    <span style={{ color: "#00d4ff" }}>"...\MCPproject-YOLOv8"</span>{"\n"}
-                    {"      "}<span style={{ color: "rgba(0,212,255,0.15)" }}>{"}"}</span>{"\n"}
-                    {"    "}<span style={{ color: "rgba(0,212,255,0.15)" }}>{"}"}</span>{"\n"}
-                    {"  "}<span style={{ color: "rgba(0,212,255,0.15)" }}>{"}"}</span>{"\n"}
-                    <span style={{ color: "rgba(0,212,255,0.15)" }}>{"}"}</span>
+                    <span style={{ color: "var(--color-code-punctuation)" }}>{"{"}</span>{"\n"}
+                    {"  "}<span style={{ color: "var(--color-accent-violet-light)" }}>"mcpServers"</span>
+                    <span style={{ color: "var(--color-code-punctuation)" }}>: {"{"}</span>{"\n"}
+                    {"    "}<span style={{ color: "var(--color-accent-violet-light)" }}>"YOLOv8 Detection Server"</span>
+                    <span style={{ color: "var(--color-code-punctuation)" }}>: {"{"}</span>{"\n"}
+                    {"      "}<span style={{ color: "var(--color-accent-violet-light)" }}>"command"</span>
+                    <span style={{ color: "var(--color-code-punctuation)" }}>: </span>
+                    <span style={{ color: "var(--color-language-primary)" }}>"...\venv\Scripts\python.exe"</span>
+                    <span style={{ color: "var(--color-code-punctuation)" }}>,</span>{"\n"}
+                    {"      "}<span style={{ color: "var(--color-accent-violet-light)" }}>"args"</span>
+                    <span style={{ color: "var(--color-code-punctuation)" }}>: [</span>
+                    <span style={{ color: "var(--color-language-primary)" }}>"...\mcpserver.py"</span>
+                    <span style={{ color: "var(--color-code-punctuation)" }}>],</span>{"\n"}
+                    {"      "}<span style={{ color: "var(--color-accent-violet-light)" }}>"env"</span>
+                    <span style={{ color: "var(--color-code-punctuation)" }}>: {"{"}</span>{"\n"}
+                    {"        "}<span style={{ color: "var(--color-accent-violet-light)" }}>"PYTHONPATH"</span>
+                    <span style={{ color: "var(--color-code-punctuation)" }}>: </span>
+                    <span style={{ color: "var(--color-language-primary)" }}>"...\MCPproject-YOLOv8"</span>{"\n"}
+                    {"      "}<span style={{ color: "var(--color-code-punctuation)" }}>{"}"}</span>{"\n"}
+                    {"    "}<span style={{ color: "var(--color-code-punctuation)" }}>{"}"}</span>{"\n"}
+                    {"  "}<span style={{ color: "var(--color-code-punctuation)" }}>{"}"}</span>{"\n"}
+                    <span style={{ color: "var(--color-code-punctuation)" }}>{"}"}</span>
                   </code>
                 </pre>
               </div>
@@ -237,7 +237,7 @@ export default function ProjectsSection() {
               <p
                 className="mt-3"
                 style={{
-                  color: "rgba(226,232,240,0.35)",
+                  color: "var(--color-text-secondary-35)",
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: "0.65rem",
                 }}

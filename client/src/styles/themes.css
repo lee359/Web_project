@@ -70,6 +70,7 @@
   --project-back-hover-border: rgba(0, 212, 255, 0.55);
   --project-back-hover-shadow: 0 0 0 1px rgba(0, 212, 255, 0.25), 0 10px 24px rgba(0, 212, 255, 0.18);
   --project-back-hover-text-shadow: 0 0 10px rgba(0, 212, 255, 0.45);
+  --project-list-hover-shadow: 0 8px 24px rgba(0, 212, 255, 0.16);
 
   /* ========== SECTION COLORS ========== */
   --color-section-panel-bg: rgba(15, 32, 64, 0.9);
@@ -169,6 +170,7 @@
   --project-back-hover-border: rgba(160, 82, 45, 0.55);
   --project-back-hover-shadow: 0 0 0 1px rgba(160, 82, 45, 0.22), 0 10px 24px rgba(62, 39, 35, 0.14);
   --project-back-hover-text-shadow: 0 0 10px rgba(160, 82, 45, 0.35);
+  --project-list-hover-shadow: 0 8px 24px rgba(160, 82, 45, 0.18);
  
   /* ========== DIALOG/UI COLORS ========== */
   --color-ui-dialog-bg: #3e2723;

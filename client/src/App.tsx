@@ -7,7 +7,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { AuthProvider } from "./contexts/AuthContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import ProjectsPage from "./pages/ProjectsPage";
+import Projects from "./pages/Projects";
+import ProjectsTarot from "./pages/ProjectsTarot";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminLogin from "./pages/admin/AdminLogin";
 
@@ -15,7 +16,8 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/projects"} component={ProjectsPage} />
+      <Route path={"/projects/mcp-yolov8"} component={Projects} />
+      <Route path={"/projects/tarot-platform"} component={ProjectsTarot} />
       <Route path={"/admin/login"}>
         <Home />
         <AdminLogin />

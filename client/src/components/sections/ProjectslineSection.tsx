@@ -10,9 +10,16 @@ const projects = [
   {
     title: "基於 MCP 協定與 YOLOv8n 之即時影像辨識系統實作",
     icon: "◈",
+    href: "/projects/mcp-yolov8",
   },
   {
-    title: "To be continued..."
+    title: "網站設計---塔羅牌占卜平台",
+    icon: "◈",
+    href: "/projects/tarot-platform",
+  },
+  {
+    title: "To be continued...",
+    href: undefined,
   },
 ];
 
@@ -73,10 +80,15 @@ export default function ProjectslineSection() {
           }}
         >
           <div className="space-y-4">
-            {projects.map((project, index) => (
-              <div
+            {projects.map((project, index) => {
+              const projectItem = (
+                <div
                 key={index}
-                className="flex items-start gap-4 p-4 rounded"
+                className={`flex items-start gap-4 p-4 rounded ${
+                  project.title !== "To be continued..."
+                    ? "transition-all duration-300 ease-out hover:translate-x-1 hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-[var(--project-list-hover-shadow)] md:hover:translate-x-2 md:hover:-translate-y-1 md:hover:scale-[1.02]"
+                    : ""
+                }`}
                 style={{
                   background: "rgba(0, 212, 255, 0.03)",
                   border: "1px solid var(--color-accent-cyan-15)",
@@ -107,38 +119,18 @@ export default function ProjectslineSection() {
                   </p>
                 </div>
               </div>
-            ))}
+              );
+
+              return project.href ? (
+                <Link key={index} href={project.href}>
+                  <a className="block cursor-pointer" style={{ textDecoration: "none" }}>
+                    {projectItem}
+                  </a>
+                </Link>
+              ) : projectItem;
+            })}
           </div>
 
-          {/* CTA: View projects — same behavior as HeroSection */}
-          <div className="mt-8">
-            <Link href="/projects">
-              <a
-                className="clip-btn inline-flex items-center gap-2 px-6 py-3 font-medium transition-all duration-200"
-                style={{
-                  background: "var(--color-accent-violet-10)",
-                  border: "1px solid var(--color-accent-violet-40)",
-                  color: "var(--color-accent-violet-light)",
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: "0.9rem",
-                  textDecoration: "none",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = "var(--color-accent-violet-20)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px var(--color-accent-violet-30)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = "var(--color-accent-violet-10)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "none";
-                }}
-              >
-                查看各專案細節
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </Link>
-          </div>
         </div>
       </div>
     </section>
